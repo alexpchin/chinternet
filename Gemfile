@@ -1,0 +1,7 @@
+source 'http://rubygems.org'
+ruby '2.2.3'
+gem 'jekyll'
+gem 'puma'
+gem 'rake'
+gem 'rack-contrib'
+gem 'rack-rewrite'
