@@ -1,3 +1,4 @@
+
 # Set the encoding
 Encoding.default_internal = Encoding::UTF_8
 
@@ -18,7 +19,7 @@ use Rack::Rewrite do
 
   # Redirect any calls to the the canonical domain, unless they are to the canonical domain
   # This prevents accessing the app from the heroku url or your domain
-  r301 /.*/, 'http://www.chinternet.lol$&', if: proc { |rack_env| rack_env['SERVER_NAME'] != /www.chinternet.lol' }
+  r301 /.*/, 'http://www.chinternet.lol$&', if: proc { |rack_env| rack_env['SERVER_NAME'] != 'www.chinternet.lol' }
 end
 
 # Ensure the site is served from the correct location and the headers are appropriate
