@@ -1,4 +1,5 @@
-<header>
+<header class="container">
+  <div class="header__doge">Much learning. So knowledge.</div>
   <ul>
     <li>
       <h1>
@@ -9,20 +10,44 @@
     </li>
   </ul>
 </header>
-<nav>
+<ul class="random">
+  <li><img src="/img/8-bit/345.png"></li>
+  <li><img src="/img/8-bit/380.png"></li>
+  <li><img src="/img/8-bit/381.png"></li>
+  <li><img src="/img/8-bit/382.png"></li>
+  <li><img src="/img/8-bit/383.png"></li>
+  <li><img src="/img/8-bit/384.png"></li>
+  <li><img src="/img/8-bit/385.png"></li>
+  <li><img src="/img/8-bit/386.png"></li>
+  <li><img src="/img/8-bit/387.png"></li>
+  <li><img src="/img/8-bit/388.png"></li>
+  <li><img src="/img/8-bit/389.png"></li>
+  <li><img src="/img/8-bit/390.png"></li>
+  <li><img src="/img/8-bit/391.png"></li>
+  <li><img src="/img/8-bit/392.png"></li>
+  <li><img src="/img/8-bit/393.png"></li>
+  <li><img src="/img/8-bit/394.png"></li>
+  <li><img src="/img/8-bit/395.png"></li>
+  <li><img src="/img/8-bit/396.png"></li>
+  <li><img src="/img/8-bit/397.png"></li>
+  <li><img src="/img/8-bit/398.png"></li>
+  <li><img src="/img/8-bit/399.png"></li>
+  <li><img src="/img/8-bit/400.png"></li>
+  <li><img src="/img/8-bit/401.png"></li>
+  <li><img src="/img/8-bit/402.png"></li>
+  <li><img src="/img/8-bit/403.png"></li>
+  <li><img src="/img/8-bit/404.png"></li>
+  <li><img src="/img/8-bit/405.png"></li>
+  <li><img src="/img/8-bit/406.png"></li>
+</ul>
+<nav class="container">
   <ul>
-    <li>
-      <a href="{{ site.baseurl }}/">Blog</a>
-    </li>
     {% for page in site.pages %}
-    {% if page.title %}
-    <li>
-      <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-    </li>
-    {% endif %}
+      {% if page.title %}
+      <li>
+        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+      </li>
+      {% endif %}
     {% endfor %}
-    <li>
-      <a href="http://www.alexchin.co.uk" target="_blank">The Author</a>
-    </li>
   </ul>
 </nav>
