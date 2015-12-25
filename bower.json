@@ -1,0 +1,21 @@
+{
+  "name": "chinternet",
+  "homepage": "https://github.com/alexpchin/chinternet",
+  "authors": [
+    "alexpchin <alex@alexchin.co.uk>"
+  ],
+  "description": "Tips and tricks of web development",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "~4.5.0"
+  }
+}
