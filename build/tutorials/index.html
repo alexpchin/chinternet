@@ -16,20 +16,31 @@
 
   <link rel="canonical" href="http://yourdomain.com/tutorials/">
   <link rel="alternate" type="application/rss+xml" title="Chinternet" href="http://yourdomain.com/feed.xml" />
+
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+  <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+  <script src="/bower_components/tether/dist/js/tether.min.js" charset="utf-8"></script>
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="/js/app.js" charset="utf-8"></script>
 </head>
 
   <body>
-    <header class="container">
+    <header>
   <div class="header__doge">Much learning. So knowledge.</div>
+  <div class="header__nerd">NERD<span>ALERT</span></div>
+  <div class="header__absolute">How bad is absolute positioning???</div>
   <ul>
+    <li><img src="/img/alex.gif"></li>
     <li>
-      <h1>
-        <a href="/">Chinternet
-          <img src="/img/alex.gif">
-        </a>
+      <h1 class="blink">
+        <a href="/">Chinternet</a>
+        <span>I learn you code.</span>
       </h1>
     </li>
+    <li><img src="/img/alex.gif"></li>
   </ul>
+  <img class="pikachu" src="/img/pikachu.gif" />
 </header>
 <ul class="random">
   <li><img src="/img/8-bit/345.png"></li>
@@ -63,6 +74,7 @@
 </ul>
 <nav class="container">
   <ul>
+    <li><a href="/"><i class="fa fa-home"></i></a>
     
       
       <li>
@@ -80,52 +92,123 @@
       </li>
       
     
+    <li class='dont-click'>don't click!</li>
   </ul>
 </nav>
 
     <main class="container">
-      <div class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">Tutorials</h1>
-  </header>
-
-  <article class="post-content">
-    <div class="card-deck-wrapper">
-  <div class="card-deck">
-    <div class="card text-xs-center">
-      <img class="card-img-top" data-src="..." alt="Card image cap" />
-      <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
+      <div class="row">
+  <div class="col-sm-1 sidebar">
+    <img src="/img/angular.png">
+    <img src="/img/javascript.png">
+    <img src="/img/rails.png">
+    <img src="/img/jquery.png">
+    <img src="/img/postgresql.png">
+    <img src="/img/html5.png">
+    <img src="/img/css3.png">
+    <img src="/img/node.png">
+    <img src="/img/backbone.png">
+    <img src="/img/react.png">
+    <img src="/img/sinatra.png">
+    <img src="/img/rspec.png">
+    <img src="/img/jasmine.png">
+  </div>
+  <div class="col-sm-9">
+    <h1>Tutorials</h1>
+    <article>
+      <div class="card-columns">
+  <div class="card">
+    <img class="card-img-top" data-src="..." alt="Card image cap" />
+    <div class="card-block">
+      <h4 class="card-title">Card title that wraps to a new line</h4>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     </div>
-    <div class="card text-xs-center">
-      <img class="card-img-top" data-src="..." alt="Card image cap" />
-      <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
+  </div>
+  <div class="card card-block">
+    <blockquote class="card-blockquote">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      <footer>
+        <small class="text-muted">
+          Someone famous in <cite title="Source Title">Source Title</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div>
+  <div class="card">
+    <img class="card-img-top" data-src="..." alt="Card image cap" />
+    <div class="card-block">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
-    <div class="card text-xs-center">
-      <img class="card-img-top" data-src="..." alt="Card image cap" />
-      <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
+  </div>
+  <div class="card card-block card-inverse card-primary text-xs-center">
+    <blockquote class="card-blockquote">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+      <footer>
+        <small>
+          Someone famous in <cite title="Source Title">Source Title</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div>
+  <div class="card card-block text-xs-center">
+    <h4 class="card-title">Card title</h4>
+    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
+  <div class="card">
+    <img class="card-img" data-src="..." alt="Card image" />
+  </div>
+  <div class="card card-block text-xs-right">
+    <blockquote class="card-blockquote">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      <footer>
+        <small class="text-muted">
+          Someone famous in <cite title="Source Title">Source Title</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div>
+  <div class="card card-block">
+    <h4 class="card-title">Card title</h4>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
   </div>
 </div>
 
-  </article>
-
+    </article>
+  </div>
+  <div class="col-sm-2 sidebar">
+    <ul class="sidebar__topics">
+      <li>Angular-1</li>
+      <li>Angular-2</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Backbone</li>
+      <li>Rails</li>
+      <li>Sinatra</li>
+      <li>Node</li>
+      <li>Express</li>
+      <li>Mongo</li>
+      <li>Mongoose</li>
+      <li>SQL</li>
+      <li>Postgres</li>
+      <li>HAML</li>
+      <li>Ruby</li>
+      <li>Rspec</li>
+      <li>Mocha</li>
+      <li>TDD</li>
+      <li>BDD</li>
+      <li>APIs</li>
+      <li>Javascript Frameworks</li>
+      <li>Javascript</li>
+    </ul>
+  </div>
 </div>
 
     </main>
-    <footer class="container">
+    <footer>
   &copy; 2015 - Alex Chin
   <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
   <ul class="footer__social-icons">
@@ -145,6 +228,7 @@
     </li>
     
   </ul>
+  Inspired by <a href="http://www.lingscars.com/" target="_blank">LingsCars</a>.
 </footer>
 
   </body>
