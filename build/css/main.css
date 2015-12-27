@@ -103,12 +103,22 @@ header {
     position: absolute;
     bottom: 0;
     right: 0; }
+  header img.header__otter {
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 10%; }
+  header img.header__glitter-cat {
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    right: 10%; }
   header .header__thumb {
     height: 50px;
     position: absolute;
     top: 10px;
     right: 150px; }
-  header .header__facebook {
+  header img.header__facebook {
     height: 50px;
     position: absolute;
     top: 5px;
@@ -238,6 +248,16 @@ main {
         height: 60px;
         width: 60px;
         margin-right: 10px; }
+  main .meme {
+    color: #081052;
+    text-align: center;
+    font-weight: 700;
+    overflow: hidden;
+    margin-bottom: 10px; }
+    main .meme img {
+      height: 50px;
+      width: 50px;
+      float: left; }
   main .hacker-news {
     font-family: Verdana, Geneva, sans-serif; }
     main .hacker-news a:visited {

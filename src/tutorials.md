@@ -41,6 +41,7 @@ permalink: /tutorials/
     </blockquote>
   </div>
   <div class="card card-block text-xs-center">
+    <iframe width="100%" height="150" src="https://www.youtube.com/embed/20BySC_6HyY" frameborder="0" allowfullscreen></iframe>
     <h4 class="card-title">Card title</h4>
     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
