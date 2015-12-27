@@ -1,9 +1,20 @@
-<header>
+<header class="container">
   <div class="header__doge">Much learning. So knowledge.</div>
   <div class="header__nerd">NERD<span>ALERT</span></div>
   <div class="header__absolute">How bad is absolute positioning???</div>
+  <a class="header__linkedin" href="https://uk.linkedin.com/in/alexpchin">
+    Find me on LinkedIn!
+  </a>
+  <a class="header__click" href="http://alexchin.co.uk">
+    <img src="{{ site.baseurl }}/img/star.gif" />
+  </a>
+  <img class="header__pikachu" src="{{ site.baseurl }}/img/pikachu.gif" />
+  <img class="header__thumb" src="{{ site.baseurl }}/img/thumb.png" />
+  <img class="header__facebook" src="{{ site.baseurl }}/img/facebook.png" />
   <ul>
-    <li><img src="{{ site.baseurl }}/img/alex.gif"></li>
+    <li>
+      <img src="{{ site.baseurl }}/img/alex.gif">
+    </li>
     <li>
       <h1 class="blink">
         <a href="{{ site.baseurl }}/">{{ site.title }}</a>
@@ -12,48 +23,51 @@
     </li>
     <li><img src="{{ site.baseurl }}/img/alex.gif"></li>
   </ul>
-  <img class="pikachu" src="{{ site.baseurl }}/img/pikachu.gif" />
-</header>
-<ul class="random">
-  <li><img src="/img/8-bit/345.png"></li>
-  <li><img src="/img/8-bit/380.png"></li>
-  <li><img src="/img/8-bit/381.png"></li>
-  <li><img src="/img/8-bit/382.png"></li>
-  <li><img src="/img/8-bit/383.png"></li>
-  <li><img src="/img/8-bit/384.png"></li>
-  <li><img src="/img/8-bit/385.png"></li>
-  <li><img src="/img/8-bit/386.png"></li>
-  <li><img src="/img/8-bit/387.png"></li>
-  <li><img src="/img/8-bit/388.png"></li>
-  <li><img src="/img/8-bit/389.png"></li>
-  <li><img src="/img/8-bit/390.png"></li>
-  <li><img src="/img/8-bit/391.png"></li>
-  <li><img src="/img/8-bit/392.png"></li>
-  <li><img src="/img/8-bit/393.png"></li>
-  <li><img src="/img/8-bit/394.png"></li>
-  <li><img src="/img/8-bit/395.png"></li>
-  <li><img src="/img/8-bit/396.png"></li>
-  <li><img src="/img/8-bit/397.png"></li>
-  <li><img src="/img/8-bit/398.png"></li>
-  <li><img src="/img/8-bit/399.png"></li>
-  <li><img src="/img/8-bit/400.png"></li>
-  <li><img src="/img/8-bit/401.png"></li>
-  <li><img src="/img/8-bit/402.png"></li>
-  <li><img src="/img/8-bit/403.png"></li>
-  <li><img src="/img/8-bit/404.png"></li>
-  <li><img src="/img/8-bit/405.png"></li>
-  <li><img src="/img/8-bit/406.png"></li>
-</ul>
-<nav class="container">
-  <ul>
-    <li><a href="{{ site.baseurl }}/"><i class="fa fa-home"></i></a>
-    {% for page in site.pages %}
-      {% if page.title %}
-      <li>
-        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+  <div class="header__random">
+    <ul>
+      <li><img src="/img/8-bit/345.png"></li>
+      <li><img src="/img/8-bit/380.png"></li>
+      <li><img src="/img/8-bit/381.png"></li>
+      <li><img src="/img/8-bit/382.png"></li>
+      <li><img src="/img/8-bit/383.png"></li>
+      <li><img src="/img/8-bit/384.png"></li>
+      <li><img src="/img/8-bit/385.png"></li>
+      <li><img src="/img/8-bit/386.png"></li>
+      <li><img src="/img/8-bit/387.png"></li>
+      <li><img src="/img/8-bit/388.png"></li>
+      <li><img src="/img/8-bit/389.png"></li>
+      <li><img src="/img/8-bit/390.png"></li>
+      <li><img src="/img/8-bit/391.png"></li>
+      <li><img src="/img/8-bit/392.png"></li>
+      <li><img src="/img/8-bit/393.png"></li>
+      <li><img src="/img/8-bit/394.png"></li>
+      <li><img src="/img/8-bit/395.png"></li>
+      <li><img src="/img/8-bit/396.png"></li>
+      <li><img src="/img/8-bit/397.png"></li>
+      <li><img src="/img/8-bit/398.png"></li>
+      <li><img src="/img/8-bit/399.png"></li>
+      <li><img src="/img/8-bit/400.png"></li>
+      <li><img src="/img/8-bit/401.png"></li>
+      <li><img src="/img/8-bit/402.png"></li>
+      <li><img src="/img/8-bit/403.png"></li>
+      <li><img src="/img/8-bit/404.png"></li>
+      <li><img src="/img/8-bit/405.png"></li>
+      <li><img src="/img/8-bit/406.png"></li>
+    </ul>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="{{ site.baseurl }}/"><i class="fa fa-home"></i></a></li>
+      {% for page in site.pages %}
+        {% if page.title %}
+        <li>
+          <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        </li>
+        {% endif %}
+      {% endfor %}
+      <li class="dont-click">
+        <a href="http://www.alexchin.co.uk" target="_blank">don't click!</a>
       </li>
-      {% endif %}
-    {% endfor %}
-    <li class='dont-click'>don't click!</li>
-  </ul>
-</nav>
+    </ul>
+  </nav>
+</header>

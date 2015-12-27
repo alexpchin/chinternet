@@ -10,6 +10,7 @@
 ">
 
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Lora" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css" media="screen" charset="utf-8">
   <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css" media="screen" charset="utf-8">
   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="/css/main.css">
@@ -22,16 +23,28 @@
   <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
   <script src="/bower_components/tether/dist/js/tether.min.js" charset="utf-8"></script>
   <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="/js/bug-min.js" charset="utf-8"></script>
   <script src="/js/app.js" charset="utf-8"></script>
 </head>
 
   <body>
-    <header>
+    <header class="container">
   <div class="header__doge">Much learning. So knowledge.</div>
   <div class="header__nerd">NERD<span>ALERT</span></div>
   <div class="header__absolute">How bad is absolute positioning???</div>
+  <a class="header__linkedin" href="https://uk.linkedin.com/in/alexpchin">
+    Find me on LinkedIn!
+  </a>
+  <a class="header__click" href="http://alexchin.co.uk">
+    <img src="/img/star.gif" />
+  </a>
+  <img class="header__pikachu" src="/img/pikachu.gif" />
+  <img class="header__thumb" src="/img/thumb.png" />
+  <img class="header__facebook" src="/img/facebook.png" />
   <ul>
-    <li><img src="/img/alex.gif"></li>
+    <li>
+      <img src="/img/alex.gif">
+    </li>
     <li>
       <h1 class="blink">
         <a href="/">Chinternet</a>
@@ -40,75 +53,155 @@
     </li>
     <li><img src="/img/alex.gif"></li>
   </ul>
-  <img class="pikachu" src="/img/pikachu.gif" />
+  <div class="header__random">
+    <ul>
+      <li><img src="/img/8-bit/345.png"></li>
+      <li><img src="/img/8-bit/380.png"></li>
+      <li><img src="/img/8-bit/381.png"></li>
+      <li><img src="/img/8-bit/382.png"></li>
+      <li><img src="/img/8-bit/383.png"></li>
+      <li><img src="/img/8-bit/384.png"></li>
+      <li><img src="/img/8-bit/385.png"></li>
+      <li><img src="/img/8-bit/386.png"></li>
+      <li><img src="/img/8-bit/387.png"></li>
+      <li><img src="/img/8-bit/388.png"></li>
+      <li><img src="/img/8-bit/389.png"></li>
+      <li><img src="/img/8-bit/390.png"></li>
+      <li><img src="/img/8-bit/391.png"></li>
+      <li><img src="/img/8-bit/392.png"></li>
+      <li><img src="/img/8-bit/393.png"></li>
+      <li><img src="/img/8-bit/394.png"></li>
+      <li><img src="/img/8-bit/395.png"></li>
+      <li><img src="/img/8-bit/396.png"></li>
+      <li><img src="/img/8-bit/397.png"></li>
+      <li><img src="/img/8-bit/398.png"></li>
+      <li><img src="/img/8-bit/399.png"></li>
+      <li><img src="/img/8-bit/400.png"></li>
+      <li><img src="/img/8-bit/401.png"></li>
+      <li><img src="/img/8-bit/402.png"></li>
+      <li><img src="/img/8-bit/403.png"></li>
+      <li><img src="/img/8-bit/404.png"></li>
+      <li><img src="/img/8-bit/405.png"></li>
+      <li><img src="/img/8-bit/406.png"></li>
+    </ul>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="/"><i class="fa fa-home"></i></a></li>
+      
+        
+      
+        
+      
+        
+        <li>
+          <a href="/tutorials/">Tutorials</a>
+        </li>
+        
+      
+      <li class="dont-click">
+        <a href="http://www.alexchin.co.uk" target="_blank">don't click!</a>
+      </li>
+    </ul>
+  </nav>
 </header>
-<ul class="random">
-  <li><img src="/img/8-bit/345.png"></li>
-  <li><img src="/img/8-bit/380.png"></li>
-  <li><img src="/img/8-bit/381.png"></li>
-  <li><img src="/img/8-bit/382.png"></li>
-  <li><img src="/img/8-bit/383.png"></li>
-  <li><img src="/img/8-bit/384.png"></li>
-  <li><img src="/img/8-bit/385.png"></li>
-  <li><img src="/img/8-bit/386.png"></li>
-  <li><img src="/img/8-bit/387.png"></li>
-  <li><img src="/img/8-bit/388.png"></li>
-  <li><img src="/img/8-bit/389.png"></li>
-  <li><img src="/img/8-bit/390.png"></li>
-  <li><img src="/img/8-bit/391.png"></li>
-  <li><img src="/img/8-bit/392.png"></li>
-  <li><img src="/img/8-bit/393.png"></li>
-  <li><img src="/img/8-bit/394.png"></li>
-  <li><img src="/img/8-bit/395.png"></li>
-  <li><img src="/img/8-bit/396.png"></li>
-  <li><img src="/img/8-bit/397.png"></li>
-  <li><img src="/img/8-bit/398.png"></li>
-  <li><img src="/img/8-bit/399.png"></li>
-  <li><img src="/img/8-bit/400.png"></li>
-  <li><img src="/img/8-bit/401.png"></li>
-  <li><img src="/img/8-bit/402.png"></li>
-  <li><img src="/img/8-bit/403.png"></li>
-  <li><img src="/img/8-bit/404.png"></li>
-  <li><img src="/img/8-bit/405.png"></li>
-  <li><img src="/img/8-bit/406.png"></li>
-</ul>
-<nav class="container">
-  <ul>
-    <li><a href="/"><i class="fa fa-home"></i></a>
-    
-      
-      <li>
-        <a href="/about/">About</a>
-      </li>
-      
-    
-      
-    
-      
-    
-      
-      <li>
-        <a href="/tutorials/">Tutorials</a>
-      </li>
-      
-    
-    <li class='dont-click'>don't click!</li>
-  </ul>
-</nav>
 
     <main class="container">
-      <h2>Posts</h2>
-<ul>
-  
-    <li>
-      <span class="post-meta">Dec 25, 2015</span>
-
-      <h2>
+      <div class="row">
+  <div class="col-sm-1 sidebar">
+    <img src="/img/angular.png">
+    <img src="/img/javascript.png">
+    <img src="/img/rails.png">
+    <img src="/img/jquery.png">
+    <img src="/img/postgresql.png">
+    <img src="/img/html5.png">
+    <img src="/img/css3.png">
+    <img src="/img/node.png">
+    <img src="/img/backbone.png">
+    <img src="/img/react.png">
+    <img src="/img/sinatra.png">
+    <img src="/img/rspec.png">
+    <img src="/img/jasmine.png">
+  </div>
+  <div class="col-sm-9">
+    <h1></h1>
+    <article>
+      <div class="hacker-news">
+  <header>
+    <img src="/img/hacker-news.gif"><h2>Latest Posts</h2>
+  </header>
+  <ol>
+    
+      <li>
+        <div class="votearrow"></div>
         <a class="post-link" href="/jekyll/update/2015/12/25/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-      </h2>
+        <span class="post-meta">Dec 25, 2015</span>
+      </li>
+    
+  </ol>
+</div>
+<div class="reviews">
+  <ul>
+    <li>
+      <img src="/img/students/jake.jpg"/><span>"Alex is an incredibly inspirational person. He has one of the most amazing minds that I have ever encountered. He thinks freely and creatively but is also highly business savvy and commercially acute. As a teacher, he is passionate, approachable and possesses the rare capacity to explain the complex in a clear and concise way. It has been an absolute pleasure being his student."</span> - <a href="https://uk.linkedin.com/in/jakewillisfleming" target="_blank">Jake Willis Fleming</a>
     </li>
-  
-</ul>
+    <li>
+      <img src="/img/students/john.jpg"/><span>"Alex teaches with expertise, passion and enthusiasm. He has great experience and technical knowledge, and was incredibly patient. Always approachable, has helped me a great deal. Highly recommended."</span> - <a href="https://uk.linkedin.com/in/jonrogers121" target="_blank">John Rogers</a>
+    </li>
+  </ul>
+</div>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/20BySC_6HyY" frameborder="0" allowfullscreen></iframe>
+
+    </article>
+  </div>
+  <div class="col-sm-2 sidebar">
+    <img src="/img/tom-myspace.gif" />
+    Book Advert
+    <ul class="sidebar__topics">
+      <li>Angular-1</li>
+      <li>Angular-2</li>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Backbone</li>
+      <li>Rails</li>
+      <li>Sinatra</li>
+      <li>Node</li>
+      <li>Express</li>
+      <li>Mongo</li>
+      <li>Mongoose</li>
+      <li>SQL</li>
+      <li>Postgres</li>
+      <li>HAML</li>
+      <li>Ruby</li>
+      <li>Rspec</li>
+      <li>Mocha</li>
+      <li>TDD</li>
+      <li>BDD</li>
+      <li>APIs</li>
+      <li>Javascript Frameworks</li>
+      <li>Javascript</li>
+    </ul>
+    <ul class="sidebar__8bit">
+      <li><img src="/img/8-bit/407.png"></li>
+      <li><img src="/img/8-bit/408.png"></li>
+      <li><img src="/img/8-bit/409.png"></li>
+      <li><img src="/img/8-bit/410.png"></li>
+      <li><img src="/img/8-bit/411.png"></li>
+      <li><img src="/img/8-bit/412.png"></li>
+      <li><img src="/img/8-bit/413.png"></li>
+      <li><img src="/img/8-bit/414.png"></li>
+      <li><img src="/img/8-bit/415.png"></li>
+      <li><img src="/img/8-bit/416.png"></li>
+      <li><img src="/img/8-bit/417.png"></li>
+      <li><img src="/img/8-bit/418.png"></li>
+      <li><img src="/img/8-bit/419.png"></li>
+      <li><img src="/img/8-bit/420.png"></li>
+      <li><img src="/img/8-bit/421.png"></li>
+      <li><img src="/img/8-bit/422.png"></li>
+    </ul>
+    <img src="/img/regex.jpeg" />
+  </div>
+</div>
 
     </main>
     <footer>
@@ -133,6 +226,9 @@
   </ul>
   Inspired by <a href="http://www.lingscars.com/" target="_blank">LingsCars</a>.
 </footer>
+<a class="github-ribbon" href="https://github.com/alexpchin" target="_blank">
+  <img src="/img/fork-me.png" alt="Fork me on Github">
+</a>
 
   </body>
 </html>

@@ -1,4 +1,3 @@
-
 # Set the encoding
 Encoding.default_internal = Encoding::UTF_8
 

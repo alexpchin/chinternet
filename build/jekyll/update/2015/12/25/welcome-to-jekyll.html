@@ -9,6 +9,7 @@
   <meta name="description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...">
 
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Lora" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css" media="screen" charset="utf-8">
   <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css" media="screen" charset="utf-8">
   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="/css/main.css">
@@ -21,16 +22,28 @@
   <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
   <script src="/bower_components/tether/dist/js/tether.min.js" charset="utf-8"></script>
   <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="/js/bug-min.js" charset="utf-8"></script>
   <script src="/js/app.js" charset="utf-8"></script>
 </head>
 
   <body>
-    <header>
+    <header class="container">
   <div class="header__doge">Much learning. So knowledge.</div>
   <div class="header__nerd">NERD<span>ALERT</span></div>
   <div class="header__absolute">How bad is absolute positioning???</div>
+  <a class="header__linkedin" href="https://uk.linkedin.com/in/alexpchin">
+    Find me on LinkedIn!
+  </a>
+  <a class="header__click" href="http://alexchin.co.uk">
+    <img src="/img/star.gif" />
+  </a>
+  <img class="header__pikachu" src="/img/pikachu.gif" />
+  <img class="header__thumb" src="/img/thumb.png" />
+  <img class="header__facebook" src="/img/facebook.png" />
   <ul>
-    <li><img src="/img/alex.gif"></li>
+    <li>
+      <img src="/img/alex.gif">
+    </li>
     <li>
       <h1 class="blink">
         <a href="/">Chinternet</a>
@@ -39,61 +52,58 @@
     </li>
     <li><img src="/img/alex.gif"></li>
   </ul>
-  <img class="pikachu" src="/img/pikachu.gif" />
+  <div class="header__random">
+    <ul>
+      <li><img src="/img/8-bit/345.png"></li>
+      <li><img src="/img/8-bit/380.png"></li>
+      <li><img src="/img/8-bit/381.png"></li>
+      <li><img src="/img/8-bit/382.png"></li>
+      <li><img src="/img/8-bit/383.png"></li>
+      <li><img src="/img/8-bit/384.png"></li>
+      <li><img src="/img/8-bit/385.png"></li>
+      <li><img src="/img/8-bit/386.png"></li>
+      <li><img src="/img/8-bit/387.png"></li>
+      <li><img src="/img/8-bit/388.png"></li>
+      <li><img src="/img/8-bit/389.png"></li>
+      <li><img src="/img/8-bit/390.png"></li>
+      <li><img src="/img/8-bit/391.png"></li>
+      <li><img src="/img/8-bit/392.png"></li>
+      <li><img src="/img/8-bit/393.png"></li>
+      <li><img src="/img/8-bit/394.png"></li>
+      <li><img src="/img/8-bit/395.png"></li>
+      <li><img src="/img/8-bit/396.png"></li>
+      <li><img src="/img/8-bit/397.png"></li>
+      <li><img src="/img/8-bit/398.png"></li>
+      <li><img src="/img/8-bit/399.png"></li>
+      <li><img src="/img/8-bit/400.png"></li>
+      <li><img src="/img/8-bit/401.png"></li>
+      <li><img src="/img/8-bit/402.png"></li>
+      <li><img src="/img/8-bit/403.png"></li>
+      <li><img src="/img/8-bit/404.png"></li>
+      <li><img src="/img/8-bit/405.png"></li>
+      <li><img src="/img/8-bit/406.png"></li>
+    </ul>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="/"><i class="fa fa-home"></i></a></li>
+      
+        
+      
+        
+      
+        
+        <li>
+          <a href="/tutorials/">Tutorials</a>
+        </li>
+        
+      
+      <li class="dont-click">
+        <a href="http://www.alexchin.co.uk" target="_blank">don't click!</a>
+      </li>
+    </ul>
+  </nav>
 </header>
-<ul class="random">
-  <li><img src="/img/8-bit/345.png"></li>
-  <li><img src="/img/8-bit/380.png"></li>
-  <li><img src="/img/8-bit/381.png"></li>
-  <li><img src="/img/8-bit/382.png"></li>
-  <li><img src="/img/8-bit/383.png"></li>
-  <li><img src="/img/8-bit/384.png"></li>
-  <li><img src="/img/8-bit/385.png"></li>
-  <li><img src="/img/8-bit/386.png"></li>
-  <li><img src="/img/8-bit/387.png"></li>
-  <li><img src="/img/8-bit/388.png"></li>
-  <li><img src="/img/8-bit/389.png"></li>
-  <li><img src="/img/8-bit/390.png"></li>
-  <li><img src="/img/8-bit/391.png"></li>
-  <li><img src="/img/8-bit/392.png"></li>
-  <li><img src="/img/8-bit/393.png"></li>
-  <li><img src="/img/8-bit/394.png"></li>
-  <li><img src="/img/8-bit/395.png"></li>
-  <li><img src="/img/8-bit/396.png"></li>
-  <li><img src="/img/8-bit/397.png"></li>
-  <li><img src="/img/8-bit/398.png"></li>
-  <li><img src="/img/8-bit/399.png"></li>
-  <li><img src="/img/8-bit/400.png"></li>
-  <li><img src="/img/8-bit/401.png"></li>
-  <li><img src="/img/8-bit/402.png"></li>
-  <li><img src="/img/8-bit/403.png"></li>
-  <li><img src="/img/8-bit/404.png"></li>
-  <li><img src="/img/8-bit/405.png"></li>
-  <li><img src="/img/8-bit/406.png"></li>
-</ul>
-<nav class="container">
-  <ul>
-    <li><a href="/"><i class="fa fa-home"></i></a>
-    
-      
-      <li>
-        <a href="/about/">About</a>
-      </li>
-      
-    
-      
-    
-      
-    
-      
-      <li>
-        <a href="/tutorials/">Tutorials</a>
-      </li>
-      
-    
-    <li class='dont-click'>don't click!</li>
-  </ul>
-</nav>
 
     <main class="container">
       <div class="post">
@@ -146,6 +156,9 @@
   </ul>
   Inspired by <a href="http://www.lingscars.com/" target="_blank">LingsCars</a>.
 </footer>
+<a class="github-ribbon" href="https://github.com/alexpchin" target="_blank">
+  <img src="/img/fork-me.png" alt="Fork me on Github">
+</a>
 
   </body>
 </html>

@@ -6,7 +6,7 @@ permalink: /tutorials/
 
 <div class="card-columns">
   <div class="card">
-    <img class="card-img-top" data-src="..." alt="Card image cap">
+    <img class="card-img-top" src="http://whyareyoustupid.com/wp-content/uploads/Funny-cat-meme-Cake.jpg" alt="Card image cap">
     <div class="card-block">
       <h4 class="card-title">Card title that wraps to a new line</h4>
       <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -23,7 +23,7 @@ permalink: /tutorials/
     </blockquote>
   </div>
   <div class="card">
-    <img class="card-img-top" data-src="..." alt="Card image cap">
+    <img class="card-img-top" src="http://i0.kym-cdn.com/photos/images/facebook/000/919/578/c2f.jpg" alt="Card image cap">
     <div class="card-block">
       <h4 class="card-title">Card title</h4>
       <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>

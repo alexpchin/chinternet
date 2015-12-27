@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "font-awesome": "~4.5.0",
-    "tether": "~1.1.1"
+    "tether": "~1.1.1",
+    "normalize-css": "~3.0.3"
   }
 }

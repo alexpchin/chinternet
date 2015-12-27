@@ -1,15 +1,24 @@
 $(function(){
-  setInterval(blinker, 2000);
-  setInterval(scroll, 4000);
+  // setInterval(function(){
+  //   blinker('.blink');
+  // }, 2000);
+  //
+  // setInterval(function(){
+  //   blinker('.header__linkedin');
+  // }, 1000);
+  //
+  // setInterval(scroll, 4000);
   // $('.dont-click').on('click', comicsansify);
+
+  // new BugController({'minBugs':10, 'maxBugs':10, 'mouseOver':'die'});
 });
 
-function blinker() {
-  $('.blink').fadeOut(500).fadeIn(500);
+function blinker(selector) {
+  $(selector).fadeOut(500).fadeIn(500);
 }
 
 function scroll(){
-  var $container = $(".random");
+  var $container = $(".header__random ul");
   var $last = $container.children().last();
   $container.prepend($last.clone());
   $last.fadeOut(300).remove();
