@@ -17,3 +17,7 @@ github_username:  alexpchin
 
 # Build settings
 markdown: kramdown
+
+include: ['.nojekyll']
+exclude: ['bower_components', 'node_modules', 'package.json', 'bower.json', 'config.ru', 'Gemfile', 'Gemfile.lock', 'Procfile', 'Rakefile', 'assets']
+# keep_files: ['build/css']

@@ -310,11 +310,13 @@ main {
 
 .sidebar img {
   width: 100%; }
+
 .sidebar .sidebar__topics {
   background-color: cyan;
   padding: 10px;
   box-sizing: border-box;
   font-size: 10px; }
+
 .sidebar .sidebar__8bit img {
   width: 40px;
   height: 40px;
@@ -347,5 +349,6 @@ footer {
   color: #fff;
   -webkit-text-stroke: 1px black;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
+
 .card img {
   width: 100%; }

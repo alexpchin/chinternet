@@ -5,8 +5,6 @@
     "alexpchin <alex@alexchin.co.uk>"
   ],
   "description": "Tips and tricks of web development",
-  "main": "",
-  "moduleType": [],
   "license": "MIT",
   "ignore": [
     "**/.*",
