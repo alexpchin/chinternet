@@ -1,0 +1,19 @@
+{
+  "name": "chinternet",
+  "version": "1.0.0",
+  "description": "A place to learn code and look at memes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexpchin/chinternet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexpchin/chinternet/issues"
+  },
+  "homepage": "https://github.com/alexpchin/chinternet#readme"
+}
