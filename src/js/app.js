@@ -1,13 +1,13 @@
 $(function(){
-  setInterval(function(){
-    blinker('.blink');
-  }, 2000);
-
-  setInterval(function(){
-    blinker('.header__linkedin');
-  }, 1000);
-
-  setInterval(scroll, 3000);
+  // setInterval(function(){
+  //   blinker('.blink');
+  // }, 2000);
+  //
+  // setInterval(function(){
+  //   blinker('.header__linkedin');
+  // }, 1000);
+  //
+  // setInterval(scroll, 3000);
 
   // $('.dont-click').on('click', comicsansify);
   // new BugController({'minBugs':10, 'maxBugs':10, 'mouseOver':'die'});
