@@ -9381,16 +9381,18 @@ a:hover i {
   color: yellow;
 }
 
-/* header */
-header {
-  height: 162px;
-  line-height: 60px;
-  text-align: center;
-  text-shadow: none;
+body > header {
   position: relative;
   background: #fff url("/img/neo.png") no-repeat;
   background-position: top right;
   background-size: 180px;
+  height: 162px;
+  line-height: 60px;
+}
+
+header {
+  text-align: center;
+  text-shadow: none;
 }
 
 header li {
@@ -9822,6 +9824,9 @@ footer ul.footer__social-icons li a {
 /* Custom, iPhone Retina */
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 320px) and (max-width: 767px) {
+  body > header {
+    height: 122px;
+  }
   header {
     background: #fff;
   }
@@ -9863,6 +9868,7 @@ footer ul.footer__social-icons li a {
   header .header__facebook,
   header .header__otter,
   header .header__linkedin,
+  header .header__random,
   header .header__glitter-cat,
   header .header__absolute {
     display: none;
