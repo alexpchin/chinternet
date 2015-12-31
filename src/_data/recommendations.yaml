@@ -1,0 +1,124 @@
+- name: Jake Willis Fleming
+  content: Alex is an incredibly inspirational person. He has one of the most amazing minds that I have ever encountered. He thinks freely and creatively but is also highly business savvy and commercially acute. As a teacher, he is passionate, approachable and possesses the rare capacity to explain the complex in a clear and concise way. It has been an absolute pleasure being his student.
+  linkedin: jakewillisfleming
+  image: jake.jpg
+
+- name: Ros Horner
+  content: Alex is like the secret love child of Mark Zuckerberg and Alexa Chung. (Hmm, they're too young, maybe Steve Jobs and Debbie Harry?) Well, either way he's the sort of genius who teaches himself PHP for fun, and manages to soften his full geekiness with his effortlessly stylish, and confident outward appearance. I'm looking forward to saying I worked with Alex before he was famous, and my friends saying "Why the hell didn't you get paid in shares?
+  linkedin: roshorner
+  image: ros.jpg
+
+- name: Emily Inglis
+  content: I speak not only for myself, but the entirety of my class, when I say that it was a pleasure having Alex as our tutor on the WDI 16 course. Considering the sheer pace and overall intensity of the course and the content, Alex made it as smooth a journey as possible, with easy to consume classes and a positive outlook at every turn. Further still, he truly went above and beyond the port of call for any tutor.
+  linkedin: emilyinglis1
+  image: emily.jpg
+
+- name: Adam Jackson
+  content: Worked with Alex to provide consultancy on a web venture. Alex was easy to work with, he had a good grasp on what he wanted but was always willing to consider other points I raised. Pleasure to do business with.
+  linkedin: adam-jackson-b0018945
+  image: adam.jpg
+
+- name: Damien Gallagher
+  content: Alex is one of those energetic, inspiring and switched-on people you sometimes have the good fortune to meet. He's great to work with and a friendly, positive presence in the office. I would have no reservations whatsoever in recommending Alex as a person to work with.
+  linkedin: damiengallagherwebdesign
+  image: damien.jpg
+
+- name: Ben Layer
+  content: "'Great teachers make learning fun' is a phrase often manifested with greater emphasis placed on the 'fun' element than the 'learning' element. Alex's teaching however cultivates an environment which naturally makes learning in his classes fun. His lessons sparked my interest in an entirely new subject and his direction guided me to pursue those specific areas which challenged and inspired me. I plan to carry on down some of the avenues Alex introduced me to and it is thanks to his teaching that I have the foundation skill set to be able to do so."
+  linkedin: benlayer291
+  image: ben.jpg
+
+- name: John Rogers
+  content: Alex teaches with expertise, passion and enthusiasm. He has great experience and technical knowledge, and was incredibly patient. Always approachable, has helped me a great deal. Highly recommended.
+  linkedin: jonrogers121
+  image: john.jpg
+
+- name: Filippo Sotto Mayor Matoso
+  content: I had Alex as a teacher at GA. He was probably one the best and coolest teachers I have ever had. He is incredibly smart really passionate about what he does and a very quick thinker and problem solver. He was always willing to help everyone and made lessons fun, interesting and easy for all. I really enjoyed being taught by him.
+  linkedin: filipposottomayor
+  image: filippo.jpg
+
+- name: Daniel Easterman
+  content: Alex is not only a kind, patient and highly knowledgeable teacher, he is also an original thinker who challenges long-held assumptions and demonstrates creative flair in practically everything he does. I cannot recommend him highly enough, whether it be in a teaching, web development or strictly entrepreneurial role. It has been said many times before, and I'll say it again - his future is bright!
+  linkedin: danieleasterman
+  image: daniel.jpg
+
+- name: Guillaume Vial-Pailler
+  content: I have had the pleasure of being one of Alex's students at General Assembly. Over the length of the course, Alex has demonstrated excellent abilities in teaching complex topics in a entertaining and clear way. Alex always goes above and beyond at anything he does and brings a positive attitude. He is a true problem solver and is extremely knowledgeable on both the technical and business side of online platforms.
+  linkedin: gvialpailler
+  image: gui.jpg
+
+- name: Pritpal Singh Badewal
+  content: Alex is a brilliant instructor on the Web Development Immersive course at General Assembly. I particularly enjoyed working with and learning from Alex on my personal projects. He has a real zest for solving problems and going above and beyond the call of duty. Working with Alex is a lot of fun and his energy and enthusiasm for coding is contagious and inspiring.
+  linkedin: psbadewal
+  image: pritpal.jpg
+
+- name: Anvar Turobov
+  content: "Alex is one of the best instructors and sharpest people I had pleasure to deal with. I am very impressed with him from both technical and personal prospective. He is an amazing instructor who presents challenging concepts in a way that is easy to grasp and relate to. Alex goes way beyond the call of duty to make sure the class understands a particular point, at times helping students remotely outside of working hours. On the technical side, Alex has knowledge of code that goes beyond the normal level, taking into account factors such as design patterns for optimal performance. Now the best part. Personality: Vibrant, energetic and genuinely cool guy to be around, with a consistent big smile that gets and keeps the camaraderie going. I wouldn’t be surprised to see Alex heading the next Airbnb or Uber in the coming years."
+  linkedin: anvarturobov
+  image: anvar.jpg
+
+- name: Gabriele Iacopetti
+  content: I had Alex as a teacher for the web development immersive programme of General Assembly. During the length of the course, Alex has proved his skills in teaching, not only from a technical point of view but he also shown that he cares about his students, staying up till late trying to solve the problems they had with their homework or projects. He is very friendly, energetic and always with a smile. Highly recommended.
+  linkedin: gabrieleiac/en
+  image: gabriele.jpg
+
+- name: Francesca Tabor
+  content: Alex is a really kind and down to earth teacher. He is genuinely dedicated to see his students succeed and has an uncanny ability to fix bugs without even looking at them. He's an unusual cocktail of all the elements that make for a great teacher - and is truthfully, by far the best teacher I've ever had.
+  linkedin: francescatabor
+  image: francesca.jpg
+
+- name: Marcus Petty-Saphon
+  content: Alex was my instructor at General Assembly. Learning to code is very difficult and Alex provided a great environment in which to learn . He genuinely cares about all his students contacting them late at night/ weekends to see how they are doing. He is also fun for a night out!
+  linkedin: marcusps
+  image: marcus.jpg
+
+- name: Andrea Mckenzie
+  content: Alex was my instructor at General Assembly for their Web Development Immersive course, his enthusiasm for web development is clear to see. He has experience across a wide range of areas. We covered a number of topics at breakneck speed and yet I felt with Alex’s guidance and explanations I got a good grounding in what we were learning. JavaScript, NodeJs, Ruby and Ruby on Rails, were some of the topics covered in more depth, and even those not covered greatly Alex was able to offer help or suggest resources if students were interested. I liked how he is very hands on, willing to sit with students and help them with their code, and offer further explanations if need, also his ability to engage students of different levels was great. One of the things Alex also encouraged was a great team spirit through the social activities we did as a group, this I feel was also important as the developer community is not just about technical aspects, but also building and sharing skills and knowledge together, and this was encouraged by Alex. I would fully endorse him as an instructor and as a passionate and knowledgeable developer.
+  linkedin: mckenzieandrea
+  image: andrea.jpg
+
+- name: Evan Gillogley
+  content: Alex empowers his students and gives them all the tools necessary to become a Full-stack developer. I took his course and he stayed late with the class many nights. He really cares about his students and makes sure they write clean code.
+  linkedin: egillogley
+  image: evan.jpg
+
+- name: Spencer Meyer
+  content: Alex was my instructor when I studied at General Assembly. Alex explains things really clearly during classes and conveys an enthusiasm for the subject. He is really patient when you need help and puts in extra effort to help you along. He is technically excellent in Web Development and has lots of interesting background information to convey along the way to make things interesting. I enjoyed studying with Alex as my teacher.
+  linkedin: meyerspencer
+  image: spencer.jpg
+
+- name: Christabel Samuel
+  content: Alex was one of my instructors at General Assembly during my WDI (Web Development Immersive) course. Alex is so intelligent, sharp, highly skilled and all round knowledgeable. Alex is extremely patient, kind and a great thinker. He took me from having no knowledge in web development and made me a web developer. His technical knowledge is amazing. He breaks down complex problems and concepts so that everyone can understand. I highly, highly recommend Alex.
+  linkedin: christabelsamuel1
+  image: christabel.jpg
+
+- name: Eleanor McGregor
+  content: Alex is a smart, dedicated and intuitive instructor who understands the needs of his students. He explains complex subjects in a clear and concise manner.
+  linkedin: elliemcgregor
+  image: eleanor.jpg
+
+- name: Johanna Carlberg
+  content: Alex is an amazing web developer and a pleasure to work with. He is always ready to help out and is really well liked by everyone. It's been a great experience working with Alex and learning from him.
+  linkedin: johannacarlberg/en
+  image: johanna.jpg
+
+- name: Andres Vara
+  content: I had the experience of being taught by Alex Chin. He has a keen eye to detail and it's extremely helpful. As English is not my first language, he asked and tried to explain things in greater detail. His teaching techniques are really good and engaging.
+  linkedin: andresvara/en
+  image: andres.jpg
+
+- name: Rabea Gleissner
+  content: Alex was one of the instructors during my WDI course at General Assembly. I can't thank him enough for his dedication, patience and help throughout the course (even during evenings and weekends!). He's a really good teacher who can explain complex subjects in a way that everyone understands. He's also a great programmer who was always able to help with any technical questions I had. In addition to that his start-up experience added a lot of value to our course.
+  linkedin: rabeagleissner
+  image: rabea.jpg
+
+- name: Francesco Papini
+  content: Alex has been an invaluable help during my 3 month at General Assembly. He is not only an extremely likeable and approachable person, but also very knowledgeable in both front and back end development. He is the kind of person you want to work with, being always curious and open to new approaches to solve problems. His teaching style is very clear and precise and his lessons always interesting.
+  linkedin: francescopapini/en
+  image: francesco.jpg
+
+- name: Anand Duddella
+  content: I had the opportunity to interact with Alex as he was teaching us Web Development Immersive course at General Assembly . Alex is a proactive teaching assistant who is very enthusiastic and knowledgeable about web technologies and entrepreneurship. He is very focused on his work and a joy to work with. He would always be an asset to team and organisation
+  linkedin_full: https://www.linkedin.com/profile/view?id=AAEAAADfWIEBfEpxyHSGZxnJOYsZuUnQeC43iRY
+  image: anand.jpg

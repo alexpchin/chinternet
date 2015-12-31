@@ -9514,7 +9514,11 @@ html, body {
 }
 
 * {
-  transition: 1s linear 0s;
+  transition: 0.5s linear 0s;
+}
+
+*:hover {
+  transition: none;
 }
 
 body {
@@ -9596,6 +9600,7 @@ header h1 a {
   padding: 10px 20px;
   display: inline-block;
   vertical-align: middle;
+  line-height: 100%;
 }
 
 header .header__doge {
@@ -9992,6 +9997,25 @@ footer ul.footer__social-icons li a {
 
 /* Custom, iPhone Retina */
 /* Extra Small Devices, Phones */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  header {
+    background: #fff;
+  }
+  header .header__thumb,
+  header .header__doge,
+  header .header__nerd,
+  header .header__facebook,
+  header .header__otter,
+  header .header__linkedin,
+  header .header__glitter-cat,
+  header .header__absolute {
+    display: none;
+  }
+  .github-ribbon {
+    display: none;
+  }
+}
+
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   header .header__thumb {

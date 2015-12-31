@@ -18,13 +18,13 @@ layout: page
   </ol>
 </div>
 <div class="reviews">
+  <h3>Recommendations</h3>
   <ul>
-    <li>
-      <img src="{{ site.baseurl }}/img/students/jake.jpg"/><span>"Alex is an incredibly inspirational person. He has one of the most amazing minds that I have ever encountered. He thinks freely and creatively but is also highly business savvy and commercially acute. As a teacher, he is passionate, approachable and possesses the rare capacity to explain the complex in a clear and concise way. It has been an absolute pleasure being his student."</span> - <a href="https://uk.linkedin.com/in/jakewillisfleming" target="_blank">Jake Willis Fleming</a>
-    </li>
-    <li>
-      <img src="{{ site.baseurl }}/img/students/john.jpg"/><span>"Alex teaches with expertise, passion and enthusiasm. He has great experience and technical knowledge, and was incredibly patient. Always approachable, has helped me a great deal. Highly recommended."</span> - <a href="https://uk.linkedin.com/in/jonrogers121" target="_blank">John Rogers</a>
-    </li>
+    {% for recommendation in site.data.recommendations %}
+      <li>
+        <img src="{{ site.baseurl }}/img/students/{{ recommendation.image }}"/><span>"{{ recommendation.content }}"</span> - <a href="{% if recommendation.linkedin_full %}{{ recommendation.linkedin_full }}{% else %} {{https://uk.linkedin.com/in/{{ recommendation.linkedin }}{% endif %}" target="_blank">{{ recommendation.name }}</a>
+      </li>
+    {% endfor %}
   </ul>
 </div>
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/20BySC_6HyY" frameborder="0" allowfullscreen></iframe>

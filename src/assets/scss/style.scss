@@ -24,10 +24,16 @@ html, body {
 }
 
 * {
-  -webkit-transition: 1s linear 0s;
-  -moz-transition: 1s linear 0s;
-  -o-transition: 1s linear 0s;
-  transition: 1s linear 0s;
+  -webkit-transition: 0.5s linear 0s;
+  -moz-transition: 0.5s linear 0s;
+  -o-transition: 0.5s linear 0s;
+  transition: 0.5s linear 0s;
+  &:hover {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
 }
 
 body {
@@ -96,6 +102,7 @@ header {
       padding: 10px 20px;
       display: inline-block;
       vertical-align: middle;
+      line-height: 100%;
     }
   }
 
