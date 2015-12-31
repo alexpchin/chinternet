@@ -9,6 +9,7 @@
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   body > header {
     height: 122px;
+    background: $white;
   }
   header {
     h1 {
@@ -43,7 +44,6 @@
         }
       }
     }
-    background: $white;
     .header__thumb,
     .header__doge,
     .header__nerd,
