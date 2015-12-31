@@ -4,19 +4,9 @@ layout: default
 
 <div class="row">
   <div class="col-sm-1 sidebar hidden-xs">
-    <img src="{{ site.baseurl }}/img/angular.png">
-    <img src="{{ site.baseurl }}/img/javascript.png">
-    <img src="{{ site.baseurl }}/img/rails.png">
-    <img src="{{ site.baseurl }}/img/jquery.png">
-    <img src="{{ site.baseurl }}/img/postgresql.png">
-    <img src="{{ site.baseurl }}/img/html5.png">
-    <img src="{{ site.baseurl }}/img/css3.png">
-    <img src="{{ site.baseurl }}/img/node.png">
-    <img src="{{ site.baseurl }}/img/backbone.png">
-    <img src="{{ site.baseurl }}/img/react.png">
-    <img src="{{ site.baseurl }}/img/sinatra.png">
-    <img src="{{ site.baseurl }}/img/rspec.png">
-    <img src="{{ site.baseurl }}/img/jasmine.png">
+    {% for tech in site.data.technologies %}
+      <img src="{{ site.baseurl }}/img/{{ tech.image }}" title="{{ tech.name }}">
+    {% endfor %}
   </div>
   <div class="col-sm-9">
     <h1>{{ page.title }}</h1>
@@ -28,28 +18,9 @@ layout: default
     <img src="{{ site.baseurl }}/img/tom-myspace.gif" />
     Book Advert
     <ul class="sidebar__topics">
-      <li>Angular-1</li>
-      <li>Angular-2</li>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>Backbone</li>
-      <li>Rails</li>
-      <li>Sinatra</li>
-      <li>Node</li>
-      <li>Express</li>
-      <li>Mongo</li>
-      <li>Mongoose</li>
-      <li>SQL</li>
-      <li>Postgres</li>
-      <li>HAML</li>
-      <li>Ruby</li>
-      <li>Rspec</li>
-      <li>Mocha</li>
-      <li>TDD</li>
-      <li>BDD</li>
-      <li>APIs</li>
-      <li>Javascript Frameworks</li>
-      <li>Javascript</li>
+      {% for topic in site.data.topics %}
+        <li>{{ topic.name }}</li>
+      {% endfor %}
     </ul>
     <ul class="sidebar__8bit">
       <li><img src="/img/8-bit/407.png"></li>

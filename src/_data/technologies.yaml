@@ -1,0 +1,38 @@
+- name: Angular
+  image: angular.png
+
+- name: Javascript
+  image: javascript.png
+
+- name: Ruby-on-Rails
+  image: rails.png
+
+- name: jQuery
+  image: jquery.png
+
+- name: Postgresql
+  image: postgresql.png
+
+- name: HTML5
+  image: html5.png
+
+- name: CSS3
+  image: css3.png
+
+- name: Node
+  image: node.png
+
+- name: Backbone
+  image: backbone.png
+
+- name: React
+  image: react.png
+
+- name: Sinatra
+  image: sinatra.png
+
+- name: Rspec
+  image: rspec.png
+
+- name: Jasmine
+  image: jasmine.png
