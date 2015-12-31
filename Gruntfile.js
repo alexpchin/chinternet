@@ -30,12 +30,20 @@ module.exports = function(grunt) {
         dest: 'src/js/app.js'
       }
     },
-    cssmin: {
-      target: {
-        files: {
-          'src/css/app.min.css': 'src/css/app.css'
-        }
-      }
+    postcss: {
+      options: {
+        map: {
+            inline: false, // save all sourcemaps as separate files...
+            annotation: 'src/css/maps/' // ...to the specified directory
+        },
+        processors: [
+          require('pixrem')(), // add fallbacks for rem units
+          require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
+        ]
+      },
+      dist: {
+        src: 'src/css/*.css'
+      },
     },
     sass: {
       expanded: {
@@ -47,7 +55,7 @@ module.exports = function(grunt) {
       compressed: {
         options: { outputStyle: 'compressed' },
         files: {
-          'src/css/app.css': 'src/assets/scss/style.scss'
+          'src/css/app.min.css': 'src/assets/scss/style.scss'
         }
       }
     },
@@ -61,18 +69,26 @@ module.exports = function(grunt) {
       },
       scss: {
         files: ['src/assets/**/*.scss'],
-        tasks: ['sass:expanded'],
+        tasks: ['sass', 'postcss'],
         options: { livereload: true }
       },
       js: {
         files: ['src/assets/js/**/*.js'],
         tasks: ['jshint', 'concat'],
         options: { livereload: true }
-      }
+      },
     }
   });
 
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('default', ['jshint', 'bower_concat', 'concat', 'uglify', 'sass', 'cssmin', 'watch']);
+  grunt.registerTask('default', [
+    'jshint',
+    'bower_concat',
+    'concat',
+    'uglify',
+    'sass',
+    'postcss',
+    'watch'
+  ]);
 };
