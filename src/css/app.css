@@ -9603,12 +9603,15 @@ header h1 a {
   line-height: 100%;
 }
 
+header h1:hover span {
+  color: yellow;
+}
+
 header .header__doge {
   position: absolute;
   top: 0;
   left: 10px;
   color: red;
-  background: #fff;
   line-height: 1;
   padding: 2px;
 }
@@ -9779,11 +9782,13 @@ header nav ul li.dont-click a {
 }
 
 header nav ul li a {
+  font-family: "Impact", sans-serif;
   padding: 0 10px;
   -webkit-text-stroke: 1px black;
   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
   color: #09F224;
   text-decoration: none;
+  line-height: 100%;
 }
 
 header nav ul li a:hover {
@@ -10001,6 +10006,38 @@ footer ul.footer__social-icons li a {
   header {
     background: #fff;
   }
+  header h1 {
+    font-size: 1rem;
+  }
+  header h1 a {
+    line-height: 100%;
+  }
+  header h1 span {
+    font-size: 9px;
+  }
+  header nav {
+    display: block;
+  }
+  header nav ul {
+    display: block;
+  }
+  header nav ul li {
+    display: block;
+  }
+  header nav ul li a {
+    font-size: 2rem;
+    vertical-align: middle;
+    line-height: 100%;
+    font-family: "Impact", sans-serif;
+    width: 100%;
+    display: inline-block;
+  }
+  header nav ul li:first-child {
+    display: none;
+  }
+  header nav ul li.dont-click {
+    display: none;
+  }
   header .header__thumb,
   header .header__doge,
   header .header__nerd,
@@ -10013,6 +10050,12 @@ footer ul.footer__social-icons li a {
   }
   .github-ribbon {
     display: none;
+  }
+  main .sidebar {
+    display: none;
+  }
+  main .main {
+    width: 100%;
   }
 }
 
@@ -10042,6 +10085,10 @@ footer ul.footer__social-icons li a {
   header .header__nerd {
     font-size: 1rem;
     top: 40px;
+  }
+  header .header__doge {
+    top: 5px;
+    font-size: 11px;
   }
 }
 

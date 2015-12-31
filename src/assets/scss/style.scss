@@ -10,7 +10,6 @@ $dark-grey: #222;
 $yellow:    yellow;
 
 /* Fonts */
-// $serif: 'Lora', serif;
 $serif: Lucida Grande, Lucida, Verdana, sans-serif;
 $san-serif: 'Press Start 2P', cursive;
 $comic:  "Comic Sans MS", cursive, sans-serif;
@@ -104,6 +103,9 @@ header {
       vertical-align: middle;
       line-height: 100%;
     }
+    &:hover span {
+      color: yellow;
+    }
   }
 
   .header__doge {
@@ -111,7 +113,6 @@ header {
     top: 0;
     left: 10px;
     color: red;
-    background: $white;
     line-height: 1;
     padding: 2px;
   }
@@ -250,15 +251,13 @@ header {
           vertical-align: middle;
         }
         a {
+          font-family: $meme;
           padding: 0 10px;
           -webkit-text-stroke: 1px black;
-          text-shadow:
-          -2px -2px 0 #000,
-          2px -2px 0 #000,
-          -2px 2px 0 #000,
-          2px 2px 0 #000;
+          text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
           color: $green;
           text-decoration: none;
+          line-height: 100%;
           &:hover {
             text-decoration: none;
           }

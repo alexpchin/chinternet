@@ -1,0 +1,10 @@
+<div class="reviews">
+  <h3>Recommendations</h3>
+  <ul>
+    {% for recommendation in site.data.recommendations %}
+      <li>
+        <a href="{{ recommendation.linkedin }}" target="_blank"><img src="{{ site.baseurl }}/img/students/{{ recommendation.image }}"/></a><span>"{{ recommendation.content }}"</span> - <a href="{{ recommendation.linkedin }}" target="_blank">{{ recommendation.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

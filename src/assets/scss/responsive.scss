@@ -8,6 +8,38 @@
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   header {
+    h1 {
+      font-size: 1rem;
+      a {
+        line-height: 100%;
+      }
+      span {
+        font-size: 9px;
+      }
+    }
+    nav {
+      display: block;
+      ul {
+        display: block;
+        li {
+          display: block;
+          a {
+            font-size: 2rem;
+            vertical-align: middle;
+            line-height: 100%;
+            font-family: $meme;
+            width: 100%;
+            display: inline-block;
+          }
+          &:first-child {
+            display: none;
+          }
+          &.dont-click {
+            display: none;
+          }
+        }
+      }
+    }
     background: $white;
     .header__thumb,
     .header__doge,
@@ -22,6 +54,14 @@
   }
   .github-ribbon {
     display: none;
+  }
+  main {
+    .sidebar {
+      display: none;
+    }
+    .main {
+      width: 100%;
+    }
   }
 }
 
@@ -52,6 +92,10 @@
     .header__nerd {
       font-size: 1rem;
       top: 40px;
+    }
+    .header__doge {
+      top: 5px;
+      font-size: 11px;
     }
   }
 }
