@@ -9513,14 +9513,6 @@ html, body {
   padding: 0;
 }
 
-* {
-  transition: 0.5s linear 0s;
-}
-
-*:hover {
-  transition: none;
-}
-
 body {
   font-family: Lucida Grande, Lucida, Verdana, sans-serif;
   color: #000;
@@ -9552,6 +9544,31 @@ a:hover {
 
 a:hover i {
   color: yellow;
+}
+
+main, footer {
+  padding: 40px 0;
+  background: #fff;
+}
+
+main {
+  background: #fff;
+  outline: 2px dashed yellow;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  text-shadow: none;
+}
+
+main h1, main h2, main h3 {
+  color: #000;
+  font-weight: 700;
+}
+
+main a {
+  color: yellow;
+  background: #000;
+  padding: 2px 10px;
 }
 
 body > header {
@@ -9803,165 +9820,6 @@ header::after {
   background: repeating-linear-gradient(-55deg, #222, #222 2px, yellow 2px, #333 10px);
 }
 
-main, footer {
-  padding: 40px 0;
-  background: #fff;
-}
-
-main {
-  background: #fff;
-  outline: 2px dashed yellow;
-  padding: 20px;
-  box-sizing: border-box;
-  border-radius: 3px;
-  text-shadow: none;
-}
-
-main h1, main h2, main h3 {
-  color: #000;
-  font-weight: 700;
-}
-
-main a {
-  color: yellow;
-  background: #000;
-  padding: 2px 10px;
-}
-
-main .reviews {
-  speak: none;
-  font-size: 12px;
-  color: #333;
-  font-family: Helvetica;
-  overflow: hidden;
-  margin: 10px 0;
-  vertical-align: baseline;
-}
-
-main .reviews ul li {
-  display: block;
-  overflow: hidden;
-  padding: 10px 0;
-  border-bottom: 1px solid #d72bf4;
-}
-
-main .reviews ul li a {
-  font-weight: bold;
-  background: none;
-  color: #006fa6;
-  padding: 0;
-}
-
-main .reviews ul li a:hover {
-  text-decoration: underline;
-}
-
-main .reviews ul li img {
-  float: left;
-  height: 60px;
-  width: 60px;
-  margin-right: 10px;
-}
-
-main .meme {
-  color: #081052;
-  font-family: "Courier New",Courier,mono;
-  text-align: center;
-  font-weight: 700;
-  overflow: hidden;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 10px 10px 0 0;
-  font-size: 14px;
-  background: #D0ACD0;
-}
-
-main .meme img {
-  height: 50px;
-  width: 50px;
-  float: left;
-}
-
-main .hacker-news {
-  font-family: Verdana, Geneva, sans-serif;
-}
-
-main .hacker-news a:visited {
-  color: #828282;
-  text-decoration: none;
-}
-
-main .hacker-news a {
-  color: #000000;
-  text-decoration: none;
-  background: none;
-  padding: 0;
-}
-
-main .hacker-news header {
-  background: #FF6600;
-  padding: 2px;
-  overflow: hidden;
-  height: 22px;
-  line-height: 22px;
-  text-align: left;
-  text-shadow: none;
-  position: relative;
-}
-
-main .hacker-news header h2 {
-  float: left;
-  font-size: 16px;
-  padding: 0px 5px;
-  line-height: 18px;
-  margin: 0;
-}
-
-main .hacker-news header img {
-  width: 18px;
-  height: 18px;
-  border: 1px solid #fff;
-  display: inline-block;
-  float: left;
-}
-
-main .hacker-news ol {
-  background: #f6f6ef;
-}
-
-main .hacker-news ol .votearrow {
-  width: 10px;
-  height: 10px;
-  border: 0px;
-  margin: 3px 2px 6px;
-  background-size: 10px;
-  background: url("/img/grayarrow.gif") no-repeat;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-main .hacker-news ol span {
-  font-size: 10px;
-}
-
-.sidebar img {
-  width: 100%;
-}
-
-.sidebar .sidebar__topics {
-  background-color: cyan;
-  padding: 10px;
-  box-sizing: border-box;
-  font-size: 10px;
-}
-
-.sidebar .sidebar__8bit img {
-  width: 40px;
-  height: 40px;
-  float: left;
-}
-
-/* Footer */
 footer {
   text-align: center;
   background: #000;
@@ -9981,6 +9839,57 @@ footer ul.footer__social-icons li a {
   padding: 5px;
 }
 
+.sidebar img {
+  width: 100%;
+}
+
+.sidebar .sidebar__topics {
+  background-color: cyan;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+.sidebar .sidebar__8bit img {
+  width: 40px;
+  height: 40px;
+  float: left;
+}
+
+main .recommendations {
+  font-size: 12px;
+  color: #333;
+  font-family: Helvetica;
+  overflow: hidden;
+  margin: 10px 0;
+  vertical-align: baseline;
+}
+
+main .recommendations ul li {
+  display: block;
+  overflow: hidden;
+  padding: 10px 0;
+  border-bottom: 1px solid #d72bf4;
+}
+
+main .recommendations ul li a {
+  font-weight: bold;
+  background: none;
+  color: #006fa6;
+  padding: 0;
+}
+
+main .recommendations ul li a:hover {
+  text-decoration: underline;
+}
+
+main .recommendations ul li img {
+  float: left;
+  height: 60px;
+  width: 60px;
+  margin-right: 10px;
+}
+
 .github-ribbon img {
   position: absolute;
   top: 0;
@@ -9988,7 +9897,87 @@ footer ul.footer__social-icons li a {
   border: 0;
 }
 
-/* Bootstrap overrides */
+.hacker-news {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.hacker-news a:visited {
+  color: #828282;
+  text-decoration: none;
+}
+
+.hacker-news a {
+  color: #000000;
+  text-decoration: none;
+  background: none;
+  padding: 0;
+}
+
+.hacker-news header {
+  background: #FF6600;
+  padding: 2px;
+  overflow: hidden;
+  height: 22px;
+  line-height: 22px;
+  text-align: left;
+  text-shadow: none;
+  position: relative;
+}
+
+.hacker-news header h2 {
+  float: left;
+  font-size: 16px;
+  padding: 0px 5px;
+  line-height: 18px;
+  margin: 0;
+}
+
+.hacker-news header img {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #fff;
+  display: inline-block;
+  float: left;
+}
+
+.hacker-news ol {
+  background: #f6f6ef;
+}
+
+.hacker-news ol .votearrow {
+  width: 10px;
+  height: 10px;
+  border: 0px;
+  margin: 3px 2px 6px;
+  background-size: 10px;
+  background: url("/img/grayarrow.gif") no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.hacker-news ol span {
+  font-size: 10px;
+}
+
+.meme {
+  color: #081052;
+  font-family: "Courier New",Courier,mono;
+  text-align: center;
+  font-weight: 700;
+  overflow: hidden;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  font-size: 14px;
+  background: #D0ACD0;
+}
+
+.meme img {
+  height: 50px;
+  width: 50px;
+  float: left;
+}
+
 .card h4 {
   font-family: "Impact", sans-serif;
   text-transform: uppercase;

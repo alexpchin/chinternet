@@ -1,0 +1,14 @@
+<div class="hacker-news">
+  <header>
+    <img src="{{ site.baseurl }}/img/hacker-news.gif"><h2>Latest Chinternet Articles</h2>
+  </header>
+  <ol>
+    {% for post in site.posts %}
+      <li>
+        <div class="votearrow"></div>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      </li>
+    {% endfor %}
+  </ol>
+</div>

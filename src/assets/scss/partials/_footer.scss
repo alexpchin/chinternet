@@ -1,0 +1,15 @@
+footer {
+  text-align: center;
+  background: $black;
+  color: $white;
+  ul.footer__social-icons {
+    list-style-type: none;
+    margin: 20px auto;
+  }
+  ul.footer__social-icons li {
+    display: inline-block;
+  }
+  ul.footer__social-icons li a {
+    padding: 5px;
+  }
+}

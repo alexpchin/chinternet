@@ -1,0 +1,53 @@
+.hacker-news {
+  font-family: Verdana, Geneva, sans-serif;
+  a:visited {
+    color: #828282;
+    text-decoration: none;
+  }
+  a {
+    color: #000000;
+    text-decoration: none;
+    background: none;
+    padding: 0;
+  }
+  header {
+    background: #FF6600;
+    padding: 2px;
+    overflow: hidden;
+    height: 22px;
+    line-height: 22px;
+    text-align: left;
+    text-shadow: none;
+    position: relative;
+    h2 {
+      float: left;
+      font-size: 16px;
+      padding: 0px 5px;
+      line-height: 18px;
+      margin: 0;
+    }
+    img {
+      width: 18px;
+      height: 18px;
+      border: 1px solid $white;
+      display: inline-block;
+      float: left;
+    }
+  }
+  ol {
+    background: #f6f6ef;
+    .votearrow {
+      width: 10px;
+      height: 10px;
+      border: 0px;
+      margin: 3px 2px 6px;
+      background-size: 10px;
+      background: url("/img/grayarrow.gif") no-repeat;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    span {
+      font-size: 10px;
+    }
+  }
+}

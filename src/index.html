@@ -3,19 +3,8 @@ layout: page
 ---
 
 <div class="meme"><img src="{{ site.baseurl }}/img/stop-korean.png">Meme - an element of a culture or system of behavior that may be considered to be passed from one individual to another by nongenetic means, especially imitation a.k.a. cute catz.</div>
-<div class="hacker-news">
-  <header>
-    <img src="{{ site.baseurl }}/img/hacker-news.gif"><h2>Latest Chinternet Articles</h2>
-  </header>
-  <ol>
-    {% for post in site.posts %}
-      <li>
-        <div class="votearrow"></div>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-      </li>
-    {% endfor %}
-  </ol>
-</div>
+
+{% include posts.html %}
 {% include recommendations.html %}
+
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/20BySC_6HyY" frameborder="0" allowfullscreen></iframe>

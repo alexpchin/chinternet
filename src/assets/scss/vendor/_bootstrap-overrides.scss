@@ -1,0 +1,13 @@
+.card {
+  h4 {
+    font-family: $meme;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $white;
+    -webkit-text-stroke: 1px black;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+  img {
+    width: 100%
+  }
+}
