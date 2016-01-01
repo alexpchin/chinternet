@@ -8,9 +8,6 @@ $(function(){
   // }, 1000);
   //
   // setInterval(scroll, 3000);
-
-  // $('.dont-click').on('click', comicsansify);
-  // new BugController({'minBugs':10, 'maxBugs':10, 'mouseOver':'die'});
 });
 
 function blinker(selector) {
