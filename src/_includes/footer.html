@@ -2,24 +2,17 @@
   &copy; 2015 - Alex Chin
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
   <ul class="footer__social-icons">
-    {% if site.github_username %}
-    <li>
-      <a href="https://github.com/{{ site.github_username }}">
-        <i class="fa fa-github-square fa-lg"></i>
-      </a>
-    </li>
-    {% endif %}
-
-    {% if site.twitter_username %}
-    <li>
-      <a href="https://twitter.com/{{ site.twitter_username }}">
-        <i class="fa fa-twitter-square fa-lg"></i>
-      </a>
-    </li>
-    {% endif %}
+    {% for social in site.data.social-links %}
+      <li>
+        <a href="{{ social.url }}" target="_blank">
+          <i class="fa fa-{{ social.type }}-square fa-lg"></i>
+        </a>
+      </li>
+    {% endfor %}
   </ul>
   Inspired by <a href="http://www.lingscars.com/" target="_blank">LingsCars</a>.
 </footer>
+
 <a class="github-ribbon" href="https://github.com/alexpchin" target="_blank">
   <img src="{{ site.baseurl }}/img/fork-me.png" alt="Fork me on Github">
 </a>
