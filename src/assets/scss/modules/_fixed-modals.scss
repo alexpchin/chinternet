@@ -17,6 +17,12 @@
   &.newsletter {
     top: 50%;
     background: #fb5952;
+    a {
+      h3 {
+        color: $white;
+        margin: 0;
+      }
+    }
   }
   .logo {
     width: 100%;

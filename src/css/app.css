@@ -12978,6 +12978,13 @@ body > footer label, body > footer input {
   float: left;
 }
 
+.sidebar .chinternet-explanation {
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  font-size: 11px;
+}
+
 main {
   padding: 40px 0;
   background: #fff;
@@ -13223,6 +13230,11 @@ main .recommendations ul li a:hover {
 .fixed-modal.newsletter {
   top: 50%;
   background: #fb5952;
+}
+
+.fixed-modal.newsletter a h3 {
+  color: #fff;
+  margin: 0;
 }
 
 .fixed-modal .logo {
@@ -13649,6 +13661,19 @@ main .highlight pre[class*="language-"] {
   }
   main .main {
     width: 100%;
+  }
+  /* _posts.scss */
+  .hacker-news > ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .hacker-news > ol li {
+    display: block;
+    padding: 10px 5px;
+  }
+  .hacker-news > ol li:nth-child(even) {
+    background: #fff;
   }
 }
 

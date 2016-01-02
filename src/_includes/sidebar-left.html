@@ -1,0 +1,9 @@
+<div class="col-sm-2 sidebar">
+  {% include slack.html %}
+  <div class="chinternet-explanation">
+  The internet in china is blocked by a system named GFW（Great Fire Wall). So, you can't browse some web in china, internet in china is not free, someone call it chinternet.
+  </div>
+  {% for tech in site.data.technologies %}
+    <img src="{{ site.baseurl }}/img/{{ tech.image }}" title="{{ tech.name }}">
+  {% endfor %}
+</div>
