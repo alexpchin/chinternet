@@ -1,14 +1,17 @@
 .hacker-news {
   font-family: Verdana, Geneva, sans-serif;
-  a:visited {
-    color: #828282;
-    text-decoration: none;
-  }
   a {
     color: #000000;
     text-decoration: none;
     background: none;
     padding: 0;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:visited {
+      color: #828282;
+      text-decoration: none;
+    }
   }
   header {
     background: #FF6600;

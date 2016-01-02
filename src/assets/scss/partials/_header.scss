@@ -14,16 +14,6 @@ body > header {
 header {
   text-align: center;
   text-shadow: none;
-  a {
-    color: $white;
-    text-decoration: none;
-  }
-  a:hover {
-    background: black;
-    text-decoration: none;
-    color: $yellow;
-    i { color: $yellow; }
-  }
   li {
     display: inline-block;
   }
@@ -170,6 +160,16 @@ header {
     font-family: $comic;
     font-weight: bold;
     height: 60px;
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+    a:hover {
+      background: black;
+      text-decoration: none;
+      color: $yellow;
+      i { color: $yellow; }
+    }
     ul {
       display: inline-flex;
       justify-content: center;

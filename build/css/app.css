@@ -12553,21 +12553,6 @@ header {
   text-shadow: none;
 }
 
-header a {
-  color: #fff;
-  text-decoration: none;
-}
-
-header a:hover {
-  background: black;
-  text-decoration: none;
-  color: yellow;
-}
-
-header a:hover i {
-  color: yellow;
-}
-
 header li {
   display: inline-block;
 }
@@ -12724,6 +12709,21 @@ header nav {
   font-family: "Comic Sans MS", cursive, sans-serif;
   font-weight: bold;
   height: 60px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  background: black;
+  text-decoration: none;
+  color: yellow;
+}
+
+header nav a:hover i {
+  color: yellow;
 }
 
 header nav ul {
@@ -12896,16 +12896,20 @@ main .recommendations ul li a:hover {
   font-family: Verdana, Geneva, sans-serif;
 }
 
-.hacker-news a:visited {
-  color: #828282;
-  text-decoration: none;
-}
-
 .hacker-news a {
   color: #000000;
   text-decoration: none;
   background: none;
   padding: 0;
+}
+
+.hacker-news a:hover {
+  text-decoration: underline;
+}
+
+.hacker-news a:visited {
+  color: #828282;
+  text-decoration: none;
 }
 
 .hacker-news header {
@@ -13046,6 +13050,40 @@ main .recommendations ul li a:hover {
   border: 3px solid #0F0;
   font-size: 18px;
   margin-bottom: 10px;
+}
+
+.fixed-modal {
+  cursor: pointer;
+  position: fixed;
+  right: 10px;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  height: auto;
+  border: 1px solid #000;
+  border-left: none;
+  border-radius: 8px;
+  box-shadow: 0 6px 9px black;
+}
+
+.fixed-modal.slack {
+  top: 30%;
+  background: white;
+}
+
+.fixed-modal.newsletter {
+  top: 50%;
+  background: #fb5952;
+}
+
+.fixed-modal .logo {
+  width: 100%;
+}
+
+.fixed-modal h3 {
+  font-size: 14px;
+  font-family: "Impact", sans-serif;
+  text-transform: uppercase;
 }
 
 .card h4 {

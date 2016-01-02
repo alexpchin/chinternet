@@ -1,0 +1,29 @@
+.fixed-modal {
+  cursor: pointer;
+  position: fixed;
+  right: 10px;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  height: auto;
+  border: 1px solid #000;
+  border-left: none;
+  border-radius: 8px;
+  box-shadow: 0 6px 9px rgba(0, 0, 0, 2);
+  &.slack {
+    top: 30%;
+    background: white;
+  }
+  &.newsletter {
+    top: 50%;
+    background: #fb5952;
+  }
+  .logo {
+    width: 100%;
+  }
+  h3 {
+    font-size: 14px;
+    font-family: $meme;
+    text-transform: uppercase;
+  }
+}
