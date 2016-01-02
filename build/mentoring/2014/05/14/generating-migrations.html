@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="Z4rloDEPfFKjdvqxnRdVLXrdyJv9LLK2Sl7fDJrPt0Y" />
+  <title>Generating Migrations</title>
+  <meta name="description" content="  Migrations are a feature of Active Record that allows you to evolve your database schema over time. Rather than write schema modifications in pure SQL, mig...">
+
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Lora" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/app.min.css">
+
+  <link rel="canonical" href="http://www.chinternet.lol/mentoring/2014/05/14/generating-migrations.html">
+  <link rel="alternate" type="application/rss+xml" title="Chinternet - I LEARN YOU CODE. Coding tutorials, memes, cute cats, games." href="http://www.chinternet.lol/feed.xml" />
+
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+  <script src="/js/app.min.js" charset="utf-8"></script>
+</head>
+
+  <body>
+    <header class="container">
+  <div class="header__doge">Much learning. So knowledge.</div>
+  <div class="header__nerd">NERD<span>ALERT</span></div>
+  <div class="header__absolute">How bad is absolute positioning???</div>
+  <a class="header__linkedin" href="https://uk.linkedin.com/in/alexpchin" target="_blank">
+    Find me on LinkedIn!
+  </a>
+  <a class="header__click" href="http://alexchin.co.uk" target="_blank">
+    <img src="/img/star.gif" />
+  </a>
+  <img class="header__pikachu" src="/img/pikachu.gif" />
+  <img class="header__thumb" src="/img/thumb.png" />
+  <img class="header__facebook" src="/img/facebook.png" />
+  <img class="header__otter" src="/img/otter.gif" />
+  <img class="header__glitter-cat" src="/img/glitter-cat.gif" />
+  <ul>
+    <li>
+      <img src="/img/alex.gif">
+    </li>
+    <li>
+      <h1 class="blink">
+        <a href="/">Chinternet</a>
+        <span>I learn you code.</span>
+      </h1>
+    </li>
+    <li><img src="/img/alex.gif"></li>
+  </ul>
+  <div class="header__random">
+    <ul>
+      <li><img src="/img/8-bit/345.png"></li>
+      <li><img src="/img/8-bit/380.png"></li>
+      <li><img src="/img/8-bit/381.png"></li>
+      <li><img src="/img/8-bit/382.png"></li>
+      <li><img src="/img/8-bit/383.png"></li>
+      <li><img src="/img/8-bit/384.png"></li>
+      <li><img src="/img/8-bit/385.png"></li>
+      <li><img src="/img/8-bit/386.png"></li>
+      <li><img src="/img/8-bit/387.png"></li>
+      <li><img src="/img/8-bit/388.png"></li>
+      <li><img src="/img/8-bit/389.png"></li>
+      <li><img src="/img/8-bit/390.png"></li>
+      <li><img src="/img/8-bit/391.png"></li>
+      <li><img src="/img/8-bit/392.png"></li>
+      <li><img src="/img/8-bit/393.png"></li>
+      <li><img src="/img/8-bit/394.png"></li>
+      <li><img src="/img/8-bit/395.png"></li>
+      <li><img src="/img/8-bit/396.png"></li>
+      <li><img src="/img/8-bit/397.png"></li>
+      <li><img src="/img/8-bit/398.png"></li>
+      <li><img src="/img/8-bit/399.png"></li>
+      <li><img src="/img/8-bit/400.png"></li>
+      <li><img src="/img/8-bit/401.png"></li>
+      <li><img src="/img/8-bit/402.png"></li>
+      <li><img src="/img/8-bit/403.png"></li>
+      <li><img src="/img/8-bit/404.png"></li>
+      <li><img src="/img/8-bit/405.png"></li>
+      <li><img src="/img/8-bit/406.png"></li>
+    </ul>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="/"><i class="fa fa-home"></i></a></li>
+      
+        
+      
+        
+        <li>
+          <a href="/tutorials/">Tutorials</a>
+        </li>
+        
+      
+      <li class="dont-click">
+        <a href="http://www.alexchin.co.uk" target="_blank">don't click!</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    <main class="container">
+      <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Generating Migrations</h1>
+    <p class="post-meta">May 14, 2014</p>
+  </header>
+
+  <article class="post-content">
+    <blockquote>
+  <p>Migrations are a feature of Active Record that allows you to evolve your database schema over time. Rather than write schema modifications in pure SQL, migrations allow you to use an easy Ruby DSL to describe changes to your tables.</p>
+</blockquote>
+
+<p>Another way of thinking about them is like a kind of version control (like git) for your application’s database - only not as cool as Git (<strong><em>because Git rules</em></strong>).</p>
+
+<h2 id="each-database-starts-empty">Each database starts empty</h2>
+<p>Every database starts empty.
+Adding information to a database can be described as a series of steps, one after another… Migrations allow developers to save the most important steps like creating tables or adding columns. Later you can rollback to before these changes if something goes wrong, although you might lose data if you do this!</p>
+
+<h2 id="active-record--ruby-dsl">Active Record &amp; Ruby DSL</h2>
+<p>Instead of writing complicated SQL statements with things like left-joins, inner-joins and outer-joins… which even an experienced web developer might find a stuggle to understand, (especially when they didn’t write the code), Rails uses something called a <strong>Ruby DSL (Domain Specific Language)</strong>.</p>
+
+<ul>
+  <li>DSL is used to make manipulating an applications’ database MUCH easier.</li>
+</ul>
+
+<p>DSL allows us to <strong>manipulate Ruby objects</strong> rather having to SELECT by table and column. This is because a table is just a representation of the information stored about an object.</p>
+
+<h2 id="generating-a-new-migration">Generating a new migration</h2>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="err">$</span> <span class="n">rails</span> <span class="n">generate</span> <span class="n">migration</span> <span class="no">MigrationName</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><strong>You can call a migration anything you want!</strong> However, it is generally good practise to describe what you are changing in the database so that other people can easily tell what it does.</p>
+
+<p>The format of a migration name is usually:</p>
+
+<ul>
+  <li>In UpperCamelCase</li>
+  <li>In the format <strong>AddXXXtoYYY</strong></li>
+  <li>Where XXX is usually <strong>SINGULAR</strong> (as it is a column)</li>
+  <li>Where YYY is usually <strong>PLURALIZED</strong> (as it is a table)</li>
+</ul>
+
+<p>Running this will create a blank migration file which will be timestamped, it will look like:</p>
+
+<ul>
+  <li>db/migrate/20100207214725_addXXXtoYYY.rb</li>
+</ul>
+
+<p>And will be in the db &gt; migrate folder.</p>
+
+<h2 id="when-does-a-migration-auto-populate">When does a migration auto-populate?</h2>
+<p>This is something that I found confusing when I was first learning about migrations. This only happens when:</p>
+
+<p><strong>The migration name is of the form “AddXXXToYYY” or “RemoveXXXFromYYY” AND is followed by a list of column names and types</strong></p>
+
+<p>For example:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="err">$</span> <span class="n">rails</span> <span class="n">generate</span> <span class="n">migration</span> <span class="no">AddPartNumberToProducts</span> <span class="n">part_number</span><span class="ss">:string</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>A migration containing the appropriate add_column and remove_column statements will automatically be created.</p>
+
+<p>All other times, a <strong>blank migration</strong> will be created.</p>
+
+<h2 id="executing-a-migration">Executing a migration</h2>
+<p>Once you have a migration file that has been created. You need to run:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="err">$</span> <span class="n">rake</span> <span class="n">db</span><span class="ss">:migrate</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>This will execute the migration files. It will execute them <strong>in the order of the earliest timestamp first</strong>, so the oldest one first.</p>
+
+<h2 id="editing-a-migration-file">Editing a migration file</h2>
+
+<p>Within a migration file you need to include:</p>
+
+<ul>
+  <li>Instructions on what to do when you execute the migration</li>
+  <li>Instructions on what to do if you want to reverse/rollback a migration</li>
+</ul>
+
+<p>Sometimes these instructions can be in the form of one <strong>change</strong> method:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>  <span class="k">class</span> <span class="nc">AddPartNumberToProducts</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+      <span class="k">def</span> <span class="nf">change</span>
+      <span class="k">end</span>
+  <span class="k">end</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>And sometimes these instructions can be in the form of an <strong>up</strong> method AND a <strong>down</strong> method:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre>  <span class="k">class</span> <span class="nc">ExampleMigration</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+      <span class="k">def</span> <span class="nf">up</span>
+      <span class="k">end</span>
+ 
+      <span class="k">def</span> <span class="nf">down</span>
+      <span class="k">end</span>
+  <span class="k">end</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="change-vs-updown">Change vs up/down?</h2>
+<p>What is the difference?</p>
+
+<h3 id="change-method">Change Method</h3>
+<p>The change method is the normal way of writing migrations. It works for the majority of cases, where Active Record <strong>knows how to reverse the migration automatically</strong>.</p>
+
+<hr />
+
+<p><strong>An example:</strong> 
+For many operations rails can guess what is the inverse operation (without problems). For example, in your case what is the reverse operation of <code class="highlighter-rouge">add_column</code> to call when you rollback? Of course it’s <code class="highlighter-rouge">remove_column</code>. What is the inverse of <code class="highlighter-rouge">create_table</code>? It’s <code class="highlighter-rouge">drop_table</code>. So in these cases rails know how to rollback and define a down method is superfluous</p>
+
+<hr />
+
+<p>Currently, the change method supports only these migration definitions:</p>
+
+<ul>
+  <li>add_column</li>
+  <li>add_index</li>
+  <li>add_reference</li>
+  <li>add_timestamps</li>
+  <li>create_table</li>
+  <li>create_join_table</li>
+  <li>drop_table (must supply a block)</li>
+  <li>drop_join_table (must supply a block)</li>
+  <li>remove_timestamps</li>
+  <li>rename_column</li>
+  <li>rename_index</li>
+  <li>remove_reference</li>
+  <li>rename_table</li>
+</ul>
+
+<h3 id="up--down-methods">Up / down methods</h3>
+
+<p>This is usually used when Active Record <strong>does not know how to reverse a migration</strong>.</p>
+
+<hr />
+
+<p><strong>An example:</strong>  for some kind of operation you still need to define the down method, for example if you change the precision of a decimal column how to guess the original precision on rollback? It’s not possible, so you need to define the down method.</p>
+
+<hr />
+
+<h3 id="up">Up</h3>
+<p>The up method should describe the transformation you’d like to make to your schema.</p>
+
+<h3 id="down">Down</h3>
+<p>The down method of your migration should revert the transformations done by the up method.</p>
+
+<blockquote>
+  <p>If you did an up followed by a down - the table should be unchanged.</p>
+</blockquote>
+
+<h5 id="what-to-do-when-the-migration-is-irreversible">What to do when the migration is irreversible?</h5>
+
+<p>If your migration is irreversible, you should <code class="highlighter-rouge">raise ActiveRecord::IrreversibleMigration</code> from your down method.</p>
+
+<hr />
+
+<p><strong>An example:</strong> There are certain commands like <code class="highlighter-rouge">remove_column</code> that cannot be automatically reversed. This is because the information required to re-create the column is not available in the remove_column command, e.g. <code class="highlighter-rouge">What datatype do you want the removed column to have?</code> If Rails encounters such commands while reversing a migration, an <code class="highlighter-rouge">ActiveRecord::IrreversibleMigration</code> exception will need be raised.</p>
+
+<hr />
+
+<p>I will do another blog on actually what to add inside the change &amp; up/down methods.</p>
+
+  </article>
+
+</div>
+
+    </main>
+    <footer>
+  &copy; 2015 - Alex Chin
+  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  <ul class="footer__social-icons">
+    
+      <li>
+        <a href="https://www.youtube.com/channel/UC4OFW5Ljzf-5dR8EgJ1zz7g" target="_blank">
+          <i class="fa fa-youtube-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://github.com/alexpchin" target="_blank">
+          <i class="fa fa-github-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://facebook.com/chinternet" target="_blank">
+          <i class="fa fa-facebook-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://twitter.com/alexpchin" target="_blank">
+          <i class="fa fa-twitter-square fa-lg"></i>
+        </a>
+      </li>
+    
+  </ul>
+  Inspired by <a href="http://www.lingscars.com/" target="_blank">LingsCars</a>.
+</footer>
+
+<a class="github-ribbon" href="https://github.com/alexpchin" target="_blank">
+  <img src="/img/fork-me.png" alt="Fork me on Github">
+</a>
+
+  </body>
+</html>

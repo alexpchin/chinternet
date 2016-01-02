@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="Z4rloDEPfFKjdvqxnRdVLXrdyJv9LLK2Sl7fDJrPt0Y" />
+  <title>Hello.js and Rails</title>
+  <meta name="description" content="I thought I’d have a little play with integrating hello.js and Rails. Devise and Oauth2 are quite good but I liked the idea of doing all of this functionalit...">
+
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Lora" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/app.min.css">
+
+  <link rel="canonical" href="http://www.chinternet.lol/code,%20js/2014/09/16/hellojs_and_rails.html">
+  <link rel="alternate" type="application/rss+xml" title="Chinternet - I LEARN YOU CODE. Coding tutorials, memes, cute cats, games." href="http://www.chinternet.lol/feed.xml" />
+
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+  <script src="/js/app.min.js" charset="utf-8"></script>
+</head>
+
+  <body>
+    <header class="container">
+  <div class="header__doge">Much learning. So knowledge.</div>
+  <div class="header__nerd">NERD<span>ALERT</span></div>
+  <div class="header__absolute">How bad is absolute positioning???</div>
+  <a class="header__linkedin" href="https://uk.linkedin.com/in/alexpchin" target="_blank">
+    Find me on LinkedIn!
+  </a>
+  <a class="header__click" href="http://alexchin.co.uk" target="_blank">
+    <img src="/img/star.gif" />
+  </a>
+  <img class="header__pikachu" src="/img/pikachu.gif" />
+  <img class="header__thumb" src="/img/thumb.png" />
+  <img class="header__facebook" src="/img/facebook.png" />
+  <img class="header__otter" src="/img/otter.gif" />
+  <img class="header__glitter-cat" src="/img/glitter-cat.gif" />
+  <ul>
+    <li>
+      <img src="/img/alex.gif">
+    </li>
+    <li>
+      <h1 class="blink">
+        <a href="/">Chinternet</a>
+        <span>I learn you code.</span>
+      </h1>
+    </li>
+    <li><img src="/img/alex.gif"></li>
+  </ul>
+  <div class="header__random">
+    <ul>
+      <li><img src="/img/8-bit/345.png"></li>
+      <li><img src="/img/8-bit/380.png"></li>
+      <li><img src="/img/8-bit/381.png"></li>
+      <li><img src="/img/8-bit/382.png"></li>
+      <li><img src="/img/8-bit/383.png"></li>
+      <li><img src="/img/8-bit/384.png"></li>
+      <li><img src="/img/8-bit/385.png"></li>
+      <li><img src="/img/8-bit/386.png"></li>
+      <li><img src="/img/8-bit/387.png"></li>
+      <li><img src="/img/8-bit/388.png"></li>
+      <li><img src="/img/8-bit/389.png"></li>
+      <li><img src="/img/8-bit/390.png"></li>
+      <li><img src="/img/8-bit/391.png"></li>
+      <li><img src="/img/8-bit/392.png"></li>
+      <li><img src="/img/8-bit/393.png"></li>
+      <li><img src="/img/8-bit/394.png"></li>
+      <li><img src="/img/8-bit/395.png"></li>
+      <li><img src="/img/8-bit/396.png"></li>
+      <li><img src="/img/8-bit/397.png"></li>
+      <li><img src="/img/8-bit/398.png"></li>
+      <li><img src="/img/8-bit/399.png"></li>
+      <li><img src="/img/8-bit/400.png"></li>
+      <li><img src="/img/8-bit/401.png"></li>
+      <li><img src="/img/8-bit/402.png"></li>
+      <li><img src="/img/8-bit/403.png"></li>
+      <li><img src="/img/8-bit/404.png"></li>
+      <li><img src="/img/8-bit/405.png"></li>
+      <li><img src="/img/8-bit/406.png"></li>
+    </ul>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="/"><i class="fa fa-home"></i></a></li>
+      
+        
+      
+        
+        <li>
+          <a href="/tutorials/">Tutorials</a>
+        </li>
+        
+      
+      <li class="dont-click">
+        <a href="http://www.alexchin.co.uk" target="_blank">don't click!</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    <main class="container">
+      <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Hello.js and Rails</h1>
+    <p class="post-meta">Sep 16, 2014</p>
+  </header>
+
+  <article class="post-content">
+    <p>I thought I’d have a little play with integrating <a href="http://adodson.com/hello.js/">hello.js</a> and Rails. Devise and Oauth2 are quite good but I liked the idea of doing all of this functionality client-side.</p>
+
+<ul>
+  <li>
+    <ol>
+      <li>Create a new rails app (I’m using Rails 4.)</li>
+    </ol>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">rails</span> <span class="kp">new</span> <span class="n">hello_js</span> <span class="o">--</span><span class="n">database</span><span class="o">=</span><span class="n">postgresql</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>
+    <ol>
+      <li>Add relavent gems to Gemfile and bundle</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Scaffold basic User and install Devise</li>
+    </ol>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="no">User</span> <span class="n">first_name</span> <span class="n">last_name</span> <span class="n">image</span><span class="ss">:text</span> <span class="n">username</span>
+<span class="n">rails</span> <span class="n">g</span> <span class="n">devise</span><span class="ss">:install</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>
+    <ol>
+      <li>Update development.rb by adding:</li>
+    </ol>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">config</span><span class="p">.</span><span class="nf">action_mailer</span><span class="p">.</span><span class="nf">default_url_options</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">host: </span><span class="s1">'localhost:3000'</span> <span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>
+    <ol>
+      <li>Change initializer for Devise.</li>
+    </ol>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">config</span><span class="p">.</span><span class="nf">mailer_sender</span> <span class="o">=</span> <span class="s1">'hello_js@hello_js_example.com'</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>
+    <ol>
+      <li>Add Devise to User model</li>
+    </ol>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">rails</span> <span class="n">g</span> <span class="n">devise</span> <span class="n">user</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>
+    <ol>
+      <li>Run migrations</li>
+    </ol>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">rake</span> <span class="n">db</span><span class="ss">:create</span> <span class="n">db</span><span class="ss">:migrate</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>
+    <ol>
+      <li>Bower install Hello.js (I use <a href="https://coderwall.com/p/hhaxlg">this setup</a> for Bower &amp; Rails)</li>
+    </ol>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="n">bower</span> <span class="n">install</span> <span class="n">hello</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>
+    <ol>
+      <li>Register your app domain, let’s do it on <a href="https://developers.facebook.com/apps">Facebook</a></li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Include hello.all.js script in application.js (hello.all includes all of the provider modules)</li>
+    </ol>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="sr">//</span><span class="o">=</span> <span class="nb">require</span> <span class="n">hello</span><span class="o">/</span><span class="n">dist</span><span class="o">/</span><span class="n">hello</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">js</span>
+<span class="sr">//</span><span class="o">=</span> <span class="n">require_tree</span> <span class="o">.</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>
+    <ol>
+      <li>Create the signin buttons in application.html.erb. I used the <a href="http://zocial.smcllns.com/">zocial</a> to style.</li>
+    </ol>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="o">&lt;</span><span class="n">button</span> <span class="k">class</span><span class="o">=</span><span class="s2">"zocial facebook"</span> <span class="n">onclick</span><span class="o">=</span><span class="s2">"hello.login('facebook');"</span><span class="o">&gt;</span><span class="no">Facebook</span><span class="o">&lt;</span><span class="sr">/button&gt;
+&lt;button class="zocial twitter" onclick="hello.login('twitter');"&gt;Twitter&lt;/</span><span class="n">button</span><span class="o">&gt;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>
+    <ol>
+      <li>Setup listener for login and retrieve user info.</li>
+    </ol>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre><span class="n">hello</span><span class="p">.</span><span class="nf">on</span><span class="p">(</span><span class="s1">'auth.login'</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">auth</span><span class="p">){</span>
+  
+  <span class="n">hello</span><span class="p">(</span> <span class="n">auth</span><span class="p">.</span><span class="nf">network</span> <span class="p">).</span><span class="nf">api</span><span class="p">(</span> <span class="s1">'/me'</span> <span class="p">).</span><span class="nf">then</span><span class="p">(</span> <span class="n">function</span><span class="p">(</span><span class="n">r</span><span class="p">){</span>
+    <span class="err">$</span><span class="p">(</span><span class="s1">'#result'</span><span class="p">).</span><span class="nf">append</span><span class="p">(</span><span class="s1">'&lt;div id="'</span><span class="o">+</span> <span class="n">auth</span><span class="p">.</span><span class="nf">network</span> <span class="o">+</span> <span class="s1">'"&gt;&lt;h2&gt;Connected to '</span><span class="o">+</span> <span class="n">auth</span><span class="p">.</span><span class="nf">network</span> <span class="o">+</span> <span class="s1">'&lt;/h2&gt;&lt;img src="'</span><span class="o">+</span> <span class="n">r</span><span class="p">.</span><span class="nf">thumbnail</span> <span class="o">+</span><span class="s1">'" /&gt;&lt;/div&gt;'</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>
+    <ol>
+      <li>Initiate the client_ids and all listeners (Client ID is aka App ID)</li>
+    </ol>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre></td><td class="code"><pre>  <span class="n">hello</span><span class="p">.</span><span class="nf">init</span><span class="p">({</span>
+    <span class="n">facebook</span> <span class="p">:</span> <span class="no">ENV</span><span class="p">[</span><span class="s1">'FACEBOOK_CLIENT_ID'</span><span class="p">],</span>
+    <span class="n">twitter</span> <span class="p">:</span> <span class="no">ENV</span><span class="p">[</span><span class="s1">'TWITTER_CLIENT_ID'</span><span class="p">]</span>
+  <span class="p">},{</span>
+    <span class="ss">redirect_uri: </span><span class="s1">'http://localhost:3000'</span><span class="p">,</span>
+  <span class="p">});</span>
+
+  <span class="n">hello</span><span class="p">.</span><span class="nf">on</span><span class="p">(</span><span class="s1">'auth.login'</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">auth</span><span class="p">){</span>
+    
+    <span class="n">hello</span><span class="p">(</span> <span class="n">auth</span><span class="p">.</span><span class="nf">network</span> <span class="p">).</span><span class="nf">api</span><span class="p">(</span> <span class="s1">'/me'</span> <span class="p">).</span><span class="nf">then</span><span class="p">(</span> <span class="n">function</span><span class="p">(</span><span class="n">r</span><span class="p">){</span>
+      <span class="err">$</span><span class="p">(</span><span class="s1">'#result'</span><span class="p">).</span><span class="nf">append</span><span class="p">(</span><span class="s1">'&lt;div id="'</span><span class="o">+</span> <span class="n">auth</span><span class="p">.</span><span class="nf">network</span> <span class="o">+</span> <span class="s1">'"&gt;&lt;h2&gt;Connected to '</span><span class="o">+</span> <span class="n">auth</span><span class="p">.</span><span class="nf">network</span> <span class="o">+</span> <span class="s1">'&lt;/h2&gt;&lt;img src="'</span><span class="o">+</span> <span class="n">r</span><span class="p">.</span><span class="nf">thumbnail</span> <span class="o">+</span><span class="s1">'" /&gt;&lt;/div&gt;'</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">});</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>
+    <ol>
+      <li>Add root route</li>
+    </ol>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  <span class="n">root</span> <span class="ss">to: </span><span class="s2">"users#index"</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>
+    <ol>
+      <li>Create a new user using Devise using the information from returned from hello.js for a provider</li>
+    </ol>
+  </li>
+</ul>
+
+<p>(To be continued in another blog post).</p>
+
+
+  </article>
+
+</div>
+
+    </main>
+    <footer>
+  &copy; 2015 - Alex Chin
+  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  <ul class="footer__social-icons">
+    
+      <li>
+        <a href="https://www.youtube.com/channel/UC4OFW5Ljzf-5dR8EgJ1zz7g" target="_blank">
+          <i class="fa fa-youtube-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://github.com/alexpchin" target="_blank">
+          <i class="fa fa-github-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://facebook.com/chinternet" target="_blank">
+          <i class="fa fa-facebook-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://twitter.com/alexpchin" target="_blank">
+          <i class="fa fa-twitter-square fa-lg"></i>
+        </a>
+      </li>
+    
+  </ul>
+  Inspired by <a href="http://www.lingscars.com/" target="_blank">LingsCars</a>.
+</footer>
+
+<a class="github-ribbon" href="https://github.com/alexpchin" target="_blank">
+  <img src="/img/fork-me.png" alt="Fork me on Github">
+</a>
+
+  </body>
+</html>

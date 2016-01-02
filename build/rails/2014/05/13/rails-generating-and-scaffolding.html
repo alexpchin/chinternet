@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="Z4rloDEPfFKjdvqxnRdVLXrdyJv9LLK2Sl7fDJrPt0Y" />
+  <title>Rails Generating & Scaffolding</title>
+  <meta name="description" content="Rails’ use of strict naming conventions means a lot of core code SHOULD be in the same format whoever writes it? It could be written by a friend, colleague o...">
+
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Lora" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/app.min.css">
+
+  <link rel="canonical" href="http://www.chinternet.lol/rails/2014/05/13/rails-generating-and-scaffolding.html">
+  <link rel="alternate" type="application/rss+xml" title="Chinternet - I LEARN YOU CODE. Coding tutorials, memes, cute cats, games." href="http://www.chinternet.lol/feed.xml" />
+
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+  <script src="/js/app.min.js" charset="utf-8"></script>
+</head>
+
+  <body>
+    <header class="container">
+  <div class="header__doge">Much learning. So knowledge.</div>
+  <div class="header__nerd">NERD<span>ALERT</span></div>
+  <div class="header__absolute">How bad is absolute positioning???</div>
+  <a class="header__linkedin" href="https://uk.linkedin.com/in/alexpchin" target="_blank">
+    Find me on LinkedIn!
+  </a>
+  <a class="header__click" href="http://alexchin.co.uk" target="_blank">
+    <img src="/img/star.gif" />
+  </a>
+  <img class="header__pikachu" src="/img/pikachu.gif" />
+  <img class="header__thumb" src="/img/thumb.png" />
+  <img class="header__facebook" src="/img/facebook.png" />
+  <img class="header__otter" src="/img/otter.gif" />
+  <img class="header__glitter-cat" src="/img/glitter-cat.gif" />
+  <ul>
+    <li>
+      <img src="/img/alex.gif">
+    </li>
+    <li>
+      <h1 class="blink">
+        <a href="/">Chinternet</a>
+        <span>I learn you code.</span>
+      </h1>
+    </li>
+    <li><img src="/img/alex.gif"></li>
+  </ul>
+  <div class="header__random">
+    <ul>
+      <li><img src="/img/8-bit/345.png"></li>
+      <li><img src="/img/8-bit/380.png"></li>
+      <li><img src="/img/8-bit/381.png"></li>
+      <li><img src="/img/8-bit/382.png"></li>
+      <li><img src="/img/8-bit/383.png"></li>
+      <li><img src="/img/8-bit/384.png"></li>
+      <li><img src="/img/8-bit/385.png"></li>
+      <li><img src="/img/8-bit/386.png"></li>
+      <li><img src="/img/8-bit/387.png"></li>
+      <li><img src="/img/8-bit/388.png"></li>
+      <li><img src="/img/8-bit/389.png"></li>
+      <li><img src="/img/8-bit/390.png"></li>
+      <li><img src="/img/8-bit/391.png"></li>
+      <li><img src="/img/8-bit/392.png"></li>
+      <li><img src="/img/8-bit/393.png"></li>
+      <li><img src="/img/8-bit/394.png"></li>
+      <li><img src="/img/8-bit/395.png"></li>
+      <li><img src="/img/8-bit/396.png"></li>
+      <li><img src="/img/8-bit/397.png"></li>
+      <li><img src="/img/8-bit/398.png"></li>
+      <li><img src="/img/8-bit/399.png"></li>
+      <li><img src="/img/8-bit/400.png"></li>
+      <li><img src="/img/8-bit/401.png"></li>
+      <li><img src="/img/8-bit/402.png"></li>
+      <li><img src="/img/8-bit/403.png"></li>
+      <li><img src="/img/8-bit/404.png"></li>
+      <li><img src="/img/8-bit/405.png"></li>
+      <li><img src="/img/8-bit/406.png"></li>
+    </ul>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="/"><i class="fa fa-home"></i></a></li>
+      
+        
+      
+        
+        <li>
+          <a href="/tutorials/">Tutorials</a>
+        </li>
+        
+      
+      <li class="dont-click">
+        <a href="http://www.alexchin.co.uk" target="_blank">don't click!</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    <main class="container">
+      <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Rails Generating & Scaffolding</h1>
+    <p class="post-meta">May 13, 2014</p>
+  </header>
+
+  <article class="post-content">
+    <p>Rails’ use of <strong>strict naming conventions</strong> means a lot of core code SHOULD be in the same format whoever writes it? It could be written by a friend, colleague or a computer… it shouldn’t matter because the same Rails rules apply to everyone.</p>
+
+<p>This means that Rails can actually do some tasks for you!
+It can actually build things and write code on your behalf…</p>
+
+<p>Coming from another language like PHP, this can seem like magic.</p>
+
+<h2 id="quick-reference">Quick reference:</h2>
+
+<p>rails g scaffold Post name:string title:string content:text
+  rails g controller Comments
+  rails g model Comment commenter:string body:text article:references</p>
+
+<h2 id="rails-generator">Rails generator</h2>
+<p>The rails generate command uses templates designed-by-convention to create a whole lot of useful things. Running rails generate by itself gives a list of available generators:</p>
+
+<p>rails generate</p>
+
+<p>or for super-hackers:</p>
+
+<p>rails g</p>
+
+<p>There are a lot of generators:</p>
+
+<p><strong>Rails:</strong></p>
+
+<ul>
+  <li>assets</li>
+  <li>controller</li>
+  <li>generator</li>
+  <li>helper</li>
+  <li>integration_test</li>
+  <li>mailer</li>
+  <li>migration</li>
+  <li>model</li>
+  <li>observer</li>
+  <li>performance_test</li>
+  <li>resource</li>
+  <li>scaffold</li>
+  <li>scaffold_controller</li>
+  <li>session_migration</li>
+  <li>task</li>
+</ul>
+
+<p><strong>Coffee:</strong></p>
+
+<ul>
+  <li>coffee:assets</li>
+</ul>
+
+<p><strong>Jquery:</strong></p>
+
+<ul>
+  <li>jquery:install</li>
+</ul>
+
+<p><strong>Js:</strong></p>
+
+<ul>
+  <li>js:assets</li>
+</ul>
+
+<h2 id="scaffolding-in-rails">Scaffolding in Rails</h2>
+
+<p>Rails’ scaffolding tool is a quick way to generate some of the major pieces of code in an application. This saves a lot of time when you want to get up-and-running quickly! (<em>It is super cool!</em>)</p>
+
+<p>Depending on what you want to create, scaffolding can auto-generate all or a combination of:</p>
+
+<p>migrations
+  models
+  views
+  controllers
+  unit_tests 
+  helpers
+  stylesheets
+  javascript</p>
+
+<p>There might be a few more files that it makes… I’m not sure if that’s a complete list!</p>
+
+<h2 id="scaffolding-a-whole-resource">Scaffolding a whole resource</h2>
+<p>### You are scaffolding things associated with an object (singular)</p>
+
+<p>If you want to scaffold an application, you need to scaffold each resource within that application. If you wanted to make a blogging application for example - you could scaffold the whole Post resource:</p>
+
+<p>rails g scaffold Post</p>
+
+<p>The resource name <code class="highlighter-rouge">Post</code> needs to be:</p>
+
+<ul>
+  <li>UpperCamelCase</li>
+  <li><strong>SINGULAR</strong></li>
+</ul>
+
+<p><strong>This name is going to be the name of the model, e.g. Post.</strong> It is also going to be the name of the controller class (but pluralized), e.g. PostsController AND the name of the table (but pluralized) e.g. posts</p>
+
+<p>After the class name, you can add table columns and their datatypes.</p>
+
+<p>rails g scaffold Post name:string title:string content:text</p>
+
+<p>These table columns names should be:</p>
+
+<ul>
+  <li>lower_snake_case</li>
+  <li><strong>SINGULAR</strong></li>
+</ul>
+
+<hr />
+
+<p>This is because each Post item is meant to have <strong>one</strong> value stored in each column.</p>
+
+<hr />
+
+<p>If you ran this scaffold, it would create these all files:</p>
+
+<ul>
+  <li>db/migrate/20100207214725_create_posts.rb</li>
+  <li>app/models/post.rb</li>
+  <li>test/unit/post_test.rb</li>
+  <li>test/fixtures/posts.yml</li>
+  <li>config/routes.rb</li>
+  <li>app/controllers/posts_controller.rb</li>
+  <li>app/views/posts/index.html.erb</li>
+  <li>app/views/posts/edit.html.erb</li>
+  <li>app/views/posts/show.html.erb</li>
+  <li>app/views/posts/new.html.erb</li>
+  <li>app/views/posts/_form.html.erb</li>
+  <li>test/functional/posts_controller_test.rb</li>
+  <li>app/helpers/posts_helper.rb</li>
+  <li>test/unit/helpers/posts_helper_test.rb</li>
+  <li>app/assets/javascripts/posts.js.coffee</li>
+  <li>app/assets/stylesheets/posts.css.scss</li>
+  <li>app/assets/stylesheets/scaffolds.css.scss</li>
+</ul>
+
+<p>Within the PostController, all of the RESTful methods will be created and they will all have their corresponding view files.</p>
+
+<p>After creating the migration file, in order to make the change to the database remember to run:</p>
+
+<p>rake db:migrate</p>
+
+<h2 id="generating-just-a-controller">Generating just a controller</h2>
+<p>### It controls lots of objects (so it is plural)</p>
+
+<p>Sometimes, you want to generate just a controller.</p>
+
+<p>rails g controller Comments</p>
+
+<p>The controller name needs to be:</p>
+
+<ul>
+  <li>UpperCamelCase</li>
+  <li><strong>PLURALIZED</strong></li>
+</ul>
+
+<hr />
+
+<p>This is because a controller deals with lots of examples of an object, so it should be plural.</p>
+
+<hr />
+
+<p>This will make these files:</p>
+
+<ul>
+  <li>app/controllers/comments_controller.rb</li>
+  <li>app/views/comments/</li>
+  <li>test/controllers/comments_controller_test.rb</li>
+  <li>app/helpers/comments_helper.rb</li>
+  <li>test/helpers/comments_helper_test.rb</li>
+  <li>app/assets/javascripts/comment.js.coffee</li>
+  <li>app/assets/stylesheets/comment.css.scss</li>
+</ul>
+
+<p>This will <strong>NOT</strong> create a migration file or a model file.</p>
+
+<h2 id="generating-just-a-model">Generating just a model</h2>
+<p>### You are generating the outline of an object (singular)</p>
+
+<p>If you just want to create a model, you can do:</p>
+
+<p>rails g model Comment</p>
+
+<ul>
+  <li>UpperCamelCase</li>
+  <li><strong>SINGULAR</strong></li>
+</ul>
+
+<p>You can also add the column names to this if you want:</p>
+
+<p>rails g model Comment commenter:string body:text article:references</p>
+
+<p>These table column names should be:</p>
+
+<ul>
+  <li>lower_snake_case</li>
+  <li><strong>SINGULAR</strong></li>
+</ul>
+
+<p>Generating a model will create these files:</p>
+
+<ul>
+  <li>db/migrate/20140120201010_create_comments.rb</li>
+  <li>app/models/comment.rb</li>
+  <li>test/models/comment_test.rb</li>
+  <li>test/fixtures/comments.yml</li>
+</ul>
+
+<p>After creating the migration file, in order to make the change to the database remember to run:</p>
+
+<p>rake db:migrate</p>
+
+  </article>
+
+</div>
+
+    </main>
+    <footer>
+  &copy; 2015 - Alex Chin
+  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  <ul class="footer__social-icons">
+    
+      <li>
+        <a href="https://www.youtube.com/channel/UC4OFW5Ljzf-5dR8EgJ1zz7g" target="_blank">
+          <i class="fa fa-youtube-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://github.com/alexpchin" target="_blank">
+          <i class="fa fa-github-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://facebook.com/chinternet" target="_blank">
+          <i class="fa fa-facebook-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://twitter.com/alexpchin" target="_blank">
+          <i class="fa fa-twitter-square fa-lg"></i>
+        </a>
+      </li>
+    
+  </ul>
+  Inspired by <a href="http://www.lingscars.com/" target="_blank">LingsCars</a>.
+</footer>
+
+<a class="github-ribbon" href="https://github.com/alexpchin" target="_blank">
+  <img src="/img/fork-me.png" alt="Fork me on Github">
+</a>
+
+  </body>
+</html>

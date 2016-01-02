@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="Z4rloDEPfFKjdvqxnRdVLXrdyJv9LLK2Sl7fDJrPt0Y" />
+  <title>Making music with Ruby</title>
+  <meta name="description" content="Last night I went to LRUG and I watched a talk by Alex Speller about music theory and Ruby.">
+
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Lora" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/app.min.css">
+
+  <link rel="canonical" href="http://www.chinternet.lol/ruby/2014/08/12/making-music-with-ruby.html">
+  <link rel="alternate" type="application/rss+xml" title="Chinternet - I LEARN YOU CODE. Coding tutorials, memes, cute cats, games." href="http://www.chinternet.lol/feed.xml" />
+
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+  <script src="/js/app.min.js" charset="utf-8"></script>
+</head>
+
+  <body>
+    <header class="container">
+  <div class="header__doge">Much learning. So knowledge.</div>
+  <div class="header__nerd">NERD<span>ALERT</span></div>
+  <div class="header__absolute">How bad is absolute positioning???</div>
+  <a class="header__linkedin" href="https://uk.linkedin.com/in/alexpchin" target="_blank">
+    Find me on LinkedIn!
+  </a>
+  <a class="header__click" href="http://alexchin.co.uk" target="_blank">
+    <img src="/img/star.gif" />
+  </a>
+  <img class="header__pikachu" src="/img/pikachu.gif" />
+  <img class="header__thumb" src="/img/thumb.png" />
+  <img class="header__facebook" src="/img/facebook.png" />
+  <img class="header__otter" src="/img/otter.gif" />
+  <img class="header__glitter-cat" src="/img/glitter-cat.gif" />
+  <ul>
+    <li>
+      <img src="/img/alex.gif">
+    </li>
+    <li>
+      <h1 class="blink">
+        <a href="/">Chinternet</a>
+        <span>I learn you code.</span>
+      </h1>
+    </li>
+    <li><img src="/img/alex.gif"></li>
+  </ul>
+  <div class="header__random">
+    <ul>
+      <li><img src="/img/8-bit/345.png"></li>
+      <li><img src="/img/8-bit/380.png"></li>
+      <li><img src="/img/8-bit/381.png"></li>
+      <li><img src="/img/8-bit/382.png"></li>
+      <li><img src="/img/8-bit/383.png"></li>
+      <li><img src="/img/8-bit/384.png"></li>
+      <li><img src="/img/8-bit/385.png"></li>
+      <li><img src="/img/8-bit/386.png"></li>
+      <li><img src="/img/8-bit/387.png"></li>
+      <li><img src="/img/8-bit/388.png"></li>
+      <li><img src="/img/8-bit/389.png"></li>
+      <li><img src="/img/8-bit/390.png"></li>
+      <li><img src="/img/8-bit/391.png"></li>
+      <li><img src="/img/8-bit/392.png"></li>
+      <li><img src="/img/8-bit/393.png"></li>
+      <li><img src="/img/8-bit/394.png"></li>
+      <li><img src="/img/8-bit/395.png"></li>
+      <li><img src="/img/8-bit/396.png"></li>
+      <li><img src="/img/8-bit/397.png"></li>
+      <li><img src="/img/8-bit/398.png"></li>
+      <li><img src="/img/8-bit/399.png"></li>
+      <li><img src="/img/8-bit/400.png"></li>
+      <li><img src="/img/8-bit/401.png"></li>
+      <li><img src="/img/8-bit/402.png"></li>
+      <li><img src="/img/8-bit/403.png"></li>
+      <li><img src="/img/8-bit/404.png"></li>
+      <li><img src="/img/8-bit/405.png"></li>
+      <li><img src="/img/8-bit/406.png"></li>
+    </ul>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="/"><i class="fa fa-home"></i></a></li>
+      
+        
+      
+        
+        <li>
+          <a href="/tutorials/">Tutorials</a>
+        </li>
+        
+      
+      <li class="dont-click">
+        <a href="http://www.alexchin.co.uk" target="_blank">don't click!</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    <main class="container">
+      <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Making music with Ruby</h1>
+    <p class="post-meta">Aug 12, 2014</p>
+  </header>
+
+  <article class="post-content">
+    <p>Last night I went to <a href="http://lrug.org/">LRUG</a> and I watched a talk by Alex Speller about music theory and Ruby.</p>
+
+<p>Alex Speller says:</p>
+
+<blockquote><p><em>Music theory can seem arcane and unapproachable. But underneath the weird names and symbols, the basics are actually pretty simple. The real issue is that the documentation is bad and the API is worse! In this talk I will show how to start with nothing but a ruby interpreter, and generate sine waves, notes, scales, modes, chords, arpeggios and songs, in a way that will be understandable to those who have never touched an instrument before and will (hopefully) offer an interesting new perspective even to those who are already well versed in music theory.</em></p></blockquote>
+
+<p>I thought the talk was really great. Here is how Alex made a note in Ruby:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34</pre></td><td class="code"><pre><span class="nb">require</span> <span class="s1">'bundler'</span>
+<span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span>
+
+<span class="n">frequency</span>     <span class="o">=</span> <span class="mi">440</span><span class="o">.</span><span class="mi">0</span>   <span class="c1"># frequency of the note, in hz</span>
+<span class="n">sample_rate</span>   <span class="o">=</span> <span class="mi">22050</span> <span class="c1"># frames per second</span>
+<span class="n">duration</span>      <span class="o">=</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span>     <span class="c1"># seconds</span>
+
+<span class="c1"># we want 1 second of the note, so we need 1 second's worth of frames</span>
+<span class="n">total_frames</span> <span class="o">=</span> <span class="p">(</span><span class="n">duration</span> <span class="o">*</span> <span class="n">sample_rate</span><span class="p">).</span><span class="nf">to_i</span>
+
+<span class="c1"># each frame, we want this fraction of a cycle:</span>
+<span class="n">cycles_per_frame</span> <span class="o">=</span> <span class="n">frequency</span> <span class="o">/</span> <span class="n">sample_rate</span>
+
+<span class="c1"># What is a cycle? A cycle is a full sine wave, which is 2π radians:</span>
+<span class="n">increment</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="no">Math</span><span class="o">::</span><span class="no">PI</span> <span class="o">*</span> <span class="n">cycles_per_frame</span>
+
+<span class="n">phase</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">samples</span> <span class="o">=</span> <span class="n">total_frames</span><span class="p">.</span><span class="nf">times</span><span class="p">.</span><span class="nf">map</span> <span class="k">do</span>
+  <span class="n">sample</span> <span class="o">=</span> <span class="no">Math</span><span class="p">.</span><span class="nf">sin</span> <span class="n">phase</span>
+  <span class="n">phase</span> <span class="o">+=</span> <span class="n">increment</span>
+  <span class="n">sample</span>
+<span class="k">end</span>
+
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">'a.wav'</span>
+
+<span class="nb">format</span> <span class="o">=</span> <span class="no">WaveFile</span><span class="o">::</span><span class="no">Format</span><span class="p">.</span><span class="nf">new</span> <span class="ss">:mono</span><span class="p">,</span> <span class="ss">:pcm_16</span><span class="p">,</span> <span class="n">sample_rate</span>
+<span class="n">buffer_format</span> <span class="o">=</span> <span class="no">WaveFile</span><span class="o">::</span><span class="no">Format</span><span class="p">.</span><span class="nf">new</span> <span class="ss">:mono</span><span class="p">,</span> <span class="ss">:float</span><span class="p">,</span> <span class="n">sample_rate</span>
+<span class="no">WaveFile</span><span class="o">::</span><span class="no">Writer</span><span class="p">.</span><span class="nf">new</span> <span class="n">filename</span><span class="p">,</span> <span class="nb">format</span> <span class="k">do</span> <span class="o">|</span><span class="n">writer</span><span class="o">|</span>
+  <span class="n">buffer</span> <span class="o">=</span> <span class="no">WaveFile</span><span class="o">::</span><span class="no">Buffer</span><span class="p">.</span><span class="nf">new</span> <span class="n">samples</span><span class="p">,</span> <span class="n">buffer_format</span>
+  <span class="n">writer</span><span class="p">.</span><span class="nf">write</span> <span class="n">buffer</span>
+<span class="k">end</span>
+
+<span class="sb">`afplay a.wav`</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+  </article>
+
+</div>
+
+    </main>
+    <footer>
+  &copy; 2015 - Alex Chin
+  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  <ul class="footer__social-icons">
+    
+      <li>
+        <a href="https://www.youtube.com/channel/UC4OFW5Ljzf-5dR8EgJ1zz7g" target="_blank">
+          <i class="fa fa-youtube-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://github.com/alexpchin" target="_blank">
+          <i class="fa fa-github-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://facebook.com/chinternet" target="_blank">
+          <i class="fa fa-facebook-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://twitter.com/alexpchin" target="_blank">
+          <i class="fa fa-twitter-square fa-lg"></i>
+        </a>
+      </li>
+    
+  </ul>
+  Inspired by <a href="http://www.lingscars.com/" target="_blank">LingsCars</a>.
+</footer>
+
+<a class="github-ribbon" href="https://github.com/alexpchin" target="_blank">
+  <img src="/img/fork-me.png" alt="Fork me on Github">
+</a>
+
+  </body>
+</html>

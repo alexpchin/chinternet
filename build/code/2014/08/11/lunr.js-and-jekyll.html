@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="Z4rloDEPfFKjdvqxnRdVLXrdyJv9LLK2Sl7fDJrPt0Y" />
+  <title>Lunr.js and Jekyll</title>
+  <meta name="description" content="I wanted to get search functionality up and running with my jekyll blog. I looked at a number of options but I decided to go with Lunr.js.">
+
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Lora" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/app.min.css">
+
+  <link rel="canonical" href="http://www.chinternet.lol/code/2014/08/11/lunr.js-and-jekyll.html">
+  <link rel="alternate" type="application/rss+xml" title="Chinternet - I LEARN YOU CODE. Coding tutorials, memes, cute cats, games." href="http://www.chinternet.lol/feed.xml" />
+
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+  <script src="/js/app.min.js" charset="utf-8"></script>
+</head>
+
+  <body>
+    <header class="container">
+  <div class="header__doge">Much learning. So knowledge.</div>
+  <div class="header__nerd">NERD<span>ALERT</span></div>
+  <div class="header__absolute">How bad is absolute positioning???</div>
+  <a class="header__linkedin" href="https://uk.linkedin.com/in/alexpchin" target="_blank">
+    Find me on LinkedIn!
+  </a>
+  <a class="header__click" href="http://alexchin.co.uk" target="_blank">
+    <img src="/img/star.gif" />
+  </a>
+  <img class="header__pikachu" src="/img/pikachu.gif" />
+  <img class="header__thumb" src="/img/thumb.png" />
+  <img class="header__facebook" src="/img/facebook.png" />
+  <img class="header__otter" src="/img/otter.gif" />
+  <img class="header__glitter-cat" src="/img/glitter-cat.gif" />
+  <ul>
+    <li>
+      <img src="/img/alex.gif">
+    </li>
+    <li>
+      <h1 class="blink">
+        <a href="/">Chinternet</a>
+        <span>I learn you code.</span>
+      </h1>
+    </li>
+    <li><img src="/img/alex.gif"></li>
+  </ul>
+  <div class="header__random">
+    <ul>
+      <li><img src="/img/8-bit/345.png"></li>
+      <li><img src="/img/8-bit/380.png"></li>
+      <li><img src="/img/8-bit/381.png"></li>
+      <li><img src="/img/8-bit/382.png"></li>
+      <li><img src="/img/8-bit/383.png"></li>
+      <li><img src="/img/8-bit/384.png"></li>
+      <li><img src="/img/8-bit/385.png"></li>
+      <li><img src="/img/8-bit/386.png"></li>
+      <li><img src="/img/8-bit/387.png"></li>
+      <li><img src="/img/8-bit/388.png"></li>
+      <li><img src="/img/8-bit/389.png"></li>
+      <li><img src="/img/8-bit/390.png"></li>
+      <li><img src="/img/8-bit/391.png"></li>
+      <li><img src="/img/8-bit/392.png"></li>
+      <li><img src="/img/8-bit/393.png"></li>
+      <li><img src="/img/8-bit/394.png"></li>
+      <li><img src="/img/8-bit/395.png"></li>
+      <li><img src="/img/8-bit/396.png"></li>
+      <li><img src="/img/8-bit/397.png"></li>
+      <li><img src="/img/8-bit/398.png"></li>
+      <li><img src="/img/8-bit/399.png"></li>
+      <li><img src="/img/8-bit/400.png"></li>
+      <li><img src="/img/8-bit/401.png"></li>
+      <li><img src="/img/8-bit/402.png"></li>
+      <li><img src="/img/8-bit/403.png"></li>
+      <li><img src="/img/8-bit/404.png"></li>
+      <li><img src="/img/8-bit/405.png"></li>
+      <li><img src="/img/8-bit/406.png"></li>
+    </ul>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="/"><i class="fa fa-home"></i></a></li>
+      
+        
+      
+        
+        <li>
+          <a href="/tutorials/">Tutorials</a>
+        </li>
+        
+      
+      <li class="dont-click">
+        <a href="http://www.alexchin.co.uk" target="_blank">don't click!</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    <main class="container">
+      <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Lunr.js and Jekyll</h1>
+    <p class="post-meta">Aug 11, 2014</p>
+  </header>
+
+  <article class="post-content">
+    <p>I wanted to get search functionality up and running with my jekyll blog. I looked at a number of options but I decided to go with Lunr.js.</p>
+
+<p>lunr.js is a simple full text search engine for client side applications. It is designed to be small, yet full featured, enabling you to provide a great search experience without the need for external, server side, search services.</p>
+
+<p><a href="http://lunrjs.com/">lunr.js</a> has no external dependencies, although it does require a modern browser with ES5 support. In older browsers you can use an ES5 shim, such as <a href="http://augmentjs.com/">augment.js</a>, to provide any missing JavaScript functionality.</p>
+
+<p>More information from <a href="https://github.com/slashdotdash/jekyll-lunr-js-search">here</a>.</p>
+
+<h3 id="how-to-use-lunrjs-with-jekyll">How to use lunr.js with jekyll</h3>
+
+<h4 id="place-this-plugin-inside-the-plugins-folder-in-the-root-of-your-jekyll-site">1. Place this plugin inside the _plugins folder in the root of your Jekyll site.</h4>
+<p>I have a seperate <code class="highlighter-rouge">/src/</code> filestructure for my blog, so mine is actually found at <code class="highlighter-rouge">/src/_plugins/</code>.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174</pre></td><td class="code"><pre><span class="nb">require</span> <span class="s1">'rubygems'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="k">module</span> <span class="nn">Jekyll</span>
+
+  <span class="k">class</span> <span class="nc">Indexer</span> <span class="o">&lt;</span> <span class="no">Generator</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="p">{})</span>
+      <span class="k">super</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+      
+      <span class="n">lunr_config</span> <span class="o">=</span> <span class="p">{</span> 
+        <span class="s1">'excludes'</span> <span class="o">=&gt;</span> <span class="p">[],</span>
+        <span class="s1">'strip_index_html'</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span>
+        <span class="s1">'min_length'</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s1">'stopwords'</span> <span class="o">=&gt;</span> <span class="s1">'stopwords.txt'</span>
+      <span class="p">}.</span><span class="nf">merge!</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s1">'lunr_search'</span><span class="p">]</span> <span class="o">||</span> <span class="p">{})</span>
+      
+      <span class="vi">@excludes</span> <span class="o">=</span> <span class="n">lunr_config</span><span class="p">[</span><span class="s1">'excludes'</span><span class="p">]</span>
+      
+      <span class="c1"># if web host supports index.html as default doc, then optionally exclude it from the url </span>
+      <span class="vi">@strip_index_html</span> <span class="o">=</span> <span class="n">lunr_config</span><span class="p">[</span><span class="s1">'strip_index_html'</span><span class="p">]</span>
+
+      <span class="c1"># stop word exclusion configuration</span>
+      <span class="vi">@min_length</span> <span class="o">=</span> <span class="n">lunr_config</span><span class="p">[</span><span class="s1">'min_length'</span><span class="p">]</span>
+      <span class="vi">@stopwords_file</span> <span class="o">=</span> <span class="n">lunr_config</span><span class="p">[</span><span class="s1">'stopwords'</span><span class="p">]</span>
+    <span class="k">end</span>
+
+    <span class="c1"># Index all pages except pages matching any value in config['lunr_excludes'] or with date['exclude_from_search']</span>
+    <span class="c1"># The main content from each page is extracted and saved to disk as json</span>
+    <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
+      <span class="nb">puts</span> <span class="s1">'Running the search indexer...'</span>
+
+      <span class="c1"># gather pages and posts</span>
+      <span class="n">items</span> <span class="o">=</span> <span class="n">pages_to_index</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
+      <span class="n">content_renderer</span> <span class="o">=</span> <span class="no">PageRenderer</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
+      <span class="n">index</span> <span class="o">=</span> <span class="p">[]</span>
+
+      <span class="n">items</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">item</span><span class="o">|</span>
+        <span class="n">entry</span> <span class="o">=</span> <span class="no">SearchEntry</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">content_renderer</span><span class="p">)</span>
+
+        <span class="n">entry</span><span class="p">.</span><span class="nf">strip_index_suffix_from_url!</span> <span class="k">if</span> <span class="vi">@strip_index_html</span>
+        <span class="n">entry</span><span class="p">.</span><span class="nf">strip_stopwords!</span><span class="p">(</span><span class="n">stopwords</span><span class="p">,</span> <span class="vi">@min_length</span><span class="p">)</span> <span class="k">if</span> <span class="no">File</span><span class="p">.</span><span class="nf">exists?</span><span class="p">(</span><span class="vi">@stopwords_file</span><span class="p">)</span> 
+        
+        <span class="n">index</span> <span class="o">&lt;&lt;</span> <span class="p">{</span>
+          <span class="ss">:title</span> <span class="o">=&gt;</span> <span class="n">entry</span><span class="p">.</span><span class="nf">title</span><span class="p">,</span> 
+          <span class="ss">:url</span> <span class="o">=&gt;</span> <span class="n">entry</span><span class="p">.</span><span class="nf">url</span><span class="p">,</span>
+          <span class="ss">:date</span> <span class="o">=&gt;</span> <span class="n">entry</span><span class="p">.</span><span class="nf">date</span><span class="p">,</span>
+          <span class="ss">:categories</span> <span class="o">=&gt;</span> <span class="n">entry</span><span class="p">.</span><span class="nf">categories</span><span class="p">,</span>
+          <span class="ss">:body</span> <span class="o">=&gt;</span> <span class="n">entry</span><span class="p">.</span><span class="nf">body</span>
+        <span class="p">}</span>
+        
+        <span class="nb">puts</span> <span class="s1">'Indexed '</span> <span class="o">&lt;&lt;</span> <span class="s2">"</span><span class="si">#{</span><span class="n">entry</span><span class="p">.</span><span class="nf">title</span><span class="si">}</span><span class="s2"> (</span><span class="si">#{</span><span class="n">entry</span><span class="p">.</span><span class="nf">url</span><span class="si">}</span><span class="s2">)"</span>
+      <span class="k">end</span>
+      
+      <span class="n">json</span> <span class="o">=</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">generate</span><span class="p">({</span><span class="ss">:entries</span> <span class="o">=&gt;</span> <span class="n">index</span><span class="p">})</span>
+      
+      <span class="c1"># Create destination directory if it doesn't exist yet. Otherwise, we cannot write our file there.</span>
+      <span class="no">Dir</span><span class="o">::</span><span class="n">mkdir</span><span class="p">(</span><span class="n">site</span><span class="p">.</span><span class="nf">dest</span><span class="p">)</span> <span class="k">unless</span> <span class="no">File</span><span class="p">.</span><span class="nf">directory?</span><span class="p">(</span><span class="n">site</span><span class="p">.</span><span class="nf">dest</span><span class="p">)</span>
+      
+      <span class="c1"># File I/O: create search.json file and write out pretty-printed JSON</span>
+      <span class="n">filename</span> <span class="o">=</span> <span class="s1">'search.json'</span>
+      
+      <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">site</span><span class="p">.</span><span class="nf">dest</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">file</span><span class="o">|</span>
+        <span class="n">file</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
+      <span class="k">end</span>
+
+      <span class="c1"># Keep the search.json file from being cleaned by Jekyll</span>
+      <span class="n">site</span><span class="p">.</span><span class="nf">static_files</span> <span class="o">&lt;&lt;</span> <span class="no">Jekyll</span><span class="o">::</span><span class="no">SearchIndexFile</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">site</span><span class="p">.</span><span class="nf">dest</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+    <span class="k">end</span>
+
+  <span class="kp">private</span>
+    
+    <span class="c1"># load the stopwords file</span>
+    <span class="k">def</span> <span class="nf">stopwords</span>
+      <span class="vi">@stopwords</span> <span class="o">||=</span> <span class="no">IO</span><span class="p">.</span><span class="nf">readlines</span><span class="p">(</span><span class="vi">@stopwords_file</span><span class="p">).</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">l</span><span class="o">|</span> <span class="n">l</span><span class="p">.</span><span class="nf">strip</span> <span class="p">}</span>
+    <span class="k">end</span>
+    
+    <span class="k">def</span> <span class="nf">pages_to_index</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
+      <span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
+      
+      <span class="c1"># deep copy pages</span>
+      <span class="n">site</span><span class="p">.</span><span class="nf">pages</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span><span class="o">|</span><span class="n">page</span><span class="o">|</span> <span class="n">items</span> <span class="o">&lt;&lt;</span> <span class="n">page</span><span class="p">.</span><span class="nf">dup</span> <span class="p">}</span>
+      <span class="n">site</span><span class="p">.</span><span class="nf">posts</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span><span class="o">|</span><span class="n">post</span><span class="o">|</span> <span class="n">items</span> <span class="o">&lt;&lt;</span> <span class="n">post</span><span class="p">.</span><span class="nf">dup</span> <span class="p">}</span>
+
+      <span class="c1"># only process files that will be converted to .html and only non excluded files </span>
+      <span class="n">items</span><span class="p">.</span><span class="nf">select!</span> <span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">i</span><span class="p">.</span><span class="nf">output_ext</span> <span class="o">==</span> <span class="s1">'.html'</span> <span class="o">&amp;&amp;</span> <span class="o">!</span> <span class="vi">@excludes</span><span class="p">.</span><span class="nf">any?</span> <span class="p">{</span><span class="o">|</span><span class="n">s</span><span class="o">|</span> <span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="nf">url</span> <span class="o">=~</span> <span class="no">Regexp</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="o">!=</span> <span class="kp">nil</span> <span class="p">}</span> <span class="p">}</span> 
+      <span class="n">items</span><span class="p">.</span><span class="nf">reject!</span> <span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">i</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'exclude_from_search'</span><span class="p">]</span> <span class="p">}</span> 
+      
+      <span class="n">items</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+<span class="nb">require</span> <span class="s1">'nokogiri'</span>
+
+<span class="k">module</span> <span class="nn">Jekyll</span>
+
+  <span class="k">class</span> <span class="nc">PageRenderer</span>
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">site</span><span class="p">)</span>
+      <span class="vi">@site</span> <span class="o">=</span> <span class="n">site</span>
+    <span class="k">end</span>
+    
+    <span class="c1"># render the item, parse the output and get all text inside &lt;p&gt; elements</span>
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+      <span class="n">item</span><span class="p">.</span><span class="nf">render</span><span class="p">({},</span> <span class="vi">@site</span><span class="p">.</span><span class="nf">site_payload</span><span class="p">)</span>
+      <span class="n">doc</span> <span class="o">=</span> <span class="no">Nokogiri</span><span class="o">::</span><span class="no">HTML</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="nf">output</span><span class="p">)</span>
+      <span class="n">paragraphs</span> <span class="o">=</span> <span class="n">doc</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="s1">'//text()'</span><span class="p">).</span><span class="nf">map</span> <span class="p">{</span><span class="o">|</span><span class="n">t</span><span class="o">|</span> <span class="n">t</span><span class="p">.</span><span class="nf">content</span> <span class="p">}</span>
+      <span class="n">paragraphs</span> <span class="o">=</span> <span class="n">paragraphs</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">" "</span><span class="p">).</span><span class="nf">gsub</span><span class="p">(</span><span class="s2">"</span><span class="se">\r</span><span class="s2">"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">).</span><span class="nf">gsub</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">).</span><span class="nf">gsub</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">).</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/\s+/</span><span class="p">,</span> <span class="s2">" "</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+  
+<span class="k">end</span>
+<span class="nb">require</span> <span class="s1">'nokogiri'</span>
+
+<span class="k">module</span> <span class="nn">Jekyll</span>
+  
+  <span class="k">class</span> <span class="nc">SearchEntry</span>
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">create</span><span class="p">(</span><span class="n">page_or_post</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">create_from_post</span><span class="p">(</span><span class="n">page_or_post</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span> <span class="k">if</span> <span class="n">page_or_post</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">Jekyll</span><span class="o">::</span><span class="no">Post</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">create_from_page</span><span class="p">(</span><span class="n">page_or_post</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span> <span class="k">if</span> <span class="n">page_or_post</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">Jekyll</span><span class="o">::</span><span class="no">Page</span><span class="p">)</span>
+      <span class="k">raise</span> <span class="s1">'Not supported'</span>
+    <span class="k">end</span>
+    
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">create_from_page</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span>
+      <span class="n">title</span><span class="p">,</span> <span class="n">url</span> <span class="o">=</span> <span class="n">extract_title_and_url</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+      <span class="n">body</span> <span class="o">=</span> <span class="n">renderer</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+      <span class="n">date</span> <span class="o">=</span> <span class="kp">nil</span>
+      <span class="n">categories</span> <span class="o">=</span> <span class="p">[]</span>
+      
+      <span class="no">SearchEntry</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">categories</span><span class="p">,</span> <span class="n">body</span><span class="p">)</span>
+    <span class="k">end</span>
+    
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">create_from_post</span><span class="p">(</span><span class="n">post</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span>
+      <span class="n">title</span><span class="p">,</span> <span class="n">url</span> <span class="o">=</span> <span class="n">extract_title_and_url</span><span class="p">(</span><span class="n">post</span><span class="p">)</span>
+      <span class="n">body</span> <span class="o">=</span> <span class="n">renderer</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="n">post</span><span class="p">)</span>
+      <span class="n">date</span> <span class="o">=</span> <span class="n">post</span><span class="p">.</span><span class="nf">date</span>
+      <span class="n">categories</span> <span class="o">=</span> <span class="n">post</span><span class="p">.</span><span class="nf">categories</span>
+      
+      <span class="no">SearchEntry</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">categories</span><span class="p">,</span> <span class="n">body</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">extract_title_and_url</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+      <span class="n">data</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="nf">to_liquid</span>
+      <span class="p">[</span> <span class="n">data</span><span class="p">[</span><span class="s1">'title'</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">'url'</span><span class="p">]</span> <span class="p">]</span>
+    <span class="k">end</span>
+
+    <span class="kp">attr_reader</span> <span class="ss">:title</span><span class="p">,</span> <span class="ss">:url</span><span class="p">,</span> <span class="ss">:date</span><span class="p">,</span> <span class="ss">:categories</span><span class="p">,</span> <span class="ss">:body</span>
+    
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">categories</span><span class="p">,</span> <span class="n">body</span><span class="p">)</span>
+      <span class="vi">@title</span><span class="p">,</span> <span class="vi">@url</span><span class="p">,</span> <span class="vi">@date</span><span class="p">,</span> <span class="vi">@categories</span><span class="p">,</span> <span class="vi">@body</span> <span class="o">=</span> <span class="n">title</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">categories</span><span class="p">,</span> <span class="n">body</span>
+    <span class="k">end</span>
+    
+    <span class="k">def</span> <span class="nf">strip_index_suffix_from_url!</span>
+      <span class="vi">@url</span><span class="p">.</span><span class="nf">gsub!</span><span class="p">(</span><span class="sr">/index\.html$/</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+    <span class="k">end</span>
+    
+    <span class="c1"># remove anything that is in the stop words list from the text to be indexed</span>
+    <span class="k">def</span> <span class="nf">strip_stopwords!</span><span class="p">(</span><span class="n">stopwords</span><span class="p">,</span> <span class="n">min_length</span><span class="p">)</span>
+      <span class="vi">@body</span> <span class="o">=</span> <span class="vi">@body</span><span class="p">.</span><span class="nf">split</span><span class="p">.</span><span class="nf">delete_if</span><span class="p">()</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> 
+        <span class="n">t</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="nf">downcase</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/[^a-z]/</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+        <span class="n">t</span><span class="p">.</span><span class="nf">length</span> <span class="o">&lt;</span> <span class="n">min_length</span> <span class="o">||</span> <span class="n">stopwords</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+      <span class="k">end</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+    <span class="k">end</span>    
+  <span class="k">end</span>
+<span class="k">end</span>
+<span class="k">module</span> <span class="nn">Jekyll</span>
+  
+  <span class="k">class</span> <span class="nc">SearchIndexFile</span> <span class="o">&lt;</span> <span class="no">StaticFile</span>
+    <span class="c1"># Override write as the search.json index file has already been created </span>
+    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="n">dest</span><span class="p">)</span>
+      <span class="kp">true</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+  
+<span class="k">end</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>The content from all Jekyll posts and pages will be indexed to a <code class="highlighter-rouge">search.json</code> file ready for lunr.js to consume. This happens each time the site is generated.</p>
+
+<h4 id="create-a-jquery-plugin-to-search-the-json-log">2. Create a jQuery plugin to search the JSON log.</h4>
+<p>(I manage all of my dependencies using Bower).</p>
+
+<p>The next step is to create a jQuery plugin to handle the configuration of lunr.js with the search index JSON data that was generated.</p>
+
+<p>Dependencies for the jQuery plugin are as follows.</p>
+
+<ul>
+  <li><a href="http://jquery.com">jQuery</a></li>
+  <li><a href="http://lunrjs.com">lunr.js</a></li>
+  <li><a href="https://github.com/janl/mustache.js">Mustache.js</a></li>
+  <li><a href="http://blog.stevenlevithan.com/archives/date-time-format">date.format.js</a></li>
+  <li><a href="http://medialize.github.com/URI.js/">URI.js</a></li>
+</ul>
+
+<p>A pre-built version of the jQuery plugin, along with all of the above dependencies, concatenated and minified is available from at <a href="https://github.com/slashdotdash/jekyll-lunr-js-search/blob/master/build/search.min.js">build/search.min.js</a>.</p>
+
+<ol>
+  <li>Create a file <code class="highlighter-rouge">js/jquery.lunr.search.js</code> to your Jekyll site’s JavaScript directory. And add this code:</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178</pre></td><td class="code"><pre><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="err">$</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="n">var</span> <span class="n">debounce</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="n">timeout</span><span class="p">;</span>
+    <span class="n">var</span> <span class="n">slice</span> <span class="o">=</span> <span class="no">Array</span><span class="p">.</span><span class="nf">prototype</span><span class="p">.</span><span class="nf">slice</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">var</span> <span class="n">args</span> <span class="o">=</span> <span class="n">slice</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="n">arguments</span><span class="p">),</span>
+          <span class="n">ctx</span> <span class="o">=</span> <span class="n">this</span><span class="p">;</span>
+
+      <span class="n">clearTimeout</span><span class="p">(</span><span class="n">timeout</span><span class="p">);</span>
+
+      <span class="n">timeout</span> <span class="o">=</span> <span class="n">setTimeout</span><span class="p">(</span><span class="n">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="n">fn</span><span class="p">.</span><span class="nf">apply</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">args</span><span class="p">);</span>
+      <span class="p">},</span> <span class="mi">100</span><span class="p">);</span>
+    <span class="p">};</span>
+  <span class="p">};</span>
+  
+  <span class="sr">//</span> <span class="n">parse</span> <span class="n">a</span> <span class="n">date</span> <span class="k">in</span> <span class="n">yyyy</span><span class="o">-</span><span class="n">mm</span><span class="o">-</span><span class="n">dd</span> <span class="nb">format</span>
+  <span class="n">var</span> <span class="n">parseDate</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">input</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="n">parts</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">/(\d+)/</span><span class="n">g</span><span class="p">);</span>
+    <span class="k">return</span> <span class="kp">new</span> <span class="no">Date</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">parts</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span> <span class="sr">//</span> <span class="n">months</span> <span class="n">are</span> <span class="mi">0</span><span class="o">-</span><span class="n">based</span>
+  <span class="p">};</span>
+  
+  <span class="n">var</span> <span class="no">LunrSearch</span> <span class="o">=</span> <span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">function</span> <span class="no">LunrSearch</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">this</span><span class="o">.</span><span class="vg">$elem</span> <span class="o">=</span> <span class="n">elem</span><span class="p">;</span>      
+      <span class="n">this</span><span class="o">.</span><span class="vg">$results</span> <span class="o">=</span> <span class="err">$</span><span class="p">(</span><span class="n">options</span><span class="p">.</span><span class="nf">results</span><span class="p">);</span>
+      <span class="n">this</span><span class="o">.</span><span class="vg">$entries</span> <span class="o">=</span> <span class="err">$</span><span class="p">(</span><span class="n">options</span><span class="p">.</span><span class="nf">entries</span><span class="p">,</span> <span class="n">this</span><span class="o">.</span><span class="vg">$results</span><span class="p">);</span>
+      <span class="n">this</span><span class="p">.</span><span class="nf">indexDataUrl</span> <span class="o">=</span> <span class="n">options</span><span class="p">.</span><span class="nf">indexUrl</span><span class="p">;</span>
+      <span class="n">this</span><span class="p">.</span><span class="nf">index</span> <span class="o">=</span> <span class="n">this</span><span class="p">.</span><span class="nf">createIndex</span><span class="p">();</span>
+      <span class="n">this</span><span class="p">.</span><span class="nf">template</span> <span class="o">=</span> <span class="n">this</span><span class="p">.</span><span class="nf">compileTemplate</span><span class="p">(</span><span class="err">$</span><span class="p">(</span><span class="n">options</span><span class="p">.</span><span class="nf">template</span><span class="p">));</span>
+      
+      <span class="n">this</span><span class="p">.</span><span class="nf">initialize</span><span class="p">();</span>
+    <span class="p">}</span>
+        
+    <span class="no">LunrSearch</span><span class="p">.</span><span class="nf">prototype</span><span class="p">.</span><span class="nf">initialize</span> <span class="o">=</span> <span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">var</span> <span class="nb">self</span> <span class="o">=</span> <span class="n">this</span><span class="p">;</span>
+      
+      <span class="n">this</span><span class="p">.</span><span class="nf">loadIndexData</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">self</span><span class="p">.</span><span class="nf">populateIndex</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+        <span class="nb">self</span><span class="p">.</span><span class="nf">populateSearchFromQuery</span><span class="p">();</span>
+        <span class="nb">self</span><span class="p">.</span><span class="nf">bindKeypress</span><span class="p">();</span>
+      <span class="p">});</span>
+    <span class="p">};</span>
+    
+    <span class="sr">//</span> <span class="n">create</span> <span class="n">lunr</span><span class="p">.</span><span class="nf">js</span> <span class="n">search</span> <span class="n">index</span> <span class="n">specifying</span> <span class="n">that</span> <span class="n">we</span> <span class="n">want</span> <span class="n">to</span> <span class="n">index</span> <span class="n">the</span> <span class="n">title</span> <span class="n">and</span> <span class="n">body</span> <span class="n">fields</span> <span class="n">of</span> <span class="n">documents</span><span class="o">.</span>
+    <span class="no">LunrSearch</span><span class="p">.</span><span class="nf">prototype</span><span class="p">.</span><span class="nf">createIndex</span> <span class="o">=</span> <span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">lunr</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">this</span><span class="p">.</span><span class="nf">field</span><span class="p">(</span><span class="s1">'title'</span><span class="p">,</span> <span class="p">{</span> <span class="ss">boost: </span><span class="mi">10</span> <span class="p">});</span>
+        <span class="n">this</span><span class="p">.</span><span class="nf">field</span><span class="p">(</span><span class="s1">'body'</span><span class="p">);</span>
+        <span class="n">this</span><span class="p">.</span><span class="nf">ref</span><span class="p">(</span><span class="s1">'id'</span><span class="p">);</span>      
+      <span class="p">});</span>
+    <span class="p">};</span>
+    
+    <span class="sr">//</span> <span class="n">compile</span> <span class="n">search</span> <span class="n">results</span> <span class="n">template</span>
+    <span class="no">LunrSearch</span><span class="p">.</span><span class="nf">prototype</span><span class="p">.</span><span class="nf">compileTemplate</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="vg">$template</span><span class="p">)</span> <span class="p">{</span>      
+      <span class="n">var</span> <span class="n">template</span> <span class="o">=</span> <span class="vg">$template</span><span class="p">.</span><span class="nf">text</span><span class="p">();</span>
+      <span class="no">Mustache</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">template</span><span class="p">);</span>
+      <span class="k">return</span> <span class="n">function</span> <span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">partials</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="no">Mustache</span><span class="p">.</span><span class="nf">render</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">partials</span><span class="p">);</span>
+      <span class="p">};</span>
+    <span class="p">};</span>
+        
+    <span class="sr">//</span> <span class="nb">load</span> <span class="n">the</span> <span class="n">search</span> <span class="n">index</span> <span class="n">data</span>
+    <span class="no">LunrSearch</span><span class="p">.</span><span class="nf">prototype</span><span class="p">.</span><span class="nf">loadIndexData</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span> <span class="p">{</span>
+      <span class="vg">$.</span><span class="n">getJSON</span><span class="p">(</span><span class="n">this</span><span class="p">.</span><span class="nf">indexDataUrl</span><span class="p">,</span> <span class="n">callback</span><span class="p">);</span>
+    <span class="p">};</span>
+    
+    <span class="no">LunrSearch</span><span class="p">.</span><span class="nf">prototype</span><span class="p">.</span><span class="nf">populateIndex</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">var</span> <span class="n">index</span> <span class="o">=</span> <span class="n">this</span><span class="p">.</span><span class="nf">index</span><span class="p">;</span>
+          
+      <span class="sr">//</span> <span class="nb">format</span> <span class="n">the</span> <span class="n">raw</span> <span class="n">json</span> <span class="n">into</span> <span class="n">a</span> <span class="n">form</span> <span class="n">that</span> <span class="n">is</span> <span class="n">simpler</span> <span class="n">to</span> <span class="n">work</span> <span class="n">with</span>
+      <span class="n">this</span><span class="p">.</span><span class="nf">entries</span> <span class="o">=</span> <span class="vg">$.</span><span class="n">map</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="nf">entries</span><span class="p">,</span> <span class="n">this</span><span class="p">.</span><span class="nf">createEntry</span><span class="p">);</span>
+
+      <span class="vg">$.</span><span class="n">each</span><span class="p">(</span><span class="n">this</span><span class="p">.</span><span class="nf">entries</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">entry</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">index</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">entry</span><span class="p">);</span>
+      <span class="p">});</span>
+    <span class="p">};</span>
+
+    <span class="no">LunrSearch</span><span class="p">.</span><span class="nf">prototype</span><span class="p">.</span><span class="nf">createEntry</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">var</span> <span class="n">entry</span> <span class="o">=</span> <span class="vg">$.</span><span class="kp">extend</span><span class="p">({</span>
+        <span class="ss">id: </span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+      <span class="p">},</span> <span class="n">raw</span><span class="p">);</span>
+      
+      <span class="sr">//</span> <span class="kp">include</span> <span class="n">pub</span> <span class="n">date</span> <span class="k">for</span> <span class="n">posts</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">raw</span><span class="p">.</span><span class="nf">date</span><span class="p">)</span> <span class="p">{</span>
+        <span class="vg">$.</span><span class="kp">extend</span><span class="p">(</span><span class="n">entry</span><span class="p">,</span> <span class="p">{</span>
+          <span class="ss">date: </span><span class="n">parseDate</span><span class="p">(</span><span class="n">raw</span><span class="p">.</span><span class="nf">date</span><span class="p">),</span>
+          <span class="ss">pubdate: </span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="sr">//</span> <span class="no">HTML5</span> <span class="n">pubdate</span>
+            <span class="k">return</span> <span class="n">dateFormat</span><span class="p">(</span><span class="n">parseDate</span><span class="p">(</span><span class="n">raw</span><span class="p">.</span><span class="nf">date</span><span class="p">),</span> <span class="s1">'yyyy-mm-dd'</span><span class="p">);</span>
+          <span class="p">},</span>
+          <span class="ss">displaydate: </span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="sr">//</span> <span class="n">only</span> <span class="k">for</span> <span class="n">posts</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="nf">g</span><span class="o">.</span> <span class="no">Oct</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2012</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">dateFormat</span><span class="p">(</span><span class="n">parseDate</span><span class="p">(</span><span class="n">raw</span><span class="p">.</span><span class="nf">date</span><span class="p">),</span> <span class="s1">'mmm dd, yyyy'</span><span class="p">);</span>
+          <span class="p">}</span>
+        <span class="p">});</span>
+      <span class="p">}</span>
+      
+      <span class="k">return</span> <span class="n">entry</span><span class="p">;</span>
+    <span class="p">};</span>
+    
+    <span class="no">LunrSearch</span><span class="p">.</span><span class="nf">prototype</span><span class="p">.</span><span class="nf">bindKeypress</span> <span class="o">=</span> <span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">var</span> <span class="nb">self</span> <span class="o">=</span> <span class="n">this</span><span class="p">;</span>
+      <span class="n">var</span> <span class="n">oldValue</span> <span class="o">=</span> <span class="n">this</span><span class="o">.</span><span class="vg">$elem</span><span class="p">.</span><span class="nf">val</span><span class="p">();</span>
+
+      <span class="n">this</span><span class="o">.</span><span class="vg">$elem</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="s1">'keyup'</span><span class="p">,</span> <span class="n">debounce</span><span class="p">(</span><span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">var</span> <span class="n">newValue</span> <span class="o">=</span> <span class="nb">self</span><span class="o">.</span><span class="vg">$elem</span><span class="p">.</span><span class="nf">val</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">newValue</span> <span class="o">!==</span> <span class="n">oldValue</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nb">self</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="n">newValue</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">oldValue</span> <span class="o">=</span> <span class="n">newValue</span><span class="p">;</span>
+      <span class="p">}));</span>
+    <span class="p">};</span>
+    
+    <span class="no">LunrSearch</span><span class="p">.</span><span class="nf">prototype</span><span class="p">.</span><span class="nf">search</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">query</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">var</span> <span class="n">entries</span> <span class="o">=</span> <span class="n">this</span><span class="p">.</span><span class="nf">entries</span><span class="p">;</span>
+      
+      <span class="k">if</span> <span class="p">(</span><span class="n">query</span><span class="p">.</span><span class="nf">length</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="vg">$results</span><span class="p">.</span><span class="nf">hide</span><span class="p">();</span>
+        <span class="n">this</span><span class="o">.</span><span class="vg">$entries</span><span class="p">.</span><span class="nf">empty</span><span class="p">();</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">var</span> <span class="n">results</span> <span class="o">=</span> <span class="vg">$.</span><span class="n">map</span><span class="p">(</span><span class="n">this</span><span class="p">.</span><span class="nf">index</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="n">query</span><span class="p">),</span> <span class="n">function</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="vg">$.</span><span class="n">grep</span><span class="p">(</span><span class="n">entries</span><span class="p">,</span> <span class="n">function</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">entry</span><span class="p">.</span><span class="nf">id</span> <span class="o">===</span> <span class="n">parseInt</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="nf">ref</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="p">})[</span><span class="mi">0</span><span class="p">];</span>
+        <span class="p">});</span>
+        
+        <span class="n">this</span><span class="p">.</span><span class="nf">displayResults</span><span class="p">(</span><span class="n">results</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+    
+    <span class="no">LunrSearch</span><span class="p">.</span><span class="nf">prototype</span><span class="p">.</span><span class="nf">displayResults</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">entries</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">var</span> <span class="vg">$entries</span> <span class="o">=</span> <span class="n">this</span><span class="o">.</span><span class="vg">$entries</span><span class="p">,</span>
+        <span class="vg">$results</span> <span class="o">=</span> <span class="n">this</span><span class="o">.</span><span class="vg">$results</span><span class="p">;</span>
+        
+      <span class="vg">$entries</span><span class="p">.</span><span class="nf">empty</span><span class="p">();</span>
+      
+      <span class="k">if</span> <span class="p">(</span><span class="n">entries</span><span class="p">.</span><span class="nf">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="vg">$entries</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="s1">'&lt;p&gt;Nothing found.&lt;/p&gt;'</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="vg">$entries</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">this</span><span class="p">.</span><span class="nf">template</span><span class="p">({</span><span class="ss">entries: </span><span class="n">entries</span><span class="p">}));</span>
+      <span class="p">}</span>
+      
+      <span class="vg">$results</span><span class="p">.</span><span class="nf">show</span><span class="p">();</span>
+    <span class="p">};</span>
+    
+    <span class="sr">//</span> <span class="no">Populate</span> <span class="n">the</span> <span class="n">search</span> <span class="n">input</span> <span class="n">with</span> <span class="s1">'q'</span> <span class="n">querystring</span> <span class="n">parameter</span> <span class="k">if</span> <span class="n">set</span>
+    <span class="no">LunrSearch</span><span class="p">.</span><span class="nf">prototype</span><span class="p">.</span><span class="nf">populateSearchFromQuery</span> <span class="o">=</span> <span class="n">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">var</span> <span class="n">uri</span> <span class="o">=</span> <span class="kp">new</span> <span class="no">URI</span><span class="p">(</span><span class="n">window</span><span class="p">.</span><span class="nf">location</span><span class="p">.</span><span class="nf">search</span><span class="p">.</span><span class="nf">toString</span><span class="p">());</span>
+      <span class="n">var</span> <span class="n">queryString</span> <span class="o">=</span> <span class="n">uri</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="kp">true</span><span class="p">);</span>
+
+      <span class="k">if</span> <span class="p">(</span><span class="n">queryString</span><span class="p">.</span><span class="nf">hasOwnProperty</span><span class="p">(</span><span class="s1">'q'</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">this</span><span class="o">.</span><span class="vg">$elem</span><span class="p">.</span><span class="nf">val</span><span class="p">(</span><span class="n">queryString</span><span class="p">.</span><span class="nf">q</span><span class="p">);</span>
+        <span class="n">this</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="n">queryString</span><span class="p">.</span><span class="nf">q</span><span class="p">.</span><span class="nf">toString</span><span class="p">());</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+    
+    <span class="k">return</span> <span class="no">LunrSearch</span><span class="p">;</span>
+  <span class="p">})();</span>
+
+  <span class="vg">$.</span><span class="n">fn</span><span class="p">.</span><span class="nf">lunrSearch</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">options</span><span class="p">)</span> <span class="p">{</span>
+    <span class="sr">//</span> <span class="n">apply</span> <span class="n">default</span> <span class="n">options</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="vg">$.</span><span class="kp">extend</span><span class="p">({},</span> <span class="vg">$.</span><span class="n">fn</span><span class="p">.</span><span class="nf">lunrSearch</span><span class="p">.</span><span class="nf">defaults</span><span class="p">,</span> <span class="n">options</span><span class="p">);</span>      
+
+    <span class="sr">//</span> <span class="n">create</span> <span class="n">search</span> <span class="n">object</span>
+    <span class="kp">new</span> <span class="no">LunrSearch</span><span class="p">(</span><span class="n">this</span><span class="p">,</span> <span class="n">options</span><span class="p">);</span>
+    
+    <span class="k">return</span> <span class="n">this</span><span class="p">;</span>
+  <span class="p">};</span>
+  
+  <span class="vg">$.</span><span class="n">fn</span><span class="p">.</span><span class="nf">lunrSearch</span><span class="p">.</span><span class="nf">defaults</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">indexUrl</span>  <span class="p">:</span> <span class="s1">'/search.json'</span><span class="p">,</span> <span class="sr">//</span> <span class="no">Url</span> <span class="k">for</span> <span class="n">the</span> <span class="p">.</span><span class="nf">json</span> <span class="n">file</span> <span class="n">containing</span> <span class="n">search</span> <span class="n">index</span> <span class="n">source</span> <span class="n">data</span> <span class="p">(</span><span class="ss">containing: </span><span class="n">title</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">body</span><span class="p">)</span>
+    <span class="n">results</span>   <span class="p">:</span> <span class="s1">'#search-results'</span><span class="p">,</span> <span class="sr">//</span> <span class="n">selector</span> <span class="k">for</span> <span class="n">containing</span> <span class="n">search</span> <span class="n">results</span> <span class="n">element</span>
+    <span class="n">entries</span>   <span class="p">:</span> <span class="s1">'.entries'</span><span class="p">,</span> <span class="sr">//</span> <span class="n">selector</span> <span class="k">for</span> <span class="n">search</span> <span class="n">entries</span> <span class="n">containing</span> <span class="n">element</span> <span class="p">(</span><span class="n">contained</span> <span class="n">within</span> <span class="n">results</span> <span class="n">above</span><span class="p">)</span>
+    <span class="n">template</span>  <span class="p">:</span> <span class="s1">'#search-results-template'</span> <span class="o">/</span><span class="sr">/ selector for Mustache.js template
+  };
+})(jQuery);</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<ol>
+  <li>Add a script reference to the bottom of your nominated search page for <code class="highlighter-rouge">jquery.lunr.search.js</code> and each of the dependencies outlined above.</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre><span class="o">&lt;</span><span class="n">script</span> <span class="n">src</span><span class="o">=</span><span class="s2">"/js/jquery-1.9.1.min.js"</span> <span class="n">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="n">charset</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="o">&gt;&lt;</span><span class="sr">/script&gt;
+&lt;script src="/</span><span class="n">js</span><span class="o">/</span><span class="n">lunr</span><span class="p">.</span><span class="nf">min</span><span class="p">.</span><span class="nf">js</span><span class="s2">" type="</span><span class="n">text</span><span class="o">/</span><span class="n">javascript</span><span class="s2">" charset="</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="s2">"&gt;&lt;/script&gt;
+&lt;script src="</span><span class="o">/</span><span class="n">js</span><span class="o">/</span><span class="n">mustache</span><span class="p">.</span><span class="nf">js</span><span class="s2">" type="</span><span class="n">text</span><span class="o">/</span><span class="n">javascript</span><span class="s2">" charset="</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="s2">"&gt;&lt;/script&gt;
+&lt;script src="</span><span class="o">/</span><span class="n">js</span><span class="o">/</span><span class="n">date</span><span class="p">.</span><span class="nf">format</span><span class="p">.</span><span class="nf">js</span><span class="s2">" type="</span><span class="n">text</span><span class="o">/</span><span class="n">javascript</span><span class="s2">" charset="</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="s2">"&gt;&lt;/script&gt;
+&lt;script src="</span><span class="o">/</span><span class="n">js</span><span class="o">/</span><span class="no">URI</span><span class="p">.</span><span class="nf">min</span><span class="p">.</span><span class="nf">js</span><span class="s2">" type="</span><span class="n">text</span><span class="o">/</span><span class="n">javascript</span><span class="s2">" charset="</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="s2">"&gt;&lt;/script&gt;
+&lt;script src="</span><span class="o">/</span><span class="n">js</span><span class="o">/</span><span class="n">jquery</span><span class="p">.</span><span class="nf">lunr</span><span class="p">.</span><span class="nf">search</span><span class="p">.</span><span class="nf">js</span><span class="s2">" type="</span><span class="n">text</span><span class="o">/</span><span class="n">javascript</span><span class="s2">" charset="</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="s2">"&gt;&lt;/script&gt;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Ideally you would concatenate, minify and optimise these six <code class="highlighter-rouge">.js</code> files using uglify/Google closure/etc to produce a single <code class="highlighter-rouge">search.min.js</code> file to reference (or use the pre-built script as described in 2.1 above).</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="o">&lt;</span><span class="n">script</span> <span class="n">src</span><span class="o">=</span><span class="s2">"/js/search.min.js"</span> <span class="n">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="n">charset</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="o">&gt;&lt;</span><span class="sr">/script&gt;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h4 id="add-a-search-form-with-a-query-input-as-shown">4. Add a search form with a query input as shown.</h4>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="n">section</span><span class="p">.</span><span class="nf">top</span><span class="o">-</span><span class="n">bar</span><span class="o">-</span><span class="n">section</span>
+  <span class="sr">/! Right Nav Section
+  ul.right
+    li 
+      #search
+        form action="/se</span><span class="n">arch</span><span class="s2">" method="</span><span class="n">get</span><span class="s2">" 
+          input#search-query autocomplete="</span><span class="n">off</span><span class="s2">" name="</span><span class="n">q</span><span class="s2">" placeholder="</span><span class="no">Search</span><span class="s2">" type="</span><span class="n">text</span><span class="s2">" </span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Search happens as you type, once at least three characters have been entered.</p>
+
+<p>Providing the form action and specifying the get method allows the user to hit return/enter to also submit the search.
+Amend the form’s action URL as necessary for the search page on your own site.</p>
+
+<h4 id="add-an-element-to-contain-the-list-of-search-result-entries">5. Add an element to contain the list of search result entries.</h4>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="n">section</span><span class="c1">#search-results</span>
+  <span class="p">.</span><span class="nf">row</span>
+    <span class="p">.</span><span class="nf">large</span><span class="o">-</span><span class="mi">12</span><span class="p">.</span><span class="nf">columns</span>
+      <span class="n">h2</span> <span class="no">Search</span> <span class="n">results</span>
+      <span class="n">ul</span><span class="p">.</span><span class="nf">entries</span><span class="p">.</span><span class="nf">posts</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>This may be initially hidden as the plugin will show the element when searching.</p>
+
+<h4 id="create-a-mustache-template-to-display-the-search-results">6. Create a Mustache template to display the search results.</h4>
+<p>(I’m using slim).</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="o">&lt;</span><span class="n">script</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"search-results-template"</span> <span class="n">type</span><span class="o">=</span><span class="s2">"text/mustache"</span><span class="o">&gt;</span>
+  <span class="o">|</span> <span class="p">{{</span><span class="c1">#entries}}</span>
+    <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span>
+      <span class="p">{{</span><span class="c1">#date}}Post&amp;nbsp;&amp;raquo;&amp;nbsp;&lt;span&gt;&lt;time datetime="{{pubdate}}" pubdate&gt;{{displaydate}}&lt;/time&gt;&amp;nbsp;&amp;raquo;&amp;nbsp;&lt;/span&gt;{{/date}}{{^date}}Page&amp;nbsp;&amp;raquo;&amp;nbsp;{{/date}}</span>
+        <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"{{url}}"</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">title</span><span class="p">}}</span><span class="o">&lt;</span><span class="sr">/a&gt;
+    &lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+  <span class="o">|</span> <span class="p">{{</span><span class="sr">/entries}} 
+&lt;/s</span><span class="n">cript</span><span class="o">&gt;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>*NB - I had to wrap this code in a raw tag to ensure the Mustache tags are not stripped out by Jekyll.</p>
+
+<p>The fields available to display are as follows.</p>
+
+<h5 id="entries">entries</h5>
+<p>List of search result entries (mandatory).
+##### date
+Raw published date for posts, or null for pages. Can be used to toggle display of the following dates in the template:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="p">{{</span><span class="c1">#date}}has a date{{/date}} </span>
+<span class="p">{{</span><span class="c1">#!date}}no date{{/date}}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h5 id="pubdate">pubdate</h5>
+<p>Post published date, formatted as ‘yyyy-mm-dd’, to be used in a html5 element:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="o">&lt;</span><span class="n">time</span> <span class="n">datetime</span><span class="o">=</span><span class="s2">"{{pubdate}}"</span><span class="o">&gt;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h5 id="displaydate">displaydate</h5>
+<p>Post published date, formatted as ‘mmm dd, yyyy’, such as Oct 12, 2012 (posts only)
+##### title
+Title of the Jekyll page or post.
+##### url
+URL of the Jekyll page or post that can be used to create a hyperlink</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"{{url}}"</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">title</span><span class="p">}}</span><span class="o">&lt;</span><span class="sr">/a&gt;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h4 id="configure-the-jquery-plugin-for-the-search-input-field">7. Configure the jQuery plugin for the search input field.</h4>
+<p>I use Coffeescript.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre><span class="err">$</span> <span class="o">-&gt;</span>
+  <span class="err">$</span><span class="p">(</span><span class="s2">"#search-query"</span><span class="p">).</span><span class="nf">lunrSearch</span>
+    <span class="ss">indexUrl: </span><span class="s2">"/search.json"</span>
+    <span class="ss">results: </span><span class="s2">"#search-results"</span>
+    <span class="ss">entries: </span><span class="s2">".entries"</span>
+    <span class="ss">template: </span><span class="s2">"#search-results-template"</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h4 id="to-exclude-pages-from-the-search-index">8. To exclude pages from the search index.</h4>
+
+<p>Add the following <code class="highlighter-rouge">exclude_from_search</code> setting to any page’s YAML config.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="ss">exclude_from_search: </span><span class="kp">true</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Or add an array of exclusions (as individual regular expressions) to the site’s <code class="highlighter-rouge">_config.yml</code> file.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="ss">lunr_search:
+  excludes: </span><span class="p">[</span><span class="n">rss</span><span class="p">.</span><span class="nf">xml</span><span class="p">,</span> <span class="n">atom</span><span class="p">.</span><span class="nf">xml</span><span class="p">]</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h4 id="stop-words">9. Stop Words</h4>
+
+<p>You can also configure a stopwords file, and a minimum length of word to be included in the index file. This can be done by adding a search block to <code class="highlighter-rouge">_config.yml</code>. The default values are:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="ss">lunr_search:
+  stopwords: </span><span class="s2">"stopwords.txt"</span>
+  <span class="ss">min_length: </span><span class="mi">3</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>The stopwords file must consist of one word per line, in lowercase, without punctuation.</p>
+
+<h4 id="requirements">Requirements</h4>
+
+<p>Requires the following gems:</p>
+
+<ul>
+  <li>json</li>
+  <li>nokogiri</li>
+</ul>
+
+  </article>
+
+</div>
+
+    </main>
+    <footer>
+  &copy; 2015 - Alex Chin
+  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  <ul class="footer__social-icons">
+    
+      <li>
+        <a href="https://www.youtube.com/channel/UC4OFW5Ljzf-5dR8EgJ1zz7g" target="_blank">
+          <i class="fa fa-youtube-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://github.com/alexpchin" target="_blank">
+          <i class="fa fa-github-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://facebook.com/chinternet" target="_blank">
+          <i class="fa fa-facebook-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://twitter.com/alexpchin" target="_blank">
+          <i class="fa fa-twitter-square fa-lg"></i>
+        </a>
+      </li>
+    
+  </ul>
+  Inspired by <a href="http://www.lingscars.com/" target="_blank">LingsCars</a>.
+</footer>
+
+<a class="github-ribbon" href="https://github.com/alexpchin" target="_blank">
+  <img src="/img/fork-me.png" alt="Fork me on Github">
+</a>
+
+  </body>
+</html>

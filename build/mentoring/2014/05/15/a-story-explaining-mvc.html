@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="Z4rloDEPfFKjdvqxnRdVLXrdyJv9LLK2Sl7fDJrPt0Y" />
+  <title>A story explaining MVC</title>
+  <meta name="description" content="MVC stands for:">
+
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Lora" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/app.min.css">
+
+  <link rel="canonical" href="http://www.chinternet.lol/mentoring/2014/05/15/a-story-explaining-mvc.html">
+  <link rel="alternate" type="application/rss+xml" title="Chinternet - I LEARN YOU CODE. Coding tutorials, memes, cute cats, games." href="http://www.chinternet.lol/feed.xml" />
+
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+  <script src="/js/app.min.js" charset="utf-8"></script>
+</head>
+
+  <body>
+    <header class="container">
+  <div class="header__doge">Much learning. So knowledge.</div>
+  <div class="header__nerd">NERD<span>ALERT</span></div>
+  <div class="header__absolute">How bad is absolute positioning???</div>
+  <a class="header__linkedin" href="https://uk.linkedin.com/in/alexpchin" target="_blank">
+    Find me on LinkedIn!
+  </a>
+  <a class="header__click" href="http://alexchin.co.uk" target="_blank">
+    <img src="/img/star.gif" />
+  </a>
+  <img class="header__pikachu" src="/img/pikachu.gif" />
+  <img class="header__thumb" src="/img/thumb.png" />
+  <img class="header__facebook" src="/img/facebook.png" />
+  <img class="header__otter" src="/img/otter.gif" />
+  <img class="header__glitter-cat" src="/img/glitter-cat.gif" />
+  <ul>
+    <li>
+      <img src="/img/alex.gif">
+    </li>
+    <li>
+      <h1 class="blink">
+        <a href="/">Chinternet</a>
+        <span>I learn you code.</span>
+      </h1>
+    </li>
+    <li><img src="/img/alex.gif"></li>
+  </ul>
+  <div class="header__random">
+    <ul>
+      <li><img src="/img/8-bit/345.png"></li>
+      <li><img src="/img/8-bit/380.png"></li>
+      <li><img src="/img/8-bit/381.png"></li>
+      <li><img src="/img/8-bit/382.png"></li>
+      <li><img src="/img/8-bit/383.png"></li>
+      <li><img src="/img/8-bit/384.png"></li>
+      <li><img src="/img/8-bit/385.png"></li>
+      <li><img src="/img/8-bit/386.png"></li>
+      <li><img src="/img/8-bit/387.png"></li>
+      <li><img src="/img/8-bit/388.png"></li>
+      <li><img src="/img/8-bit/389.png"></li>
+      <li><img src="/img/8-bit/390.png"></li>
+      <li><img src="/img/8-bit/391.png"></li>
+      <li><img src="/img/8-bit/392.png"></li>
+      <li><img src="/img/8-bit/393.png"></li>
+      <li><img src="/img/8-bit/394.png"></li>
+      <li><img src="/img/8-bit/395.png"></li>
+      <li><img src="/img/8-bit/396.png"></li>
+      <li><img src="/img/8-bit/397.png"></li>
+      <li><img src="/img/8-bit/398.png"></li>
+      <li><img src="/img/8-bit/399.png"></li>
+      <li><img src="/img/8-bit/400.png"></li>
+      <li><img src="/img/8-bit/401.png"></li>
+      <li><img src="/img/8-bit/402.png"></li>
+      <li><img src="/img/8-bit/403.png"></li>
+      <li><img src="/img/8-bit/404.png"></li>
+      <li><img src="/img/8-bit/405.png"></li>
+      <li><img src="/img/8-bit/406.png"></li>
+    </ul>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="/"><i class="fa fa-home"></i></a></li>
+      
+        
+      
+        
+        <li>
+          <a href="/tutorials/">Tutorials</a>
+        </li>
+        
+      
+      <li class="dont-click">
+        <a href="http://www.alexchin.co.uk" target="_blank">don't click!</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    <main class="container">
+      <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">A story explaining MVC</h1>
+    <p class="post-meta">May 15, 2014</p>
+  </header>
+
+  <article class="post-content">
+    <p>MVC stands for:</p>
+
+<ul>
+  <li>Models</li>
+  <li>Views</li>
+  <li>Controllers</li>
+</ul>
+
+<p>It’s more fun to imagine the explainatin of MVC as a story with “a <strong>fat assistant</strong>, a <strong>skinny manager</strong> and a <strong>good looking sales rep</strong>” (fat model, skinny controller and well designed view) rather than a boring “3-tiered MVC architecture”.</p>
+
+<ul>
+  <li>Models do the grunt work</li>
+  <li>Views are the happy face</li>
+  <li>Controllers are the masterminds behind it all.</li>
+</ul>
+
+<p>Many MVC discussions also ignore the role of the web server. However, it’s important to mention how the controller magically gets created and passed user information. The web server is the shopping small, a  gateway where everything is located, in which people move data back and forth: users never interact with the controller directly ;).</p>
+
+<h2 id="an-mvc-story">An MVC story</h2>
+
+<ul>
+  <li>
+    <p>First, the <strong>browser makes a request</strong>, such as http://alexchin.co.uk/videos/show/15
+&gt; A customer decides they want to buy something from a business.</p>
+  </li>
+  <li>
+    <p>Then the web server (Heroku, 1and1, Amazon etc.) receives the request.
+&gt; The customer actually walks into the business where the business is located (like a shopping center).</p>
+  </li>
+  <li>
+    <p>The server uses <code class="highlighter-rouge">routes.rb</code> (in application &gt; config) to find out which controller to use: the default route pattern is <code class="highlighter-rouge">“/controller/action/id”</code>. In the case above, it’s the “<code class="highlighter-rouge">videos</code>” controller (controllers should be plural), method “<code class="highlighter-rouge">show</code>” with an id of “<code class="highlighter-rouge">15</code>″. The web server then uses the dispatcher to create a new controller, call the action and pass the parameters.
+&gt; The customer asks someone from the shopping center, <em>“I’d like to get a video with an id of 15, where would I find that?”</em> The shopping mall assistant looks at the map given to them by the shop and says, <em>“Over there dude!”</em></p>
+  </li>
+  <li>
+    <p>Controllers do the work of <strong>parsing user requests</strong>, <strong>data submissions</strong>, <strong>cookies</strong>, <strong>sessions</strong> and the “browser stuff”.  In our case (http://alexchin.co.uk/videos/show/15), the show method in the video controller knows it needs to lookup a video. It asks the model to get video 15, and will eventually display it to the user.
+&gt; The customer meets the controller, a slick-haired manager that orders employees around. The controller gives orders without knowing (or caring) how it gets done. When the employ goes to get a video the controller grabs it off the model and then gives it to the customer.</p>
+  </li>
+  <li>
+    <p>Models are Ruby classes that represent objects. They <strong>talk to the database</strong>, <strong>store and validate data</strong>, perform the <strong>business logic</strong> and otherwise do the <strong>heavy lifting</strong>. In our case, the model retrieves video 15 from the database. 
+&gt; Think of models as the people who stack the shelves in the shop. They do all the work to sort and grab things when you need them to. They pick up the objects and sort them out (even more because of Ruby’s use of DSL instead of SQL). You can think of the database as the actual shelves where the products are stored.</p>
+  </li>
+</ul>
+
+<p>*Note from Pavling: “Beware… if the shop assistant gets too fat, he won’t be able to get around the shop. I think the skinny manager might prefer lots of skinny assistants to one fat one…”</p>
+
+<ul>
+  <li>
+    <p>Views are what the user sees: <strong>HTML, CSS, XML, Javascript, JSON</strong>. In our example, the controller gives video 15 to the “show” view. The show view generates the HTML: divs, tables, text, descriptions, footers, etc.
+&gt; Sometimes, you can think of the views as the actual product… But you can also think of a view like a sales rep. They are often responsible for putting up flyers and collecting surveys. However, they work completely at the manager’s direction. Views are merely puppets reading what their manager (the controller) gives them. They don’t know what happens in the back room. (They probably live for the weekend!)</p>
+  </li>
+  <li>
+    <p>The controller also returns the response body (HTML, XML, etc.) &amp; metadata (caching headers, redirects) to the server. The server combines the raw data into a proper HTTP response and sends it to the user.</p>
+  </li>
+</ul>
+
+  </article>
+
+</div>
+
+    </main>
+    <footer>
+  &copy; 2015 - Alex Chin
+  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  <ul class="footer__social-icons">
+    
+      <li>
+        <a href="https://www.youtube.com/channel/UC4OFW5Ljzf-5dR8EgJ1zz7g" target="_blank">
+          <i class="fa fa-youtube-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://github.com/alexpchin" target="_blank">
+          <i class="fa fa-github-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://facebook.com/chinternet" target="_blank">
+          <i class="fa fa-facebook-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://twitter.com/alexpchin" target="_blank">
+          <i class="fa fa-twitter-square fa-lg"></i>
+        </a>
+      </li>
+    
+  </ul>
+  Inspired by <a href="http://www.lingscars.com/" target="_blank">LingsCars</a>.
+</footer>
+
+<a class="github-ribbon" href="https://github.com/alexpchin" target="_blank">
+  <img src="/img/fork-me.png" alt="Fork me on Github">
+</a>
+
+  </body>
+</html>

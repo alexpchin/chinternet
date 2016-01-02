@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="Z4rloDEPfFKjdvqxnRdVLXrdyJv9LLK2Sl7fDJrPt0Y" />
+  <title>Rails Naming Conventions</title>
+  <meta name="description" content="I think the most confusing thing that I have found about Ruby on Rails so far has been the transition from (trying to) write code myself to the use of the fa...">
+
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Lora" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/app.min.css">
+
+  <link rel="canonical" href="http://www.chinternet.lol/mentoring/2014/05/08/rails-naming-conventions.html">
+  <link rel="alternate" type="application/rss+xml" title="Chinternet - I LEARN YOU CODE. Coding tutorials, memes, cute cats, games." href="http://www.chinternet.lol/feed.xml" />
+
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+  <script src="/js/app.min.js" charset="utf-8"></script>
+</head>
+
+  <body>
+    <header class="container">
+  <div class="header__doge">Much learning. So knowledge.</div>
+  <div class="header__nerd">NERD<span>ALERT</span></div>
+  <div class="header__absolute">How bad is absolute positioning???</div>
+  <a class="header__linkedin" href="https://uk.linkedin.com/in/alexpchin" target="_blank">
+    Find me on LinkedIn!
+  </a>
+  <a class="header__click" href="http://alexchin.co.uk" target="_blank">
+    <img src="/img/star.gif" />
+  </a>
+  <img class="header__pikachu" src="/img/pikachu.gif" />
+  <img class="header__thumb" src="/img/thumb.png" />
+  <img class="header__facebook" src="/img/facebook.png" />
+  <img class="header__otter" src="/img/otter.gif" />
+  <img class="header__glitter-cat" src="/img/glitter-cat.gif" />
+  <ul>
+    <li>
+      <img src="/img/alex.gif">
+    </li>
+    <li>
+      <h1 class="blink">
+        <a href="/">Chinternet</a>
+        <span>I learn you code.</span>
+      </h1>
+    </li>
+    <li><img src="/img/alex.gif"></li>
+  </ul>
+  <div class="header__random">
+    <ul>
+      <li><img src="/img/8-bit/345.png"></li>
+      <li><img src="/img/8-bit/380.png"></li>
+      <li><img src="/img/8-bit/381.png"></li>
+      <li><img src="/img/8-bit/382.png"></li>
+      <li><img src="/img/8-bit/383.png"></li>
+      <li><img src="/img/8-bit/384.png"></li>
+      <li><img src="/img/8-bit/385.png"></li>
+      <li><img src="/img/8-bit/386.png"></li>
+      <li><img src="/img/8-bit/387.png"></li>
+      <li><img src="/img/8-bit/388.png"></li>
+      <li><img src="/img/8-bit/389.png"></li>
+      <li><img src="/img/8-bit/390.png"></li>
+      <li><img src="/img/8-bit/391.png"></li>
+      <li><img src="/img/8-bit/392.png"></li>
+      <li><img src="/img/8-bit/393.png"></li>
+      <li><img src="/img/8-bit/394.png"></li>
+      <li><img src="/img/8-bit/395.png"></li>
+      <li><img src="/img/8-bit/396.png"></li>
+      <li><img src="/img/8-bit/397.png"></li>
+      <li><img src="/img/8-bit/398.png"></li>
+      <li><img src="/img/8-bit/399.png"></li>
+      <li><img src="/img/8-bit/400.png"></li>
+      <li><img src="/img/8-bit/401.png"></li>
+      <li><img src="/img/8-bit/402.png"></li>
+      <li><img src="/img/8-bit/403.png"></li>
+      <li><img src="/img/8-bit/404.png"></li>
+      <li><img src="/img/8-bit/405.png"></li>
+      <li><img src="/img/8-bit/406.png"></li>
+    </ul>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="/"><i class="fa fa-home"></i></a></li>
+      
+        
+      
+        
+        <li>
+          <a href="/tutorials/">Tutorials</a>
+        </li>
+        
+      
+      <li class="dont-click">
+        <a href="http://www.alexchin.co.uk" target="_blank">don't click!</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    <main class="container">
+      <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Rails Naming Conventions</h1>
+    <p class="post-meta">May 8, 2014</p>
+  </header>
+
+  <article class="post-content">
+    <p>I think the most confusing thing that I have found about Ruby on Rails so far has been the transition from (trying to) write code myself to the use of the fabled “Rails Magic”. So, to help my own understanding of a few core Ruby on Rails concepts, I have decided to write something on what I think is a <strong><em>CRITICAL</em></strong> topic… the idea of <strong>Convention over Configuration</strong> and why (in my mind) it is the most important thing that helps Rails become magic!</p>
+
+<p><em>(This may be a topic that we cover in more detail in class but as I said, I’m writing this for my own understanding… I hope it helps someone else understand things too… Perhaps you can give me a hand when I’m crying next week!)</em></p>
+
+<h2 id="convention-over-configuration">Convention over configuration</h2>
+<p>###What does this “actually” mean…</p>
+
+<p>Wikipedia says:
+&gt; “Convention over configuration (also known as coding by convention) is a software design paradigm which seeks to decrease the number of decisions that developers need to make, gaining simplicity, but not necessarily losing flexibility.”</p>
+
+<p>Rails’ homepage says: 
+&gt; “Ruby on Rails is an open-source web framework that’s optimized for programmer happiness and sustainable productivity. It lets you write beautiful code by favoring convention over configuration.”</p>
+
+<p>Before having a web application framework as powerful as Rails with tools that can do things like scaffold things for you, developers had to make LOTS more decisions about how they called each variable, controller, model, database table etc that they put into their application. Although there were things like lower_snake_case, cameBack and UpperCamelCase there was still a lot of room for personal decision…</p>
+
+<p>In Rails, there are different conventions for the:</p>
+
+<ol>
+  <li><strong>File name</strong> (outside) e.g. orders_controller.rb</li>
+  <li><strong>File definition</strong> (inside) e.g. OrdersController</li>
+  <li><strong>File location</strong> (inside) e.g. /app/controllers</li>
+</ol>
+
+<h2 id="rails-naming-convention">Rails Naming Convention</h2>
+
+<p>Rails use the same naming convention as Ruby (for a list of the Ruby naming conventions scroll down) with some additions:</p>
+
+<p><strong>Variable</strong> - <em>e.g. order_amount, total</em><br />
+Variables are named where all letters are lowercase and words are separated by underscores.</p>
+
+<p><strong>Class and Module</strong> - <em>e.g. InvoiceItem</em><br />
+Classes and modules use MixedCase and have no underscores, each word starts with a uppercase letter.</p>
+
+<p><strong>Database Table</strong> - <em>e.g. invoice_items, orders</em>
+Table names have all lowercase letters and underscores between words, also all table names need to be plural.</p>
+
+<p><strong>Model</strong> - <em>e.g. Order</em><br />
+The model is named using the class naming convention of unbroken MixedCase and is always the singular of the table name. e.g.</p>
+
+<ul>
+  <li>Table name might be orders (plural)</li>
+  <li>The model name would be Order (singular)</li>
+  <li>Rails will then look for the class definition in a file called order.rb in the /app/models directory.</li>
+  <li>If the model class name has multiple capitalised words, the table name is assumed to have underscores between these words.</li>
+</ul>
+
+<p><strong>Controller</strong> - <em>e.g. OrdersController</em><br />
+Controller class names are pluralized, such that <strong>OrdersController would be the controller class for the orders table</strong>.  Rails will then look for the class definition in a file called orders_controller.rb in the /app/controllers directory.</p>
+
+<p><strong>Files, Directories and other pluralization</strong>  <br />
+Files are named using lowercase and underscores. Assuming we have an Orders controller then the following other conventions will apply:</p>
+
+<ul>
+  <li>That there is a helper module named <strong>OrdersHelper</strong> in the <strong>orders_helper.rb</strong> found in the app/helpers directory.</li>
+  <li>Rails will look for view template files for the controller in the <strong>app/views/orders</strong> directory.</li>
+  <li>Output from this view will then be used in the layout defined in the <strong>orders.html.erb</strong> in the <strong>app/views/layouts</strong> directory.</li>
+  <li>Test files including <strong>order_test.rb</strong> will be created in the <strong>/test/unit</strong> directory, a file will be created in the <strong>/test/fixtures</strong> directory called <strong>orders.yml</strong> and finally a file called <strong>orders_controller_test.rb</strong> will be created in the <strong>/test/functional directory</strong></li>
+</ul>
+
+<p><strong>Primary Key</strong><br />
+The primary key of a table is assumed to be named id.</p>
+
+<p><strong>Foreign Key</strong><br />
+The foreign key is named with the singular version of the target table name with _id appended to it, e.g. order_id in the items table where we have items linked to the orders table.</p>
+
+<p><strong>Many to Many Link Tables</strong><br />
+Tables used to join two tables in a many to many relationship is named using the table names they link, with the table names in alphabetical order, for example items_orders.</p>
+
+<p><strong>Automated Record Timestamps</strong><br />
+You can get ActiveRecord to automatically update the create and update times of records in a database table. To do this create two specially named columns created_at and updated_at to your table, i.e. t.datetime :created_at and t.datetime :updated_at. If you only want to store the date rather than a date and time, use :created_on and :updated_on.</p>
+
+<h2 id="naming-convention-summary">Naming Convention Summary</h2>
+
+<h5 id="model-naming-convention">Model Naming Convention</h5>
+
+<p>Table:      orders
+  Class:      Order
+  File:       /app/models/order.rb
+  Primary Key:  id
+  Foreign Key:  customer_id
+  Link Tables:  items_orders</p>
+
+<h5 id="controller-naming-convention">Controller Naming Convention</h5>
+
+<p>Class:      OrdersController
+  File:       /app/controllers/orders_controller.rb
+  Layout:     /app/layouts/orders.html.erb</p>
+
+<h5 id="view-naming-convention">View Naming Convention</h5>
+
+<p>Helper:     /app/helpers/orders_helper.rb
+  Helper Module:  OrdersHelper
+  Views:      /app/views/orders/… (list.html.erb for example)</p>
+
+<h4 id="tests-naming-convention">Tests Naming Convention</h4>
+
+<p>Unit:       /test/unit/order_test.rb
+  Functional:   /test/functional/orders_controller_test.rb
+  Fixtures:     /test/fixtures/orders.yml</p>
+
+<h2 id="the-ruby-naming-conventions">The Ruby Naming Conventions</h2>
+
+<p>As Jon would say, ProTip:
+&gt; Ruby uses the first character of the name to help it determine it’s intended use.</p>
+
+<p><strong>Local Variables</strong><br />
+These should be a lowercase letter followed by other characters, naming convention states that it is better to use underscores rather than camelBack for multiple word names, <strong>e.g. mileage, variable_xyz</strong></p>
+
+<p><strong>Instance Variables</strong><br />
+Instance variables are defined using the single “at” sign (@) followed by a name. It is suggested that a lowercase letter should be used after the @, <strong>e.g. @colour</strong></p>
+
+<p><strong>Instance Methods</strong><br />
+Method names should start with a lowercase letter, and may be followed by digits, underscores, and letters, e.g. paint, close_the_door</p>
+
+<p><strong>Class Variables</strong><br />
+Class variable names start with a double “at” sign (@@) and may be followed by digits, underscores, and letters, <strong>e.g. @@colour</strong></p>
+
+<p><strong>Constant</strong><br />
+Constant names start with an uppercase letter followed by other characters. Constant objects are by convention named using all uppercase letters and underscores between words, <strong>e.g. THIS_IS_A_CONSTANT</strong></p>
+
+<p><strong>Class and Module</strong><br />
+Class and module names starts with an uppercase letter, by convention they are named using MixedCase, <strong>e.g. module Encryption, class MixedCase</strong></p>
+
+<p><strong>Global Variables</strong><br />
+Starts with a dollar ($) sign followed by other characters, <strong>e.g. $global</strong></p>
+
+<p><em>Some info borrowed from - <a href="http://">http://itsignals.cascadia.com.au/?p=7</a></em></p>
+
+  </article>
+
+</div>
+
+    </main>
+    <footer>
+  &copy; 2015 - Alex Chin
+  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  <ul class="footer__social-icons">
+    
+      <li>
+        <a href="https://www.youtube.com/channel/UC4OFW5Ljzf-5dR8EgJ1zz7g" target="_blank">
+          <i class="fa fa-youtube-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://github.com/alexpchin" target="_blank">
+          <i class="fa fa-github-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://facebook.com/chinternet" target="_blank">
+          <i class="fa fa-facebook-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://twitter.com/alexpchin" target="_blank">
+          <i class="fa fa-twitter-square fa-lg"></i>
+        </a>
+      </li>
+    
+  </ul>
+  Inspired by <a href="http://www.lingscars.com/" target="_blank">LingsCars</a>.
+</footer>
+
+<a class="github-ribbon" href="https://github.com/alexpchin" target="_blank">
+  <img src="/img/fork-me.png" alt="Fork me on Github">
+</a>
+
+  </body>
+</html>

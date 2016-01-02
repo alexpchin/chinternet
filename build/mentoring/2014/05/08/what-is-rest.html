@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="Z4rloDEPfFKjdvqxnRdVLXrdyJv9LLK2Sl7fDJrPt0Y" />
+  <title>What is REST?</title>
+  <meta name="description" content="REST stands for Representional State Transfer and is defined on Wikipedia as:&gt; Representational state transfer (REST) is a software architectural style co...">
+
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Lora" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/app.min.css">
+
+  <link rel="canonical" href="http://www.chinternet.lol/mentoring/2014/05/08/what-is-rest.html">
+  <link rel="alternate" type="application/rss+xml" title="Chinternet - I LEARN YOU CODE. Coding tutorials, memes, cute cats, games." href="http://www.chinternet.lol/feed.xml" />
+
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+  <script src="/js/app.min.js" charset="utf-8"></script>
+</head>
+
+  <body>
+    <header class="container">
+  <div class="header__doge">Much learning. So knowledge.</div>
+  <div class="header__nerd">NERD<span>ALERT</span></div>
+  <div class="header__absolute">How bad is absolute positioning???</div>
+  <a class="header__linkedin" href="https://uk.linkedin.com/in/alexpchin" target="_blank">
+    Find me on LinkedIn!
+  </a>
+  <a class="header__click" href="http://alexchin.co.uk" target="_blank">
+    <img src="/img/star.gif" />
+  </a>
+  <img class="header__pikachu" src="/img/pikachu.gif" />
+  <img class="header__thumb" src="/img/thumb.png" />
+  <img class="header__facebook" src="/img/facebook.png" />
+  <img class="header__otter" src="/img/otter.gif" />
+  <img class="header__glitter-cat" src="/img/glitter-cat.gif" />
+  <ul>
+    <li>
+      <img src="/img/alex.gif">
+    </li>
+    <li>
+      <h1 class="blink">
+        <a href="/">Chinternet</a>
+        <span>I learn you code.</span>
+      </h1>
+    </li>
+    <li><img src="/img/alex.gif"></li>
+  </ul>
+  <div class="header__random">
+    <ul>
+      <li><img src="/img/8-bit/345.png"></li>
+      <li><img src="/img/8-bit/380.png"></li>
+      <li><img src="/img/8-bit/381.png"></li>
+      <li><img src="/img/8-bit/382.png"></li>
+      <li><img src="/img/8-bit/383.png"></li>
+      <li><img src="/img/8-bit/384.png"></li>
+      <li><img src="/img/8-bit/385.png"></li>
+      <li><img src="/img/8-bit/386.png"></li>
+      <li><img src="/img/8-bit/387.png"></li>
+      <li><img src="/img/8-bit/388.png"></li>
+      <li><img src="/img/8-bit/389.png"></li>
+      <li><img src="/img/8-bit/390.png"></li>
+      <li><img src="/img/8-bit/391.png"></li>
+      <li><img src="/img/8-bit/392.png"></li>
+      <li><img src="/img/8-bit/393.png"></li>
+      <li><img src="/img/8-bit/394.png"></li>
+      <li><img src="/img/8-bit/395.png"></li>
+      <li><img src="/img/8-bit/396.png"></li>
+      <li><img src="/img/8-bit/397.png"></li>
+      <li><img src="/img/8-bit/398.png"></li>
+      <li><img src="/img/8-bit/399.png"></li>
+      <li><img src="/img/8-bit/400.png"></li>
+      <li><img src="/img/8-bit/401.png"></li>
+      <li><img src="/img/8-bit/402.png"></li>
+      <li><img src="/img/8-bit/403.png"></li>
+      <li><img src="/img/8-bit/404.png"></li>
+      <li><img src="/img/8-bit/405.png"></li>
+      <li><img src="/img/8-bit/406.png"></li>
+    </ul>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="/"><i class="fa fa-home"></i></a></li>
+      
+        
+      
+        
+        <li>
+          <a href="/tutorials/">Tutorials</a>
+        </li>
+        
+      
+      <li class="dont-click">
+        <a href="http://www.alexchin.co.uk" target="_blank">don't click!</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    <main class="container">
+      <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">What is REST?</h1>
+    <p class="post-meta">May 8, 2014</p>
+  </header>
+
+  <article class="post-content">
+    <p>REST stands for <strong>Representional State Transfer</strong> and is defined on Wikipedia as:
+&gt; Representational state transfer (REST) is a software architectural style consisting of a coordinated set of architectural constraints applied to components, connectors, and data elements, within a distributed hypermedia system. REST ignores the details of component implementation and protocol syntax in order to focus on the <strong>roles of components</strong>, the constraints upon their interaction with other components, and their interpretation of significant data elements.</p>
+
+<p>I think the second part of that explanation sounds like it could be quite interesting… but to me that all seems <strong>super complicated</strong>! So I’ve decided to try to simplify it for my own understanding. <em>(If I have not understood something in this gist, please TELL ME!)</em></p>
+
+<h2 id="saving--retrieving-information">Saving &amp; Retrieving information</h2>
+<p>For this section, think of a web application as a piece of software built to help people to store and access information online.</p>
+
+<h4 id="http-requests-help-you-request-this-information">HTTP requests help you request this information</h4>
+
+<p>Whenever your web browser or application fetches a file (a page, a picture, etc) from a web server, it does so using HTTP (<strong>“Hypertext Transfer Protocol”</strong>).  HTTP is a request/response protocol, which means your computer sends a request for some file (e.g. “Get me the file ‘home.html’”), ..and the web server sends back a response (e.g. “Here’s the file”, followed by the file itself).</p>
+
+<h2 id="rest---wtf">REST - Wtf?!</h2>
+<p>I understand REST as a <strong>set of actions</strong> that a web application can do. <em>(Web app got skillz.)</em>
+&gt; I think it’s quite easy to remember because someone <strong>doing an action</strong> is the oppoiste of them RESTing!</p>
+
+<p>We can group these RESTful actions into 3 main categories:</p>
+
+<ul>
+  <li><strong>Posting</strong> data (e.g. create and/or update)</li>
+  <li><strong>Reading</strong> data (e.g. make queries)</li>
+  <li><strong>Deleting</strong> data (e.g. remove something)</li>
+</ul>
+
+<p>Although there are other actions, these actions can mainly be grouped by these 3 categories - for example, looking at a list of all the posts on a blog is an example of <strong>Reading</strong> &amp; looking at just one blog post is also an example of <strong>Reading</strong>.</p>
+
+<h2 id="api-vs-browser">API vs Browser</h2>
+<p>When interacting with a website, whether you are a coder (using an API to access the website’s data) or you are a user viewing a website using a browser (Chrome, Firefox, Safari etc…), these REST actions that you might want to do in the application should be the same.</p>
+
+<h4 id="what-are-theses-rest-actions">What are theses REST actions?</h4>
+
+<p>Applications might limit the permissions of specific users’ actions using authentication especially for actions that involve <strong><em>deleting</em></strong>, <strong><em>updating</em></strong> and <strong><em>editing</em></strong> but usually the ones that don’t change anything are accessible to the user. <em>(Or else they wouldn’t be able to get any information from the web app!)</em></p>
+
+<p>In order to make these requests, the web application uses HTTP requests (HTTP verbs) and subsequently route a user to the correct logic contained within the application. In Rails, this routing is done using convention using <strong>path</strong> locations and <strong>filenames</strong>.</p>
+
+<h2 id="the-7-restful-routes">The 7 RESTFUL routes</h2>
+
+<p>Here is a list of the <strong>7 RESTFUL routes</strong>.</p>
+
+<p>HTTP Verb Path        Controller#Action</p>
+
+<p>GET     /photos       photos#index
+  GET     /photos/new     photos#new
+  POST    /photos       photos#create
+  GET     /photos/:id     photos#show
+  GET     /photos/:id/edit  photos#edit
+  PATCH/PUT /photos/:id     photos#update
+  DELETE    /photos/:id     photos#destroy</p>
+
+<h5 id="pro-tip-as-jon-would-say">Pro Tip (As Jon would say)…</h5>
+
+<p>It is important that the route for the dynamic urls (<code class="highlighter-rouge">/photos/:id</code>) are at the bottom of the page or else anything following the <code class="highlighter-rouge">/photos/</code> would be considered as an id.</p>
+
+<h2 id="rest-vs-crud">REST vs CRUD</h2>
+<p>Another way of understanding the concept is that REST uses HTTP to allow users to  do all the four main CRUD operations.</p>
+
+<ul>
+  <li><strong>C</strong>reate</li>
+  <li><strong>R</strong>ead</li>
+  <li><strong>U</strong>pdate</li>
+  <li><strong>D</strong>elete</li>
+</ul>
+
+<p>CRUD is defined on Wikipedia as:
+&gt; In computer programming, create, read, update and delete (CRUD) (Sometimes called SCRUD with an “S” for Search) are the four basic functions of persistent storage.</p>
+
+<h5 id="if-you-want-to-store-information-on-a-web-application-you-therefore-need-to-do-crud-operations-if-you-want-to-allow-users-to-perform-these-actions-securely-you-need-to-use-rest-so-they-can-perform-these-actions-using-http-requests">If you want to store information on a web application, you therefore need to do CRUD operations. If you want to allow users to perform these actions securely, you need to use REST so they can perform these actions using HTTP requests.</h5>
+
+<p>Going back to the top again:</p>
+
+<blockquote>
+  <p>For this section, think of a web application as a piece of software built to help people to store and access information online.</p>
+</blockquote>
+
+<h2 id="rest-is-super-cool">REST is super cool!</h2>
+
+<p>Much like Web Services, a REST service is:</p>
+
+<ul>
+  <li><strong>Platform-independent</strong> (you don’t care if the server is Unix, the client is a Mac, or anything else),</li>
+  <li><strong>Language-independent</strong> (C# can talk to Java, etc.),</li>
+  <li><strong>Standards-based</strong> (runs on top of HTTP), and</li>
+  <li><strong>Can easily be used in the presence of firewalls</strong>.</li>
+</ul>
+
+  </article>
+
+</div>
+
+    </main>
+    <footer>
+  &copy; 2015 - Alex Chin
+  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  <ul class="footer__social-icons">
+    
+      <li>
+        <a href="https://www.youtube.com/channel/UC4OFW5Ljzf-5dR8EgJ1zz7g" target="_blank">
+          <i class="fa fa-youtube-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://github.com/alexpchin" target="_blank">
+          <i class="fa fa-github-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://facebook.com/chinternet" target="_blank">
+          <i class="fa fa-facebook-square fa-lg"></i>
+        </a>
+      </li>
+    
+      <li>
+        <a href="https://twitter.com/alexpchin" target="_blank">
+          <i class="fa fa-twitter-square fa-lg"></i>
+        </a>
+      </li>
+    
+  </ul>
+  Inspired by <a href="http://www.lingscars.com/" target="_blank">LingsCars</a>.
+</footer>
+
+<a class="github-ribbon" href="https://github.com/alexpchin" target="_blank">
+  <img src="/img/fork-me.png" alt="Fork me on Github">
+</a>
+
+  </body>
+</html>

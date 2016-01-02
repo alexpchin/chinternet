@@ -80,12 +80,13 @@ Typing.startGame = function() {
 };
 
 document.addEventListener("DOMContentLoaded", function(event) {
-  Typing.message             = document.getElementById("message");
   Typing.box                 = document.getElementById("box");
-  Typing.score               = document.getElementById("score");
-  Typing.startButton         = document.getElementById("start");
-  Typing.resetButton         = document.getElementById("reset");
-
-  Typing.startButton.onclick = Typing.startGame;
-  Typing.resetButton.onclick = Typing.resetGame;
+  if (Typing.box) {
+    Typing.message             = document.getElementById("message");
+    Typing.score               = document.getElementById("score");
+    Typing.startButton         = document.getElementById("start");
+    Typing.resetButton         = document.getElementById("reset");
+    Typing.startButton.onclick = Typing.startGame;
+    Typing.resetButton.onclick = Typing.resetGame;
+  }
 });
