@@ -3,12 +3,13 @@ layout: default
 ---
 
 <div class="row">
-  <div class="col-sm-1 sidebar hidden-xs">
+  <div class="col-sm-2 sidebar">
+    {% include slack.html %}
     {% for tech in site.data.technologies %}
       <img src="{{ site.baseurl }}/img/{{ tech.image }}" title="{{ tech.name }}">
     {% endfor %}
   </div>
-  <div class="col-sm-9 main">
+  <div class="col-sm-8 main">
     {% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
     <article>
       {{ content }}

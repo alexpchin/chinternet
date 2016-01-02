@@ -1,18 +1,6 @@
 $(function(){
-  // setInterval(function(){
-  //   blinker('.blink');
-  // }, 2000);
-  //
-  // setInterval(function(){
-  //   blinker('.header__linkedin');
-  // }, 1000);
-  //
   // setInterval(scroll, 3000);
 });
-
-function blinker(selector) {
-  $(selector).fadeOut(500).fadeIn(500);
-}
 
 function scroll(){
   var $container = $(".header__random ul");

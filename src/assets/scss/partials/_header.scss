@@ -1,9 +1,13 @@
+$dark-purple: #6E67BE;
+$light-purple: #F516D7;
+$orange: orange;
+
 body > header {
   position: relative;
   background: $white url('/img/neo.png') no-repeat;
   background-position: top right;
   background-size: 180px;
-  height: 162px;
+  height: 197px;
   line-height: 60px;
 }
 
@@ -36,23 +40,23 @@ header {
     font-size: 1.5rem;
     z-index: 2;
     position: relative;
-    span {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      font-size: 11px;
-    }
-    a {
-      background: yellow;
-      color: #000;
-      padding: 10px 20px;
-      display: inline-block;
-      vertical-align: middle;
-      line-height: 100%;
-    }
-    &:hover span {
-      color: yellow;
-    }
+    // span {
+    //   position: absolute;
+    //   right: 0;
+    //   bottom: 0;
+    //   font-size: 11px;
+    // }
+    // a {
+    //   background: yellow;
+    //   color: #000;
+    //   padding: 10px 20px;
+    //   display: inline-block;
+    //   vertical-align: middle;
+    //   line-height: 100%;
+    // }
+    // &:hover span {
+    //   color: yellow;
+    // }
   }
   .header__doge {
     position: absolute;
@@ -64,7 +68,7 @@ header {
   }
   .header__nerd {
     position: absolute;
-    top: 22px;
+    top: 50px;
     left: 10%;
     font-size: 2rem;
     color: #60da00;
@@ -89,7 +93,7 @@ header {
     height: 50px;
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 14px;
   }
   .header__otter {
     height: 100px;
@@ -106,8 +110,8 @@ header {
   .header__thumb {
     height: 50px;
     position: absolute;
-    top: 10px;
-    right: 150px;
+    top: 47px;
+    right: 164px;
   }
   .header__facebook{
     height: 50px;
@@ -119,7 +123,7 @@ header {
   .header__linkedin {
     position: absolute;
     left: 10px;
-    top: 25px;
+    top: 30px;
     font-size: 12px;
     line-height: 1.2;
     color: $black;
@@ -132,7 +136,7 @@ header {
   }
   .header__click {
     position: absolute;
-    left: 10px;
+    left: 22px;
     bottom: 0px;
     &:hover {
       background: none;
@@ -172,12 +176,12 @@ header {
       text-align: center;
       width: 100%;
       background-image: -webkit-gradient(
-      linear, left top, left bottom, color-stop(0, #6E67BE), color-stop(1, #F516D7));
-      background-image: -o-linear-gradient(bottom, #6E67BE 0%, #F516D7 100%);
-      background-image: -moz-linear-gradient(bottom, #6E67BE 0%, #F516D7 100%);
-      background-image: -webkit-linear-gradient(bottom, #6E67BE 0%, #F516D7 100%);
-      background-image: -ms-linear-gradient(bottom, #6E67BE 0%, #F516D7 100%);
-      background-image: linear-gradient(to bottom, #6E67BE 0%, #F516D7 100%);
+      linear, left top, left bottom, color-stop(0, $dark-purple), color-stop(1, $light-purple));
+      background-image: -o-linear-gradient(bottom, $dark-purple 0%, $light-purple 100%);
+      background-image: -moz-linear-gradient(bottom, $dark-purple 0%, $light-purple 100%);
+      background-image: -webkit-linear-gradient(bottom, $dark-purple 0%, $light-purple 100%);
+      background-image: -ms-linear-gradient(bottom, $dark-purple 0%, $light-purple 100%);
+      background-image: linear-gradient(to bottom, $dark-purple 0%, $light-purple 100%);
       li {
         display: inline;
         font-family: $meme;
@@ -201,7 +205,7 @@ header {
           padding: 0 10px;
           -webkit-text-stroke: 1px black;
           text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
-          color: $green;
+          color: $orange;
           text-decoration: none;
           line-height: 100%;
           &:hover {
