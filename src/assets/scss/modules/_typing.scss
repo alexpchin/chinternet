@@ -1,0 +1,62 @@
+.typing {
+  padding: $padding 0;
+
+  #box {
+    margin: auto;
+    height: 200px;
+    border: 1px solid #FF6158;
+    background: $pink;
+    overflow: hidden;
+    position: relative;
+    font-family: $comic;
+    font-size: 30px;
+    color: $dark-blue;
+  }
+
+  #box > div {
+    display: inline-block;
+    position: absolute;
+    width: 50px;
+    text-align: center;
+    transition-property: right;
+    transition-duration: 100ms;
+    transition-timing-function: linear;
+    transition-delay: 0;
+  }
+}
+
+#message {
+  display: block;
+  text-align: center;
+  position: relative;
+  font-size: 100px;
+  top: 0;
+  line-height: 200px;
+  z-index: 0;
+  color: #FF6158;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.panel {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.panel-body {
+  padding: 0;
+}
+
+.btn {
+  margin-left: 10px;
+}
+
+.container {
+  max-width: 1000px;
+}
+
+.hidden {
+  display: none!important;
+  visibility: hidden!important;
+}

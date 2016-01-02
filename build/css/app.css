@@ -9506,6 +9506,7 @@ th {
 
 /* Colors */
 /* Fonts */
+/* Structure */
 html, body {
   height: 100%;
   min-height: 100%;
@@ -9546,12 +9547,8 @@ a:hover i {
   color: yellow;
 }
 
-main, footer {
-  padding: 40px 0;
-  background: #fff;
-}
-
 main {
+  padding: 40px 0;
   background: #fff;
   outline: 2px dashed yellow;
   padding: 20px;
@@ -9569,6 +9566,14 @@ main a {
   color: yellow;
   background: #000;
   padding: 2px 10px;
+}
+
+main .tips {
+  width: 100%;
+  padding: 10px;
+  border: 3px solid #0F0;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 body > header {
@@ -9820,22 +9825,23 @@ header::after {
   background: repeating-linear-gradient(-55deg, #222, #222 2px, yellow 2px, #333 10px);
 }
 
-footer {
+body > footer {
+  padding: 40px 0;
   text-align: center;
   background: #000;
   color: #fff;
 }
 
-footer ul.footer__social-icons {
+body > footer ul.footer__social-icons {
   list-style-type: none;
   margin: 20px auto;
 }
 
-footer ul.footer__social-icons li {
+body > footer ul.footer__social-icons li {
   display: inline-block;
 }
 
-footer ul.footer__social-icons li a {
+body > footer ul.footer__social-icons li a {
   padding: 5px;
 }
 
@@ -9863,6 +9869,14 @@ main .recommendations {
   overflow: hidden;
   margin: 10px 0;
   vertical-align: baseline;
+  font-size: 16px;
+}
+
+main .recommendations img {
+  float: left;
+  height: 60px;
+  width: 60px;
+  margin-right: 10px;
 }
 
 main .recommendations ul li {
@@ -9881,13 +9895,6 @@ main .recommendations ul li a {
 
 main .recommendations ul li a:hover {
   text-decoration: underline;
-}
-
-main .recommendations ul li img {
-  float: left;
-  height: 60px;
-  width: 60px;
-  margin-right: 10px;
 }
 
 .github-ribbon img {
@@ -9976,6 +9983,68 @@ main .recommendations ul li img {
   height: 50px;
   width: 50px;
   float: left;
+}
+
+.typing {
+  padding: 10px 0;
+}
+
+.typing #box {
+  margin: auto;
+  height: 200px;
+  border: 1px solid #FF6158;
+  background: #FFEADD;
+  overflow: hidden;
+  position: relative;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 30px;
+  color: #2145DE;
+}
+
+.typing #box > div {
+  display: inline-block;
+  position: absolute;
+  width: 50px;
+  text-align: center;
+  transition-property: right;
+  transition-duration: 100ms;
+  transition-timing-function: linear;
+  transition-delay: 0;
+}
+
+#message {
+  display: block;
+  text-align: center;
+  position: relative;
+  font-size: 100px;
+  top: 0;
+  line-height: 200px;
+  z-index: 0;
+  color: #FF6158;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.panel {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.panel-body {
+  padding: 0;
+}
+
+.btn {
+  margin-left: 10px;
+}
+
+.container {
+  max-width: 1000px;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
 }
 
 .card h4 {

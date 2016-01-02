@@ -34,12 +34,8 @@ a:hover {
   i { color: $yellow; }
 }
 
-main, footer {
-  padding: 40px 0;
-  background: $white;
-}
-
 main {
+  padding: 40px 0;
   background: $white;
   outline: 2px dashed $yellow;
   padding: 20px;
@@ -55,6 +51,14 @@ main {
     background: $black;
     padding: 2px 10px;
   }
+
+  .tips {
+    width: 100%;
+    padding: 10px;
+    border: 3px solid #0F0;
+    font-size: 18px;
+    margin-bottom: $padding;
+  }
 }
 
 // Partials
@@ -67,6 +71,7 @@ main {
 @import "modules/_github-ribbon.scss";
 @import "modules/_posts.scss";
 @import "modules/_meme.scss";
+@import "modules/_typing.scss";
 
 // Vendor
 @import "vendor/_bootstrap-overrides.scss";
