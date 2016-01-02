@@ -3,8 +3,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="Z4rloDEPfFKjdvqxnRdVLXrdyJv9LLK2Sl7fDJrPt0Y" />
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <!-- FACEBOOK -->
+  <meta property="og:image" content="{{ site.baseurl }}/img/facebook-logo.png"/>
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"/>
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"/>
+  <meta property="og:site_name" content="Chinternet"/>
+  <meta property="og:type" content="blog"/>
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Lora" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{{ "/css/app.min.css" | prepend: site.baseurl }}">
