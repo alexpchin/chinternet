@@ -1,0 +1,15 @@
+---
+layout: nil
+---
+/* TEAM */
+Builder: {{ site.author }}
+Site: {{ site.url }}
+
+/* SITE */
+{{ site.title }}
+{{ site.description }}
+
+Last update: {{ site.time | date: "%Y/%m/%d" }}
+Standards: HTML5, CSS3
+Components: Jekyll, Modernizr, jQuery, Bower
+Software: Sublime Text, iTerm2, Chrome

@@ -14,7 +14,7 @@ Alex Speller says:
 
 I thought the talk was really great. Here is how Alex made a note in Ruby:
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 require 'bundler'
 Bundler.require
 

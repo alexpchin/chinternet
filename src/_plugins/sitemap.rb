@@ -1,16 +1,3 @@
----
-layout: post
-title:  "Generating a sitemap with Jekyll"
-date:   2014-08-12 10:00:00
-category: Coding
-tags:  [Code, Jekyll Plugin, Jekyll]
----
-
-I was looking for a solution to create a new sitemap.xml [file](http://www.sitemaps.org/protocol.html#xmlTagDefinitions) for my jekyll blog. I looked at some code written by [Dave Perret](http://www.daveperrett.com/), [here](https://github.com/recurser/jekyll-plugins).
-
-This is the plugin code I ended up going with:
-
-{% highlight ruby %}
 require 'pathname'
 module Jekyll
 
@@ -142,20 +129,3 @@ module Jekyll
   end
 
 end
-{% endhighlight %}
-
-In your _config.yaml, add these options:
-
-{% highlight ruby %}
-sitemap:
-  # local: false
-  file: "/sitemap.xml"
-  exclude:
-      - "/atom.xml"
-      - "/feed.xml"
-      - "/feed/index.xml"
-  include_posts:
-      - "/index.html"
-  change_frequency_name: "change_frequency"
-  priority_name: "priority"
-{% endhighlight %}

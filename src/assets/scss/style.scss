@@ -34,6 +34,7 @@ ul {
 @import "modules/_recommendations.scss";
 @import "modules/_github-ribbon.scss";
 @import "modules/_posts.scss";
+@import "modules/_post.scss";
 @import "modules/_meme.scss";
 @import "modules/_typing.scss";
 @import "modules/_tips.scss";
@@ -44,4 +45,5 @@ ul {
 @import "vendor/_syntax.scss";
 
 // Responsive
-@import "partials/_responsive.scss";
+@import "base/_404.scss";
+@import "base/_responsive.scss";

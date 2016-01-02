@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     },
     bower_concat: {
       all: {
-        dest: 'src/assets/js/_bower.js',
+        dest: 'src/assets/js/bower.js',
         cssDest: 'src/assets/scss/bower.scss',
         dependencies: {
           'bootstrap': ['jquery', 'tether']
@@ -24,27 +24,12 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          'src/assets/js/_bower.js',
+          'src/assets/js/bower.js',
           'src/assets/js/app.js',
           'src/assets/js/**/*.js'
         ],
         dest: 'src/js/app.js'
       }
-    },
-    postcss: {
-      options: {
-        map: {
-            inline: false, // save all sourcemaps as separate files...
-            annotation: 'src/css/maps/' // ...to the specified directory
-        },
-        processors: [
-          require('pixrem')(), // add fallbacks for rem units
-          require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
-        ]
-      },
-      dist: {
-        src: 'src/css/*.css'
-      },
     },
     sass: {
       expanded: {
@@ -59,6 +44,21 @@ module.exports = function(grunt) {
           'src/css/app.min.css': 'src/assets/scss/style.scss'
         }
       }
+    },
+    postcss: {
+      options: {
+        map: {
+          inline: false, // save all sourcemaps as separate files...
+          annotation: 'src/css/maps/' // ...to the specified directory
+        },
+        processors: [
+          require('pixrem')(), // add fallbacks for rem units
+          require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
+        ]
+      },
+      dist: {
+        src: 'src/css/*.css'
+      },
     },
     uglify: {
       'src/js/app.min.js': 'src/js/app.js'
