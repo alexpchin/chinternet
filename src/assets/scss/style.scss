@@ -23,48 +23,12 @@ ul {
   list-style-type: none;
   margin: 0 auto;
 }
-a {
-  color: $white;
-  text-decoration: none;
-}
-a:hover {
-  background: black;
-  text-decoration: none;
-  color: $yellow;
-  i { color: $yellow; }
-}
-
-main {
-  padding: 40px 0;
-  background: $white;
-  outline: 2px dashed $yellow;
-  padding: 20px;
-  box-sizing: border-box;
-  border-radius: 3px;
-  text-shadow: none;
-  h1, h2, h3 {
-    color: $black;
-    font-weight: 700;
-  }
-  a {
-    color: $yellow;
-    background: $black;
-    padding: 2px 10px;
-  }
-
-  .tips {
-    width: 100%;
-    padding: 10px;
-    border: 3px solid #0F0;
-    font-size: 18px;
-    margin-bottom: $padding;
-  }
-}
 
 // Partials
 @import "partials/_header.scss";
 @import "partials/_footer.scss";
 @import "partials/_sidebar.scss";
+@import "partials/_main.scss";
 
 // Modules
 @import "modules/_recommendations.scss";
@@ -72,6 +36,7 @@ main {
 @import "modules/_posts.scss";
 @import "modules/_meme.scss";
 @import "modules/_typing.scss";
+@import "modules/_tips.scss";
 
 // Vendor
 @import "vendor/_bootstrap-overrides.scss";

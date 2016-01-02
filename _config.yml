@@ -4,7 +4,7 @@ destination: ./build
 plugins_dir: ./src/_plugins
 
 # Site settings
-title: Chinternet
+title: Chinternet - I LEARN YOU CODE. Coding tutorials, memes, cute cats, games.
 email: chinternet@alexchin.co.uk
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this

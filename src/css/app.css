@@ -9532,50 +9532,6 @@ ul {
   margin: 0 auto;
 }
 
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-a:hover {
-  background: black;
-  text-decoration: none;
-  color: yellow;
-}
-
-a:hover i {
-  color: yellow;
-}
-
-main {
-  padding: 40px 0;
-  background: #fff;
-  outline: 2px dashed yellow;
-  padding: 20px;
-  box-sizing: border-box;
-  border-radius: 3px;
-  text-shadow: none;
-}
-
-main h1, main h2, main h3 {
-  color: #000;
-  font-weight: 700;
-}
-
-main a {
-  color: yellow;
-  background: #000;
-  padding: 2px 10px;
-}
-
-main .tips {
-  width: 100%;
-  padding: 10px;
-  border: 3px solid #0F0;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
 body > header {
   position: relative;
   background: #fff url("/img/neo.png") no-repeat;
@@ -9588,6 +9544,21 @@ body > header {
 header {
   text-align: center;
   text-shadow: none;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header a:hover {
+  background: black;
+  text-decoration: none;
+  color: yellow;
+}
+
+header a:hover i {
+  color: yellow;
 }
 
 header li {
@@ -9845,6 +9816,21 @@ body > footer ul.footer__social-icons li a {
   padding: 5px;
 }
 
+body > footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+body > footer a:hover {
+  background: #000;
+  text-decoration: none;
+  color: yellow;
+}
+
+body > footer a:hover i {
+  color: yellow;
+}
+
 .sidebar img {
   width: 100%;
 }
@@ -9860,6 +9846,21 @@ body > footer ul.footer__social-icons li a {
   width: 40px;
   height: 40px;
   float: left;
+}
+
+main {
+  padding: 40px 0;
+  background: #fff;
+  outline: 2px dashed yellow;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  text-shadow: none;
+}
+
+main h1, main h2, main h3 {
+  color: #000;
+  font-weight: 700;
 }
 
 main .recommendations {
@@ -10012,7 +10013,12 @@ main .recommendations ul li a:hover {
   transition-delay: 0;
 }
 
-#message {
+.typing p {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.typing #message {
   display: block;
   text-align: center;
   position: relative;
@@ -10025,26 +10031,34 @@ main .recommendations ul li a:hover {
   transform: translateY(-50%);
 }
 
-.panel {
+.typing .panel {
   max-width: 1000px;
   margin: auto;
 }
 
-.panel-body {
+.typing .panel-body {
   padding: 0;
 }
 
-.btn {
+.typing .btn {
   margin-left: 10px;
 }
 
-.container {
+.typing .container {
   max-width: 1000px;
 }
 
-.hidden {
+.typing .hidden {
   display: none !important;
   visibility: hidden !important;
+}
+
+.tips {
+  width: 100%;
+  padding: 10px;
+  border: 3px solid #0F0;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .card h4 {

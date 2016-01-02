@@ -10,6 +10,16 @@ body > header {
 header {
   text-align: center;
   text-shadow: none;
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+  a:hover {
+    background: black;
+    text-decoration: none;
+    color: $yellow;
+    i { color: $yellow; }
+  }
   li {
     display: inline-block;
   }
